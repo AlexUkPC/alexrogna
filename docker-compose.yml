@@ -16,6 +16,8 @@ services:
       - .env/development/web_alexrogna
     environment: 
       - WEBPACKER_DEV_SERVER_HOST=webpack_dev_server_alexrogna
+    networks:
+      - network
   webpack_dev_server_alexrogna:
     build:
       context: .
@@ -33,12 +35,18 @@ services:
       - .env/development/web_alexrogna
     environment: 
       - WEBPACKER_DEV_SERVER_HOST=0.0.0.0
+    networks:
+      - network
   database_alexrogna:
     image: postgres
     env_file: 
       - .env/development/database_alexrogna
     volumes: 
       - db_data_alexrogna:/var/lib/postgresql/data
+    networks:
+      - network
 volumes: 
   db_data_alexrogna:
   gem_cache_alexrogna:
+networks:
+  network:

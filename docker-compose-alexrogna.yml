@@ -9,6 +9,8 @@ services:
       - .env/production/web_alexrogna
     environment:
       - "VIRTUAL_HOST=alexrogna.alexrogna.com"
+    networks:
+      - proxy
     restart: always
 
   database_alexrogna:
@@ -17,6 +19,8 @@ services:
       - .env/production/database_alexrogna
     volumes:
       - db_data_alexrogna:/var/lib/postgresql/data
+    networks:
+      - proxy
     restart: always
     
   db-migrator_alexrogna:
@@ -25,5 +29,9 @@ services:
     env_file:
       - .env/production/database_alexrogna
       - .env/production/web_alexrogna
+    networks:
+      - proxy
 volumes:
   db_data_alexrogna:
+networks:
+  proxy:
