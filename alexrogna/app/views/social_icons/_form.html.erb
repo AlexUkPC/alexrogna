@@ -1,0 +1,30 @@
+<%= form_with(model: social_icon) do |form| %>
+  <% if social_icon.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(social_icon.errors.count, "error") %> prohibited this social_icon from being saved:</h2>
+
+      <ul>
+        <% social_icon.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :icon %>
+    <%= form.text_field :icon %>
+  </div>
+
+  <div class="field">
+    <%= form.label :link %>
+    <%= form.text_field :link %>
+  </div>
+  <div class="field">
+    <%= form.label :order_id %>
+    <%= form.number_field :order_id %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

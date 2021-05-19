@@ -1,0 +1,2 @@
+class SocialIcon < ApplicationRecord
+end
