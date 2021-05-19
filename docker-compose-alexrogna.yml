@@ -1,0 +1,37 @@
+version: "3" 
+services:
+  web_alexrogna:
+    image: alexrogna/alexrogna_web:prod
+    expose:
+      - 3000
+    env_file:
+      - .env/production/database_alexrogna
+      - .env/production/web_alexrogna
+    environment:
+      - VIRTUAL_HOST=alexrogna.alexrogna.com
+      - VIRTUAL_PORT=3000
+      - LETSENCRYPT_HOST=alexrogna.alexrogna.com
+    networks:
+      - proxy
+    restart: always
+
+  database_alexrogna:
+    image: postgres
+    env_file:
+      - .env/production/database_alexrogna
+    volumes:
+      - db_data_alexrogna:/var/lib/postgresql/data
+    networks:
+      - proxy
+    restart: always
+    
+  db-migrator_alexrogna:
+    image: alexrogna/alexrogna_web:prod
+    command: ["./wait-for", "--timeout=300", "database_alexrogna:5432", "--", "bin/rails", "db:create" , "db:migrate"]
+    env_file:
+      - .env/production/database_alexrogna
+      - .env/production/web_alexrogna
+volumes:
+  db_data_alexrogna:
+networks:
+  proxy:
