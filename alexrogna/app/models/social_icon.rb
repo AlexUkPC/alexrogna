@@ -1,2 +1,0 @@
-class SocialIcon < ApplicationRecord
-end

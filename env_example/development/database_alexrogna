@@ -1,3 +1,0 @@
-POSTGRES_USER=postgres
-POSTGRES_PASSWORD=some-long-secured-password
-POSTGRES_DB=alexrogna_development
