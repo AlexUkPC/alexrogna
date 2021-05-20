@@ -1,1 +1,8 @@
+<p>
+    <% if user.cover_image.attached? %>
+        <%= image_tag user.cover_image.variant(resize_to_limit: local_assigns.fetch(:cover_image_options, [200, 200])) %>
+    <% end %>
+</p>
+<p>Salute: <%= user.salute %></p>
+<p>Short description: <%= user.short_description %></p>
 <%= render 'social_icons', social_icons: social_icons %>

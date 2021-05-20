@@ -30,5 +30,8 @@ private
       :city,
       :post_code,
       :phone,
+      :cover_image,
+      :profile_image,
+      :cv
     )
   end
