@@ -1,0 +1,26 @@
+<h1>Settings::Users#show</h1>
+<p>Find me in app/views/settings/users/show.html.erb</p>
+ <%= form_with model: current_user,
+        url: settings_user_path,
+        method: :patch do |f| %>
+    <%= f.label :salute %>
+    <%= f.text_field :salute %>
+    <%= f.label :short_description %>
+    <%= f.text_area :short_description %>
+    <%= f.label :long_description %>
+    <%= f.text_area :long_description %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :street_number %>
+    <%= f.text_field :street_number %>
+    <%= f.label :street_name %>
+    <%= f.text_field :street_name %>
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+    <%= f.label :post_code %>
+    <%= f.text_field :post_code %>
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+
+     <%= f.submit "Update", class: "submit-btn" %>
+     <% end %>
