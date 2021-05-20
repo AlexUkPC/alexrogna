@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  namespace :settings do
-    get 'users/show'
-    get 'users/update'
-  end
+  resources :social_icons
   namespace :settings do
     resource :user, only: [:show, :update]
   end

@@ -10,6 +10,7 @@
 <p>Postcode: <%= @user.post_code %></p>
 <p>Phone: <%= @user.phone %></p>
 <p>Email: <%= @user.email %></p>
+<%= render 'hero', social_icons: @social_icons %>
 <p><%= link_to "log in", new_user_session_path %></p>
 <p><%= link_to "log out", destroy_user_session_path,method: :delete %></p>
 <p><%= link_to "settings", settings_user_path %></p>
