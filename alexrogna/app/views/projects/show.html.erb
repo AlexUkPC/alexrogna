@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @project.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @project.description %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @project.url %>
+</p>
+
+<p>
+  <strong>Github url:</strong>
+  <%= @project.github_url %>
+</p>
+
+<p>
+  <strong>Docker url:</strong>
+  <%= @project.docker_url %>
+</p>
+<h3>Tags</h3>
+<ul>
+    <% for @tag in @project.tags %>
+        <li><%= @tag.name %></li>
+    <% end %>
+</ul>
+<p>
+<% if @project.cover_image.attached? %>
+      <%= image_tag @project.cover_image.variant(resize_to_limit: local_assigns.fetch(:cover_image_options, [200, 200])) %>
+  <% end %>
+</p>
+<p>
+  <% if @project.logo.attached? %>
+      <%= image_tag @project.logo.variant(resize_to_limit: local_assigns.fetch(:logo_options, [200, 200])) %>
+  <% end %>
+</p> 
+<p>
+  <% if @project.main_tech.attached? %>
+      <%= image_tag @project.main_tech.variant(resize_to_limit: local_assigns.fetch(:main_tech_options, [200, 200])) %>
+  <% end %>
+</p>
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', root_path %>

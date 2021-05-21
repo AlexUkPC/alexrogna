@@ -1,0 +1,16 @@
+<% projects.each do |project| %>
+    <tr>
+    <td><%= link_to project do %>
+            <% if project.project_logo.attached? %>
+                <%= project.name %>
+                <%= image_tag project.project_logo.variant(resize_to_limit: local_assigns.fetch(:profile_image_options, [200, 200])) %>
+            <% else %>
+                <%= project.name %>
+            <% end %>
+        <% end %>
+    </td>
+    <td><%= link_to 'Edit', edit_project_path(project) %></td>
+    <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+<% end %>
+<%= link_to 'New Project', new_project_path %>

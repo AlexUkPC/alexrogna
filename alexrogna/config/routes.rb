@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :tags
+  resources :projects
   resources :social_icons
   namespace :settings do
     resource :user, only: [:show, :update]

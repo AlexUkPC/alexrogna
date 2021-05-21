@@ -4,7 +4,8 @@
 <hr>
 <p><%= render 'about', user: @user %></p>
 <hr>
-
+<p><%= render 'projects', projects: @projects %></p>
+<hr>
 
 <% if current_user %>
     <p><%= link_to "log out", destroy_user_session_path, method: :delete %></p>

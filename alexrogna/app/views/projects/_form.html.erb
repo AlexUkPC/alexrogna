@@ -1,0 +1,74 @@
+<%= form_with(model: project) do |form| %>
+  <% if project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+        <% project.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :url %>
+    <%= form.text_field :url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :github_url %>
+    <%= form.text_field :github_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :docker_url %>
+    <%= form.text_field :docker_url %>
+  </div>
+  <h3>Add Tags</h3>
+  <%= form.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |b| %>
+    <% b.label {b.check_box + b.text } %>
+  <% end %>
+  <div class="links">
+      <%= link_to_add_association "Add Tag", form, :tags %>
+  </div>
+  <%= link_to "Remove tags", tags_path %>
+
+  <% if project.cover_image.attached? %>
+      <%= image_tag project.cover_image.variant(resize_to_limit: local_assigns.fetch(:cover_image_options, [200, 200])) %>
+  <% end %>
+  <%= form.label :cover_image %>
+  <%= form.file_field :cover_image %>
+
+  <% if project.logo.attached? %>
+      <%= image_tag project.logo.variant(resize_to_limit: local_assigns.fetch(:logo_options, [200, 200])) %>
+  <% end %>
+  <%= form.label :logo %>
+  <%= form.file_field :logo %>
+  
+  <% if project.main_tech.attached? %>
+      <%= image_tag project.main_tech.variant(resize_to_limit: local_assigns.fetch(:main_tech_options, [200, 200])) %>
+  <% end %>
+  <%= form.label :main_tech %>
+  <%= form.file_field :main_tech %>
+
+  <% if project.project_logo.attached? %>
+      <%= image_tag project.project_logo.variant(resize_to_limit: local_assigns.fetch(:project_logo_options, [200, 200])) %>
+  <% end %>
+  <%= form.label :project_logo %>
+  <%= form.file_field :project_logo %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
