@@ -1,0 +1,2 @@
+class FreeCodeCamp < ApplicationRecord
+end

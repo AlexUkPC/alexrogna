@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cerificate name:</strong>
+  <%= @free_code_camp.cerificate_name %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @free_code_camp.url %>
+</p>
+
+<%= link_to 'Edit', edit_free_code_camp_path(@free_code_camp) %> |
+<%= link_to 'Back', free_code_camps_path %>
