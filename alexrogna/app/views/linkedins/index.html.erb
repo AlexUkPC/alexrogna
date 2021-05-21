@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Linkedins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Badge name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @linkedins.each do |linkedin| %>
+      <tr>
+        <td><%= linkedin.badge_name %></td>
+        <td><%= link_to 'Show', linkedin %></td>
+        <td><%= link_to 'Edit', edit_linkedin_path(linkedin) %></td>
+        <td><%= link_to 'Destroy', linkedin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Linkedin', new_linkedin_path %>

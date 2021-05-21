@@ -1,0 +1,22 @@
+<%= form_with(model: linkedin) do |form| %>
+  <% if linkedin.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(linkedin.errors.count, "error") %> prohibited this linkedin from being saved:</h2>
+
+      <ul>
+        <% linkedin.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :badge_name %>
+    <%= form.text_field :badge_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
