@@ -1,0 +1,32 @@
+<%= form_with(model: hacker_rank) do |form| %>
+  <% if hacker_rank.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(hacker_rank.errors.count, "error") %> prohibited this hacker_rank from being saved:</h2>
+
+      <ul>
+        <% hacker_rank.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :cerificate_name %>
+    <%= form.text_field :cerificate_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :badge_name %>
+    <%= form.text_field :badge_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :url %>
+    <%= form.text_field :url %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

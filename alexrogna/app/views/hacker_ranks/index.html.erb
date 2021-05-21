@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Hacker Ranks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cerificate name</th>
+      <th>Badge name</th>
+      <th>Url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hacker_ranks.each do |hacker_rank| %>
+      <tr>
+        <td><%= hacker_rank.cerificate_name %></td>
+        <td><%= hacker_rank.badge_name %></td>
+        <td><%= hacker_rank.url %></td>
+        <td><%= link_to 'Show', hacker_rank %></td>
+        <td><%= link_to 'Edit', edit_hacker_rank_path(hacker_rank) %></td>
+        <td><%= link_to 'Destroy', hacker_rank, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hacker Rank', new_hacker_rank_path %>

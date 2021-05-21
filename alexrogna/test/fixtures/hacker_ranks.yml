@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cerificate_name: MyString
+  badge_name: MyString
+  url: MyString
+
+two:
+  cerificate_name: MyString
+  badge_name: MyString
+  url: MyString
