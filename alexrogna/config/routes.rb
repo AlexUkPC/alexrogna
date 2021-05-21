@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :books
   resources :hacker_ranks
   resources :free_code_camps
   resources :linkedins
