@@ -13,7 +13,9 @@ overflow: auto; /* Enable scroll if needed */
 background-color: rgb(0,0,0); /* Fallback color */
 background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
-
+body .modal-active {
+    display: block;
+}
 /* Modal Content/Box */
 .modal-content {
 background-color: #fefefe;
