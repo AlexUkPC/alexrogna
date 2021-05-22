@@ -1,9 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @skill.name %>
+  <strong>Books</strong>
+
 </p>
+<% for @book in @skill.books %>
+    <li><%= @book.title %></li>
+    <li><%= @book.publisher %></li>
+    <li><%= @book.dop %></li>
+    <hr>
+<% end %>
 
 <%= link_to 'Edit', edit_skill_path(@skill) %> |
 <%= link_to 'Back', skills_path %>

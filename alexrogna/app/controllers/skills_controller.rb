@@ -2,8 +2,29 @@ class SkillsController < ApplicationController
   before_action :set_skill, only: %i[ show edit update destroy ]
 
   # GET /skills or /skills.json
-  def index
-    @skills = Skill.all
+  def _index
+    
+    @book = Book.all
+    @linkedin = Linkedin.all
+    @free_code_camp = FreeCodeCamp.all
+    @hacker_rank = HackerRank.all
+
+    book = params[:book]
+    linkedin = params[:linkedin]
+    free_code_camp = params[:free_code_camp]
+    hacker_rank = params[:hacker_rank]
+
+    if !book.nil?
+      @skills = Skill.joins(:books).where(books: {id: book})
+    elsif !linkedin.nil?
+      @skills = Skill.joins(:linkedins).where(linkedins: {id: linkedin})
+    elsif !free_code_camp.nil?
+      @skills = Skill.joins(:free_code_camps).where(free_code_camps: {id: free_code_camp})
+    elsif !hacker_rank.nil?
+      @skills = Skill.joins(:hacker_ranks).where(hacker_ranks: {id: hacker_rank})
+    else
+      @skills = Skill.all
+    end
   end
 
   # GET /skills/1 or /skills/1.json
@@ -64,6 +85,6 @@ class SkillsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def skill_params
-      params.require(:skill).permit(:name)
+      params.require(:skill).permit(:name, :logo, book_ids: [], books_attributes:[:title, :subtitle, :author, :publisher, :dop, :resources_link, :github_link, :_destroy], linkedin_ids: [], linkedins_attributes:[:badge_name, :_destroy], free_code_camp_ids: [], free_code_camps_attributes:[:cerificate_name, :url, :_destroy], hacker_rank_ids: [], hacker_ranks_attributes:[:cerificate_name, :is_badge, :url, :_destroy] )
     end
 end

@@ -15,6 +15,43 @@
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
+  <% if skill.logo.attached? %>
+      <%= image_tag skill.logo.variant(resize_to_limit: local_assigns.fetch(:logo_options, [200, 200])) %>
+  <% end %>
+  <%= form.label :logo %>
+  <%= form.file_field :logo %>
+
+  <h3>Add Linkedin</h3>
+  <%= form.collection_check_boxes(:linkedin_ids, Linkedin.all, :id, :badge_name) do |b| %>
+    <% b.label {b.check_box + b.text } %>
+  <% end %>
+  <div class="links">
+      <%= link_to_add_association "Add Linkedin", form, :linkedins %>
+  </div>
+
+  <h3>Add FreeCodeCamp</h3>
+  <%= form.collection_check_boxes(:free_code_camp_ids, FreeCodeCamp.all, :id, :cerificate_name) do |b| %>
+    <% b.label {b.check_box + b.text } %>
+  <% end %>
+  <div class="links">
+      <%= link_to_add_association "Add FreeCodeCamp", form, :free_code_camps %>
+  </div>
+
+  <h3>Add HackerRank</h3>
+  <%= form.collection_check_boxes(:hacker_rank_ids, HackerRank.all, :id, :cerificate_name) do |b| %>
+    <% b.label {b.check_box + b.text } %>
+  <% end %>
+  <div class="links">
+      <%= link_to_add_association "Add HackerRank", form, :hacker_ranks %>
+  </div>
+
+  <h3>Add Book</h3>
+  <%= form.collection_check_boxes(:book_ids, Book.all, :id, :title) do |b| %>
+    <% b.label {b.check_box + b.text} %>
+  <% end %>
+  <div class="links">
+      <%= link_to_add_association "Add Book", form, :books %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  resources :books
-  resources :hacker_ranks
-  resources :free_code_camps
-  resources :linkedins
-  resources :skills
+  resources :skills do
+    resources :books
+    resources :hacker_ranks
+    resources :free_code_camps
+    resources :linkedins
+  end
+  
   resources :tags
   resources :projects
   resources :social_icons

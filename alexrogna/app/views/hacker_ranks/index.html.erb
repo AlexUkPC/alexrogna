@@ -16,7 +16,7 @@
     <% @hacker_ranks.each do |hacker_rank| %>
       <tr>
         <td><%= hacker_rank.cerificate_name %></td>
-        <td><%= hacker_rank.badge_name %></td>
+        <td><%= hacker_rank.is_badge %></td>
         <td><%= hacker_rank.url %></td>
         <td><%= link_to 'Show', hacker_rank %></td>
         <td><%= link_to 'Edit', edit_hacker_rank_path(hacker_rank) %></td>

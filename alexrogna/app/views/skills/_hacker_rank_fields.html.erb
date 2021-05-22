@@ -1,0 +1,15 @@
+<div class="nested-fields">
+    <div class="field">
+        <%= f.label :cerificate_name %>
+        <%= f.text_field :cerificate_name %>
+    </div>
+    <div class="field">
+        <%= f.label :is_badge %>
+        <%= f.check_box :is_badge %>
+    </div>
+    <div class="field">
+        <%= f.label :url %>
+        <%= f.text_field :url %>
+    </div>
+    <%= link_to_remove_association "Remove Hacker Rank", f %>
+</div>

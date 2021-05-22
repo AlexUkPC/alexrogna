@@ -7,6 +7,8 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+require("books.js")
+require("linkedin.js")
 require("jquery")
 require("@nathanvda/cocoon")
 Rails.start()

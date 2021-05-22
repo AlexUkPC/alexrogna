@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_21_123600) do
+ActiveRecord::Schema.define(version: 2021_05_21_124455) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,11 @@ ActiveRecord::Schema.define(version: 2021_05_21_123600) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "books_skills", id: false, force: :cascade do |t|
+    t.bigint "skill_id", null: false
+    t.bigint "book_id", null: false
+  end
+
   create_table "free_code_camps", force: :cascade do |t|
     t.string "cerificate_name"
     t.string "url"
@@ -62,18 +67,33 @@ ActiveRecord::Schema.define(version: 2021_05_21_123600) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "free_code_camps_skills", id: false, force: :cascade do |t|
+    t.bigint "skill_id", null: false
+    t.bigint "free_code_camp_id", null: false
+  end
+
   create_table "hacker_ranks", force: :cascade do |t|
     t.string "cerificate_name"
-    t.string "badge_name"
+    t.boolean "is_badge"
     t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "hacker_ranks_skills", id: false, force: :cascade do |t|
+    t.bigint "skill_id", null: false
+    t.bigint "hacker_rank_id", null: false
   end
 
   create_table "linkedins", force: :cascade do |t|
     t.string "badge_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "linkedins_skills", id: false, force: :cascade do |t|
+    t.bigint "skill_id", null: false
+    t.bigint "linkedin_id", null: false
   end
 
   create_table "projects", force: :cascade do |t|

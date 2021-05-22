@@ -1,0 +1,77 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Skills</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @skills.each do |skill| %>
+      <tr>
+        <td><%= skill.name %></td>
+        
+        <td><button id="booksBtn">View Books</button>
+
+        <!-- The Modal -->
+        <div id="booksModal" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <%= render skill.books %>
+          </div>
+
+        </div></td>
+        <td><button id="linkedinBtn">View Linkedin</button>
+
+        <!-- The Modal -->
+        <div id="linkedinModal" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <%= render skill.linkedins %>
+          </div>
+
+        </div></td>
+        <td><button id="hackerRankBtn">View HackerRank</button>
+
+        <!-- The Modal -->
+        <div id="hackerRankModal" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <%= render skill.hacker_ranks %>
+          </div>
+
+        </div></td>
+        <td><button id="freeCodeCampBtn">View FreeCodeCamp</button>
+
+        <!-- The Modal -->
+        <div id="freeCodeCampModal" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <%= render skill.free_code_camps %>
+          </div>
+
+        </div></td>
+        
+        <td><%= link_to 'Show', skill %></td>
+        <td><%= link_to 'Edit', edit_skill_path(skill) %></td>
+        <td><%= link_to 'Destroy', skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Skill', new_skill_path %>

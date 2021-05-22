@@ -1,0 +1,31 @@
+<div class="nested-fields">
+    <div class="field">
+        <%= f.label :title %>
+        <%= f.text_field :title %>  
+    </div>
+    <div class="field">
+        <%= f.label :subtitle %>
+        <%= f.text_field :subtitle %>  
+    </div>
+    <div class="field">
+        <%= f.label :author %>
+        <%= f.text_field :author %>  
+    </div>
+    <div class="field">
+        <%= f.label :publisher %>
+        <%= f.text_field :publisher %>  
+    </div>
+    <div class="field">
+        <%= f.label "Date of publication" %>
+        <%= f.date_field :dop %>  
+    </div>
+    <div class="field">
+        <%= f.label :resources_link %>
+        <%= f.text_field :resources_link %>  
+    </div>
+    <div class="field">
+        <%= f.label :github_link %>
+        <%= f.text_field :github_link %>  
+    </div>
+    <%= link_to_remove_association "Remove Book", f %>
+</div>
