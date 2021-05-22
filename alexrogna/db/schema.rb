@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_21_124455) do
+ActiveRecord::Schema.define(version: 2021_05_22_163613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,6 +83,16 @@ ActiveRecord::Schema.define(version: 2021_05_21_124455) do
   create_table "hacker_ranks_skills", id: false, force: :cascade do |t|
     t.bigint "skill_id", null: false
     t.bigint "hacker_rank_id", null: false
+  end
+
+  create_table "language_skills", force: :cascade do |t|
+    t.string "language"
+    t.string "certificate_name"
+    t.string "certificate_url"
+    t.boolean "is_native"
+    t.integer "procent"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "linkedins", force: :cascade do |t|

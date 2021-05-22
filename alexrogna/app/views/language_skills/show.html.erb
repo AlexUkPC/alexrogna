@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Language:</strong>
+  <%= @language_skill.language %>
+</p>
+
+<p>
+  <strong>Certificate name:</strong>
+  <%= @language_skill.certificate_name %>
+</p>
+
+<p>
+  <strong>Certificate url:</strong>
+  <%= @language_skill.certificate_url %>
+</p>
+
+<p>
+  <strong>Is native:</strong>
+  <%= @language_skill.is_native %>
+</p>
+
+<p>
+  <strong>Procent:</strong>
+  <%= @language_skill.procent %>
+</p>
+
+<%= link_to 'Edit', edit_language_skill_path(@language_skill) %> |
+<%= link_to 'Back', language_skills_path %>

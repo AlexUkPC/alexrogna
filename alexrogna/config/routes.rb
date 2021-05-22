@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :language_skills
   resources :skills do
     resources :books
     resources :hacker_ranks

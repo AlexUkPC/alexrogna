@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Language Skills</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Language</th>
+      <th>Certificate name</th>
+      <th>Certificate url</th>
+      <th>Is native</th>
+      <th>Procent</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @language_skills.each do |language_skill| %>
+      <tr>
+        <td><%= language_skill.language %></td>
+        <td><%= language_skill.certificate_name %></td>
+        <td><%= language_skill.certificate_url %></td>
+        <td><%= language_skill.is_native %></td>
+        <td><%= language_skill.procent %></td>
+        <td><%= link_to 'Show', language_skill %></td>
+        <td><%= link_to 'Edit', edit_language_skill_path(language_skill) %></td>
+        <td><%= link_to 'Destroy', language_skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Language Skill', new_language_skill_path %>
