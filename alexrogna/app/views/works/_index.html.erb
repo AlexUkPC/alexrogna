@@ -22,6 +22,15 @@
         <td><%= work.start_date %></td>
         <td><%= work.end_date %></td>
         <td><%= work.present %></td>
+        <td> 
+            <% for tech in work.teches.order('order_id ASC') %>
+                <% if tech.logo.attached? %>
+                  <%= image_tag tech.logo.variant(resize_to_limit: local_assigns.fetch(:logo_options, [200, 200])) %>
+                <% end %>
+                <%= tech.name %>
+                <%= tech.order_id %>
+            <% end %>
+        </td>
         <td><%= link_to 'Show', work %></td>
         <td><%= link_to 'Edit', edit_work_path(work) %></td>
         <td><%= link_to 'Destroy', work, method: :delete, data: { confirm: 'Are you sure?' } %></td>

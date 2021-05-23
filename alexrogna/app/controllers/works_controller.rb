@@ -3,7 +3,13 @@ class WorksController < ApplicationController
 
   # GET /works or /works.json
   def index
-    @works = Work.all
+    @teches = Tech.all
+    tech = params[:tech]
+    if !tech.nil?
+      @works = Work.joins(:teches).where(teches: {id: tech})
+    else
+      @works = Work.all
+    end
   end
 
   # GET /works/1 or /works/1.json
@@ -64,6 +70,6 @@ class WorksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def work_params
-      params.require(:work).permit(:company, :position, :start_date, :end_date, :present)
+      params.require(:work).permit(:company, :position, :start_date, :end_date, :present, tech_ids: [], teches_attributes:[:name, :logo, :_destroy])
     end
 end

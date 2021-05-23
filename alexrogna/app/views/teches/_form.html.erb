@@ -20,7 +20,11 @@
     <%= form.label :order_id %>
     <%= form.number_field :order_id %>
   </div>
-
+  <% if tech.logo.attached? %>
+    <%= image_tag tech.logo.variant(resize_to_limit: local_assigns.fetch(:logo_options, [200, 200])) %>
+  <% end %>
+  <%= form.label :logo %>
+  <%= form.file_field :logo %>
   <div class="actions">
     <%= form.submit %>
   </div>
