@@ -35,6 +35,15 @@
     <%= form.label :specialization %>
     <%= form.text_area :specialization %>
   </div>
+  
+  <h3>Add Techs</h3>
+  <%= form.collection_check_boxes(:tech_ids, Tech.all, :id, :name) do |b| %>
+    <% b.label {b.check_box + b.text } %>
+  <% end %>
+  <div class="links">
+      <%= link_to_add_association "Add Tech", form, :teches %>
+  </div>
+  <%= link_to "Remove Techs", teches_path %>
 
   <div class="actions">
     <%= form.submit %>

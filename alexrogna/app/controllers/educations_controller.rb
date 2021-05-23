@@ -3,7 +3,14 @@ class EducationsController < ApplicationController
 
   # GET /educations or /educations.json
   def index
-    @educations = Education.all
+    
+    @teches = Tech.all
+    tech = params[:tech]
+    if !tech.nil?
+      @educations = Education.joins(:teches).where(teches: {id: tech})
+    else
+      @educations = Education.all
+    end
   end
 
   # GET /educations/1 or /educations/1.json
@@ -64,6 +71,6 @@ class EducationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def education_params
-      params.require(:education).permit(:school, :location, :start_date, :end_date, :specialization)
+      params.require(:education).permit(:school, :location, :start_date, :end_date, :specialization, tech_ids: [], teches_attributes:[:name, :logo, :_destroy])
     end
 end
