@@ -11,6 +11,6 @@ class NotifierMailer < ApplicationMailer
     if @user.cv.present?
         attachments[@user.cv.filename.to_s] = @user.cv.download
     end
-    mail to: receiver_email, subject: 'Interesting Article' 
+    mail to: receiver_email, subject: 'Check out this CV' 
   end
 end
