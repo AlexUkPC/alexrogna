@@ -74,5 +74,16 @@ Rails.application.configure do
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
   config.hosts << "alexrogna.local"
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'https://mail.alexrogna.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "glc27.hostico.ro",
+      domain: "alexrogna.com",
+      port: 465,
+      ssl: true,
+      authentication: :login,
+    user_name: ENV.fetch("EMAIL_USER_NAME"){ 'none'},
+    password: ENV.fetch("EMAIL_PSW"){ 'none'},
+    enable_starttls_auto: true
+  }
 end

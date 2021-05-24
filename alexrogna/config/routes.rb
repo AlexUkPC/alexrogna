@@ -14,7 +14,11 @@ Rails.application.routes.draw do
   resources :projects
   resources :social_icons
   namespace :settings do
-    resource :user, only: [:show, :update]
+    resource :user, only: [:show, :update] do
+      member do
+        post :notify_friend
+      end
+    end
   end
   devise_for :users
   root "home#index"

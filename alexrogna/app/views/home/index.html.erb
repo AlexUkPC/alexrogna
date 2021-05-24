@@ -4,6 +4,11 @@
 <hr>
 <p><%= render 'about', user: @user %></p>
 <hr>
+<%= link_to 'Email a friend', '#', onclick: "document.querySelector('#notify_friend').style.display='block';return false;" %>
+<div id="notify_friend" style="display:none;">
+  <%= render 'settings/users/notify_friend'%>
+</div>
+<hr>
 <p><%= render 'projects', projects: @projects %></p>
 <hr>
 <p><%= render 'skills/index', projects: @projects %></p>

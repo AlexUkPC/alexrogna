@@ -16,7 +16,11 @@ class Settings::UsersController < ApplicationController
 
     redirect_to settings_user_path
   end
-end
+  def notify_friend
+    @user=User.first
+    NotifierMailer.email_friend(@user, params[:name], params[:email]).deliver
+    redirect_to root_path, notice: 'Successfully sent a message to your friend'
+  end
 private
 
   def permitted_params
@@ -35,3 +39,4 @@ private
       :cv
     )
   end
+end
