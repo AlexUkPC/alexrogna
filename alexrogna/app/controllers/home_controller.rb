@@ -8,5 +8,6 @@ class HomeController < ApplicationController
     @works = Work.all.order('start_date DESC')
     @teches = Tech.all.order('order_id ASC')
     @educations = Education.all.order('start_date DESC')
+    @email_a_friend = EmailAFriend.new
   end
 end

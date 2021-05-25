@@ -17,9 +17,14 @@ class Settings::UsersController < ApplicationController
     redirect_to settings_user_path
   end
   def notify_friend
+    @email_a_friend = EmailAFriend.new(email_a_friend_params)
     @user=User.first
-    NotifierMailer.email_friend(@user, params[:name], params[:email]).deliver
-    redirect_to root_path, notice: 'Successfully sent a message to your friend'
+    if @email_a_friend.valid?
+      NotifierMailer.email_friend(@user, @email_a_friend.name, @email_a_friend.email).deliver_later
+      redirect_to root_path, notice: 'Succesfully sent a message to your friend'
+    else
+      render :notify_friend, status: :unprocessable_entity
+    end
   end
 private
 
@@ -38,5 +43,8 @@ private
       :profile_image,
       :cv
     )
+  end
+  def email_a_friend_params
+    params.require(:email_a_friend).permit(:name, :email)
   end
 end
