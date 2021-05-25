@@ -11,13 +11,15 @@
 <hr>
 <p><%= render 'projects', projects: @projects %></p>
 <hr>
-<p><%= render 'skills/index', projects: @projects %></p>
+<p><%= render 'skills/index' %></p>
 <hr>
-<p><%= render 'language_skills/index', projects: @projects %></p>
+<p><%= render 'language_skills/index' %></p>
 <hr>
-<p><%= render 'works/index', projects: @projects %></p>
+<p><%= render 'works/index' %></p>
 <hr>
-<p><%= render 'educations/index', projects: @projects %></p>
+<p><%= render 'educations/index' %></p>
+<hr>
+<p><%= render 'contact_forms/form', contact_form: @contact_form %></p>
 <hr>
 <% if current_user %>
     <p><%= link_to "log out", destroy_user_session_path, method: :delete %></p>
