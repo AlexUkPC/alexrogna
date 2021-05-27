@@ -22,14 +22,17 @@ class ContactFormsController < ApplicationController
   # POST /contact_forms or /contact_forms.json
   def create
     @contact_form = ContactForm.new(contact_form_params)
-
+    @user = User.first
+    
     respond_to do |format|
       if @contact_form.save
-        format.html { redirect_to @contact_form, notice: "Contact form was successfully created." }
-        format.json { render :show, status: :created, location: @contact_form }
+          format.html { redirect_to root_path, notice: "Thank you for your message." }
+          format.js { flash[:notice] = @message = "Thank you for your message. I'll get back to you soon!" }
+          NotifierMailer.email_me(@user, @contact_form).deliver_later
+          
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @contact_form.errors, status: :unprocessable_entity }
+          format.html { redirect_to root_path, notice: 'Unable to send message'  }
+          format.js { render :fail }
       end
     end
   end

@@ -1,4 +1,4 @@
-<%= form_with(model: contact_form) do |form| %>
+<%= form_with(model: contact_form, id: 'email_me') do |form| %>
   <% if contact_form.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(contact_form.errors.count, "error") %> prohibited this contact_form from being saved:</h2>
@@ -10,7 +10,9 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="col-md-6" id="flash-message">
+    <%= render 'home/flash' %>
+  </div>
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>

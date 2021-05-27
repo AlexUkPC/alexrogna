@@ -13,4 +13,9 @@ class NotifierMailer < ApplicationMailer
     end
     mail to: receiver_email, subject: 'Check out this CV' 
   end
+
+  def email_me(user, contact_form)
+    @contact_form = contact_form
+    mail to: user.email, subject: @contact_form.name + ' sent you a message with subject ' + @contact_form.subject 
+  end
 end
