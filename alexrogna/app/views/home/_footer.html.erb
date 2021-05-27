@@ -1,0 +1,14 @@
+<p> <% social_icons.each do |social_icon| %>
+        <%= link_to social_icon.link, target: :_blank do %><i class='<%= social_icon.icon %> fa-2x'></i><% end %>
+        <% if current_user %>
+            <%= link_to edit_social_icon_path(social_icon) do %><i class="fas fa-pen fa-xs" style="color:green"></i><% end %>
+            <%= link_to social_icon, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fas fa-times-circle fa-xs" style="color:red"></i><% end %>
+        <% end %>
+    <% end %>
+    <% if current_user %>
+        <%= link_to new_social_icon_path do %><i class="fas fa-plus fa-lg" style="color:blue"></i><% end %>
+    <% end %>
+</p>
+<p>
+&copy; Copyright <%= Time.new.year!=2021 ? '2021-'+Time.new.year.to_s : Time.new.year%> AlexRogna 
+</p>

@@ -20,7 +20,9 @@
 <p><%= render 'educations/index' %></p>
 <hr>
 <p>
-<%= render 'contact_forms/form', contact_form: @contact_form %></p>
+<%= render 'contact', contact_form: @contact_form, user: @user %></p>
+<hr>
+<p><%= render 'footer', social_icons: @social_icons %></p>
 <hr>
 <% if current_user %>
     <p><%= link_to "log out", destroy_user_session_path, method: :delete %></p>
