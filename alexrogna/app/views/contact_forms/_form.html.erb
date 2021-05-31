@@ -10,30 +10,30 @@
       </ul>
     </div>
   <% end %>
-  <div class="col-md-6" id="flash-message">
+  <div id="flash-message">
     <%= render 'home/flash' %>
   </div>
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: "h-full-width", placeholder: "Your name" %>
   </div>
 
   <div class="field">
     <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.text_field :email, class: "h-full-width", placeholder: "Your email address"%>
   </div>
 
   <div class="field">
     <%= form.label :subject %>
-    <%= form.text_field :subject %>
+    <%= form.text_field :subject, class: "h-full-width", placeholder: "Subject" %>
   </div>
 
   <div class="field">
     <%= form.label :message %>
-    <%= form.text_area :message %>
+    <%= form.text_area :message, class: "h-full-width", placeholder: "Your message" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Send', class:"btn btn--stroke h-full-width" %>
   </div>
 <% end %>

@@ -1,10 +1,67 @@
-<h1><i class="fas fa-envelope fa-2x"></i> Don’t hesitate to contact me!</h1>
-<%= render 'contact_forms/form', contact_form: contact_form %></p>
-<h2>Address and phone</h2>
-<p>Name: <%= user.name %></p>
-<p>Street Number: <%= user.street_number %></p>
-<p>Street Name: <%= user.street_name %></p>
-<p>City: <%= user.city %></p>
-<p>Postcode: <%= user.post_code %></p>
-<p>Phone: <%= user.phone %></p>
-<p>Email: <%= user.email %></p>
+<div class="row s-contact__header">
+    <div class="column large-12">
+        <h4 class="huge-text">
+            <i class="fas fa-envelope fa-2x"></i>
+        </h4>
+        <h3 class="section-header-allcaps"> Don’t hesitate to contact me!</h3>
+        
+    </div>
+</div>
+
+<div class="row s-contact__content">
+
+    <div class="column large-7 medium-12">
+        <%= render 'contact_forms/form', contact_form: contact_form %>
+    </div>
+
+    <div class="column large-4 medium-12">
+
+        <div class="row contact-infos">
+            <div class="column large-12 medium-6 tab-12">
+                <div class="contact-block">
+                    <h5 class="contact-block__header">
+                        Name
+                    </h5>
+                    <p class="contact-block__content">
+                        <%= user.name %>
+                    </p>
+                </div> 
+            </div>
+            <div class="column large-12 medium-6 tab-12">
+                <div class="contact-block">
+                    <h5 class="contact-block__header">
+                        Address
+                    </h5>
+                    <p class="contact-block__content">
+                        <%= user.street_number %> <%= user.street_name %>
+                        <br>
+                        <%= user.city %> 
+                        <br>
+                        <%= user.post_code %>
+                    </p>
+                </div> 
+            </div>
+            <div class="column large-12 medium-6 tab-12">
+                <div class="contact-block">
+                    <h5 class="contact-block__header">
+                        Email
+                    </h5>
+                    <p class="contact-block__content">
+                        <a class="mailtoui" href="mailto:<%= user.email %>"><%= user.email %></a>
+                    </p>
+                </div> 
+            </div>
+            <div class="column large-12 medium-6 tab-12">
+                <div class="contact-block">
+                    <h5 class="contact-block__header">
+                        Phone
+                    </h5>
+                    <p class="contact-block__content">
+                        <a href="tel:<%= user.phone %>"><%= user.phone %></a>
+                    </p>
+                </div> 
+            </div>
+        </div> 
+
+    </div>
+</div>

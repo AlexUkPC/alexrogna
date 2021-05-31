@@ -15,29 +15,28 @@
   <section id="portfolio" class="s-portfolio target-section">
     <%= render 'projects/index', projects: @projects %>
   </section>
-  <hr>
+  
   <section id="skills" class="s-resume target-section">
     <%= render 'skills/index' %>
   </section>
-  <hr>
+  
   <section id="language_skills" class="s-resume target-section">
     <%= render 'language_skills/index' %>
   </section>
-  <hr>
+  
   <section id="work" class="s-resume target-section">
     <%= render 'works/index' %>
   </section>
-  <hr>
+  
   <section id="education" class="s-resume target-section">
     <%= render 'educations/index' %>
   </section>
-  <hr>
-  <section>
+  
+  <section id="contact" class="s-contact target-section">
     <%= render 'contact', contact_form: @contact_form, user: @user %>
   </section>
-  <hr>
 </main>
-<footer>
+<footer class="s-footer">
   <%= render 'footer', social_icons: @social_icons %>
 </footer>
 

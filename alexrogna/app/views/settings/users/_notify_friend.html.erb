@@ -11,11 +11,11 @@
     <% end %>
     <div class="field">
         <%= form.label :name, 'Your name' %>
-        <%= form.text_field :name %>
+        <%= form.text_field :name, class: "h-full-width", placeholder: "Your name" %>
     </div>
     <div class="field">
         <%= form.label :email, "Your friend's email" %>
-        <%= form.text_field :email %>
+        <%= form.text_field :email, class: "h-full-width", placeholder: "Your email address" %>
     </div>
     <div class="actions">
         <%= form.submit 'Send', class:"btn btn--download" %> or
