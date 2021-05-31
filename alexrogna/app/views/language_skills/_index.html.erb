@@ -1,35 +1,40 @@
-<p id="notice"><%= notice %></p>
+<div class="row s-resume__section">
+  <div class="column large-12 tab-12">
+    <div class="row s-portfolio__header">
+        <div class="column large-12">
+            <h3>Language Skills</h3>
+        </div>
+    </div>
 
-<h1>Language Skills</h1>
+    <table>
 
-<table>
+      <tbody>
+        <% @language_skills.each do |language_skill| %>
+          <tr>
+            <td><%= language_skill.language %></td>
+            <td>
+              <% if language_skill.is_native %>
+                Native language
+              <% else %>
+                <%= link_to language_skill.certificate_url, target: :_blank do %> 
+                  View <%= language_skill.certificate_name %>
+                <%end %>
+              <%end %>
+            </td>
+            
+            
+            <td><%= link_to 'Show', language_skill %></td>
+            <td><%= link_to 'Edit', edit_language_skill_path(language_skill) %></td>
+            <td><%= link_to 'Destroy', language_skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+          <tr>
+            <td colspan="2"><div class="progress-bar" style="--width: <%= language_skill.procent %>" data-label="<%= language_skill.procent %>%"></div></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 
-  <tbody>
-    <% @language_skills.each do |language_skill| %>
-      <tr>
-        <td><%= language_skill.language %></td>
-        <td>
-          <% if language_skill.is_native %>
-            Native language
-          <% else %>
-            <%= link_to language_skill.certificate_url, target: :_blank do %> 
-              View <%= language_skill.certificate_name %>
-            <%end %>
-          <%end %>
-        </td>
-        
-        
-        <td><%= link_to 'Show', language_skill %></td>
-        <td><%= link_to 'Edit', edit_language_skill_path(language_skill) %></td>
-        <td><%= link_to 'Destroy', language_skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-      <tr>
-        <td colspan="2"><div class="progress-bar" style="--width: <%= language_skill.procent %>" data-label="<%= language_skill.procent %>%"></div></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
 
 <%= link_to 'New Language Skill', new_language_skill_path %>
