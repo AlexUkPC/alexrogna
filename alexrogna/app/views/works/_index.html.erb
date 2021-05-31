@@ -1,44 +1,35 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Works</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Company</th>
-      <th>Position</th>
-      <th>Start date</th>
-      <th>End date</th>
-      <th>Present</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="row s-resume__section">
+  <div class="column large-12 tab-12">
+    <div class="row s-portfolio__header">
+        <div class="column large-12">
+            <h3>Works</h3>
+        </div>
+    </div>
     <% @works.each do |work| %>
-      <tr>
-        <td><%= work.company %></td>
-        <td><%= work.position %></td>
-        <td><%= work.start_date %></td>
-        <td><%= work.end_date %></td>
-        <td><%= work.present %></td>
-        <td> 
-            <% for tech in work.teches.order('order_id ASC') %>
-                <% if tech.logo.attached? %>
-                  <%= image_tag tech.logo.variant(resize_to_limit: local_assigns.fetch(:logo_options, [200, 200])) %>
-                <% end %>
-                <%= tech.name %>
-                <%= tech.order_id %>
-            <% end %>
-        </td>
-        <td><%= link_to 'Show', work %></td>
-        <td><%= link_to 'Edit', edit_work_path(work) %></td>
-        <td><%= link_to 'Destroy', work, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <div class="resume-block">
 
-<br>
+          <div class="resume-block__header">
+              <h4 class="h3"><%= work.company %></h4>
+              <p class="resume-block__header-meta">
+                  <span><%= work.position %></span> 
+                  <span class="resume-block__header-date">
+                      <%= work.start_date %> - <%= work.present ? "Present" : work.end_date%>
+                  </span>
+              </p>
+          </div>
+
+          <p>
+          <% for tech in work.teches.order('order_id ASC') %>
+              <% if tech.logo.attached? %>
+                <%= image_tag tech.logo.variant(resize_to_limit: local_assigns.fetch(:logo_options, [200, 200])) %>
+              <% end %>
+              <%= tech.name %>
+              <%= tech.order_id %>
+          <% end %>
+          </p>
+          <p><%= link_to 'Edit', edit_work_path(work) %></p>
+          <p><%= link_to 'Destroy', work, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      </div> 
+    <% end %> 
 
 <%= link_to 'New Work', new_work_path %>
