@@ -9,13 +9,11 @@
   <%= render 'hero', social_icons: @social_icons, user: @user %>
 </section>
 <main>
-  <hr>
   <section id="about" class="s-about target-section">
     <%= render 'about', user: @user %>
   </section>
-  <hr>
-  <section>
-    <%= render 'projects', projects: @projects %>
+  <section id="portfolio" class="s-portfolio target-section">
+    <%= render 'projects/index', projects: @projects %>
   </section>
   <hr>
   <section>
