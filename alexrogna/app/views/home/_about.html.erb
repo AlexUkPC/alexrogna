@@ -1,18 +1,47 @@
-<p>Long Description <%= user.long_description %></p>
-<p>Name: <%= user.name %></p>
-<p>Street Number: <%= user.street_number %></p>
-<p>Street Name: <%= user.street_name %></p>
-<p>City: <%= user.city %></p>
-<p>Postcode: <%= user.post_code %></p>
-<p>Phone: <%= user.phone %></p>
-<p>Email: <%= user.email %></p>
-<p>
-    <% if user.profile_image.attached? %>
-        <%= image_tag user.profile_image.variant(resize_to_limit: local_assigns.fetch(:profile_image_options, [200, 200])) %>
-    <% end %>
-</p>
-<p>
-    <% if user.cv.attached? %>
-        <%= button_to 'Download', user.cv, method: :get, formtarget: :_blank %>
-    <% end %>
-</p>
+<section id="about" class="s-about target-section">
+
+        <div class="row">
+            <div class="column large-3 tab-12">
+                <% if user.profile_image.attached? %>
+                    <%= image_tag user.profile_image.variant(resize_to_limit: local_assigns.fetch(:profile_image_options, [200, 200])), class:"s-about__pic" %>
+                <% end %>
+            </div>
+            <div class="column large-9 tab-12 s-about__content">
+                <h3>About Me</h3>
+                <p>
+                <%= user.long_description %>
+                </p>
+
+                <hr>
+
+                <div class="row s-about__content-bottom">
+                    <div class="column w-1000-stack">
+                        <h3>Contact Details</h3>
+    
+                        <p>
+                        <%= user.name %> <br>
+                        <%= user.street_number %> <%= user.street_name %> <br>
+                        <%= user.city %>, <%= user.post_code %> <br>
+                        <a href="tel:<%= user.phone %>"><%= user.phone %></a> <br>
+                        <a href="mailto:<%= user.email %>"><%= user.email %></a>
+                        </p>
+                        
+                    </div>
+                    <div class="column w-1000-stack">
+                        <% if user.cv.attached? %>
+                            <%= link_to user.cv, method: :get, target: :_blank, class:"btn btn--download" do %>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M12 16L16 11 13 11 13 4 11 4 11 11 8 11z"></path><path d="M20,18H4v-7H2v7c0,1.103,0.897,2,2,2h16c1.103,0,2-0.897,2-2v-7h-2V18z"></path></svg>
+                                Download CV
+                            <% end %>
+                            
+                        <% end %>
+                        <%= link_to 'Email a friend', '#', onclick: "document.querySelector('#notify_friend').style.display='block';return false;", class:"btn btn--download" %>
+                        <div id="notify_friend" style="display:none;">
+                            <%= render 'settings/users/notify_friend'%>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>

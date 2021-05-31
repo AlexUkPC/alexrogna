@@ -18,7 +18,7 @@
         <%= form.text_field :email %>
     </div>
     <div class="actions">
-        <%= form.submit 'Send' %> or
-        <%= link_to 'Cancel', '#' , onclick:"document.querySelector('#notify_friend').style.display='none';return false;" %>
+        <%= form.submit 'Send', class:"btn btn--download" %> or
+        <%= link_to 'Cancel', '#' , onclick:"document.querySelector('#notify_friend').style.display='none';return false;", class:"btn btn--download" %>
     </div>
 <% end %>
