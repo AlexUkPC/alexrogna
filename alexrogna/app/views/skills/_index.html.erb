@@ -50,13 +50,21 @@
         <div id="modal-<%= skill.id %>-free_code_camps" hidden>
           <%= render skill.free_code_camps %>
          </div>
+         <% if current_user %>
+            <%= link_to edit_skill_path(skill) do %>
+                <i class="fas fa-pen fa-xs" aria-hidden="true"></i>
+            <% end %>
+            <%= link_to skill, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <i class="fas fa-times-circle fa-xs" style="color:red"></i>
+            <% end %>
+        <% end %>
       <% end %>
     </div>
   </div>
 </div>
+<div class="row">
+<% if current_user %>
+    <%= link_to new_skill_path do %><i class="fas fa-plus fa-lg" ></i><% end %>
+  <% end %>
+</div>
 
-
-
-<br>
-
-<%= link_to 'New Skill', new_skill_path %>

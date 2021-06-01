@@ -25,17 +25,19 @@
                         <a href="tel:<%= user.phone %>"><%= user.phone %></a> <br>
                         <a href="mailto:<%= user.email %>"><%= user.email %></a>
                         </p>
-                        
+                        <% if current_user %>
+                            <p><%= link_to "settings", settings_user_path %></p>
+                        <% end %>
                     </div>
                     <div class="column w-1000-stack">
                         <% if user.cv.attached? %>
-                            <%= link_to user.cv, method: :get, target: :_blank, class:"btn btn--download" do %>
+                            <%= link_to user.cv, method: :get, target: :_blank, class:"btn btn--download h-full-width" do %>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M12 16L16 11 13 11 13 4 11 4 11 11 8 11z"></path><path d="M20,18H4v-7H2v7c0,1.103,0.897,2,2,2h16c1.103,0,2-0.897,2-2v-7h-2V18z"></path></svg>
                                 Download CV
                             <% end %>
                             
                         <% end %>
-                        <%= link_to 'Email a friend', '#', onclick: "document.querySelector('#notify_friend').style.display='block';return false;", class:"btn btn--download" %>
+                        <%= link_to 'Email a friend', '#', onclick: "document.querySelector('#notify_friend').style.display='block';return false;", class:"btn btn--download h-full-width" %>
                         <div id="notify_friend" style="display:none;">
                             <%= render 'settings/users/notify_friend'%>
                         </div>

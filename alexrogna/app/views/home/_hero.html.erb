@@ -12,7 +12,9 @@
             <h3>
                 <%= user.short_description %>
             </h3>
-
+            <% if current_user %>
+                <p><%= link_to "settings", settings_user_path %></p>
+            <% end %>
             <div class="s-hero__content-social">
                 <%= render 'social_icons', social_icons: social_icons %>
             </div>

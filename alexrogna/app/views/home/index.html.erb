@@ -39,13 +39,3 @@
 <footer class="s-footer">
   <%= render 'footer', social_icons: @social_icons %>
 </footer>
-
-
-
-
-<% if current_user %>
-    <p><%= link_to "log out", destroy_user_session_path, method: :delete %></p>
-    <p><%= link_to "settings", settings_user_path %></p>
-<% else %>
-    <p><%= link_to "log in", new_user_session_path %></p>
-<% end %>

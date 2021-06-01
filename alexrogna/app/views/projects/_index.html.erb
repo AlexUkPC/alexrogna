@@ -19,8 +19,14 @@
             
         </div>
         <div>
-            <%= link_to 'Edit', edit_project_path(project) %>
-            <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% if current_user %>
+                <%= link_to edit_project_path(project) do %>
+                    <i class="fas fa-pen fa-xs" aria-hidden="true"></i>
+                <% end %>
+                <%= link_to project, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                    <i class="fas fa-times-circle fa-xs" style="color:red"></i>
+                <% end %>
+            <% end %>
         </div>
         <div id="modal-<%= project.id %>" hidden>
             <div class="modal-popup">
@@ -41,5 +47,7 @@
             </div>
         </div>
     <% end %>
+    <% if current_user %>
+        <%= link_to new_project_path do %><i class="fas fa-plus fa-lg" ></i><% end %>
+    <% end %>
 </div>
-<%= link_to 'New Project', new_project_path %>

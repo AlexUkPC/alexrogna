@@ -20,19 +20,27 @@
           <p>
             <%= education.specialization %>
           </p>
-          <p>
-          <% for tech in education.teches.order('order_id ASC') %>
-              <% if tech.logo.attached? %>
-                <%= image_tag tech.logo.variant(resize_to_limit: local_assigns.fetch(:logo_options, [200, 200])) %>
-              <% end %>
-              <%= tech.name %>
-              <%= tech.order_id %>
-          <% end %>
-          </p>
-          <p><%= link_to 'Edit', edit_education_path(education) %></p>
-          <p><%= link_to 'Destroy', education, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+          
+          <div class="row block-small-1-12">
+            <% for tech in education.teches.order('order_id ASC') %>
+              <div class="column">
+                <% if tech.logo.attached? %>
+                  <%= image_tag tech.logo %>
+                <% end %>
+              </div>  
+            <% end %>
+          </div> 
+          <% if current_user %>
+                <%= link_to edit_education_path(education) do %>
+                    <i class="fas fa-pen fa-xs" aria-hidden="true"></i>
+                <% end %>
+                <%= link_to education, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                    <i class="fas fa-times-circle fa-xs" style="color:red"></i>
+                <% end %>
+            <% end %>
       </div> 
     <% end %> 
         
-
-<%= link_to 'New Education', new_education_path %>
+<% if current_user %>
+    <%= link_to new_education_path do %><i class="fas fa-plus fa-lg" ></i><% end %>
+<% end %>
