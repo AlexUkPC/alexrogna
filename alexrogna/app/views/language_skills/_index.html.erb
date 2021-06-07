@@ -1,51 +1,46 @@
-<div class="row s-resume__section">
-  <div class="column large-12 tab-12">
-    <div class="row s-portfolio__header">
-        <div class="column large-12">
-            <h3>Language Skills</h3>
-        </div>
+<header class="row">
+    <div class="column large-12">
+        <h3 class="section-header-allcaps">Language Skills</h3>
     </div>
+</header>
 
-    <table>
-
-      <tbody>
-        <% @language_skills.each do |language_skill| %>
-          <tr>
-            <td><%= language_skill.language %></td>
-            <td>
-              <% if language_skill.is_native %>
-                Native language
-              <% else %>
-                <%= link_to language_skill.certificate_url, target: :_blank do %> 
-                  View <%= language_skill.certificate_name %>
-                <%end %>
-              <%end %>
-            </td>
-            
-            
-          </tr>
-          <tr>
-            <td colspan="2"><div class="progress-bar h-full-width" style="--width: <%= language_skill.procent %>" data-label="<%= language_skill.procent %>%"></div>
-            <div>
-              <% if current_user %>
-                  <%= link_to edit_language_skill_path(language_skill) do %>
-                      <i class="fas fa-pen fa-xs" aria-hidden="true"></i>
-                  <% end %>
-                  <%= link_to language_skill, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                      <i class="fas fa-times-circle fa-xs" style="color:red"></i>
-                  <% end %>
+<main class="row">
+  <div class="language_skills large-12">
+    <% @language_skills.each do |language_skill| %>
+      <div class="row">
+        <div class="column large-3 mob-4">
+          <p><%= language_skill.language %></p>
+        </div>
+        <div class="column large-8 mob-8">
+          <% if language_skill.is_native %>
+            <p>Native language</p>
+          <% else %>
+            <%= link_to language_skill.certificate_url, target: :_blank do %> 
+              <p>View <%= language_skill.certificate_name %></p>
+            <%end %>
+          <%end %>
+        </div>
+        <div class="column large-1">
+          <% if current_user %>
+              <%= link_to edit_language_skill_path(language_skill) do %>
+                  <i class="fas fa-pen fa-xs" aria-hidden="true"></i>
               <% end %>
-            </div>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+              <%= link_to language_skill, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                  <i class="fas fa-times-circle fa-xs" style="color:red"></i>
+              <% end %>
+          <% end %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="progress-bar large-12" style="--width: <%= language_skill.procent %>" data-label="<%= language_skill.procent %>%"></div>
+      </div>
+    <% end %>
   </div>
-</div>
-<div class="row">
-  <% if current_user %>
-    <%= link_to new_language_skill_path do %><i class="fas fa-plus fa-lg" ></i><% end %>
-  <% end %>
-</div>
+  <div class="row">
+    <% if current_user %>
+      <%= link_to new_language_skill_path do %><i class="fas fa-plus fa-lg" ></i><% end %>
+    <% end %>
+  </div>
+</main>
 
+<footer class="row"></footer>
