@@ -1,46 +1,42 @@
-<div class="row s-resume__section">
-  <div class="column large-12 tab-12">
-    <div class="row s-portfolio__header">
-        <div class="column large-12">
-            <h3>Works</h3>
-        </div>
+<header class="row">
+    <div class="column large-12">
+        <h3 class="section-header-allcaps">Works</h3>
     </div>
+</header>
+<main class="row">
     <% @works.each do |work| %>
-      <div class="resume-block">
-
-          <div class="resume-block__header">
-              <h4 class="h3"><%= work.company %></h4>
-              <p class="resume-block__header-meta">
-                  <span><%= work.position %></span> 
-                  <span class="resume-block__header-date">
-                      <%= work.start_date %> - <%= work.present ? "Present" : work.end_date%>
-                  </span>
-              </p>
-          </div>
-
-          <div class="row block-small-1-12">
-            
-                <% for tech in work.teches.order('order_id ASC') %>
-                    <div class="column">
+      <div class="work-place large-12">
+        <h4 class="h3"><%= work.company %></h4>
+        <p class="header-meta">
+            <span><%= work.position %></span> 
+            <span class="header-date">
+                <%= work.start_date %> - <%= work.present ? "Present" : work.end_date%>
+            </span>
+        </p>
+        <div class="row collapse block-large-1-12 block-medium-1-8 block-tab-1-6 block-mob-1-4">
+            <% for tech in work.teches.order('order_id ASC') %>
+                <div class="column">
+                    <div class="techs">
                         <% if tech.logo.attached? %>
                             <%= image_tag tech.logo %>
                         <% end %>
-                   </div> 
-                <% end %>
-            
-          </div>
-          <% if current_user %>
-                <%= link_to edit_work_path(work) do %>
-                    <i class="fas fa-pen fa-xs" aria-hidden="true"></i>
-                <% end %>
-                <%= link_to work, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                    <i class="fas fa-times-circle fa-xs" style="color:red"></i>
-                <% end %>
+                    </div>
+                </div> 
             <% end %>
-          
+        </div>
+        <% if current_user %>
+            <%= link_to edit_work_path(work) do %>
+                <i class="fas fa-pen fa-xs" aria-hidden="true"></i>
+            <% end %>
+            <%= link_to work, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <i class="fas fa-times-circle fa-xs" style="color:red"></i>
+            <% end %>
+        <% end %>
       </div> 
     <% end %> 
-<% if current_user %>
-    <%= link_to new_work_path do %><i class="fas fa-plus fa-lg" ></i><% end %>
-<% end %>
+    <% if current_user %>
+        <%= link_to new_work_path do %><i class="fas fa-plus fa-lg" ></i><% end %>
+    <% end %>
+</main>
+<footer class="row"></footer>
 
