@@ -1,35 +1,30 @@
-<div class="s-hero__bg rellax" data-rellax-speed="-7" style="--background: url(<% if @user.cover_image.attached? %>
-            <%=rails_blob_url(@user.cover_image) %>
-            <% end %>);"></div>
+<div class="bg rellax" data-rellax-speed="-7" style="--background: url(<% if @user.cover_image.attached? %>
+        <%=rails_blob_url(@user.cover_image) %>
+    <% end %>);">
+</div>
 
-<div class="row s-hero__content">
+<div class="row content">
     <div class="column">
+        <h1><%= user.salute %></h1>
 
-        <div class="s-hero__content-about">
-
-            <h1><%= user.salute %></h1>
-
-            <h3>
-                <%= user.short_description %>
-            </h3>
-            <% if current_user %>
-                <p><%= link_to "settings", settings_user_path %></p>
-            <% end %>
-            <div class="s-hero__content-social">
-                <%= render 'social_icons', social_icons: social_icons %>
-            </div>
-
-        </div> <!-- end s-hero__content-about -->
-
+        <h3>
+            <%= user.short_description %>
+        </h3>
+        <% if current_user %>
+            <p><%= link_to "settings", settings_user_path %></p>
+        <% end %>
+        <div class="social">
+            <%= render 'social_icons', social_icons: social_icons %>
+        </div>
     </div>
-</div> <!-- s-hero__content -->
+</div> 
 
-<div class="s-hero__scroll">
-    <a href="#about" class="s-hero__scroll-link smoothscroll">
-        <span class="scroll-arrow">
+<div class="scroll">
+    <a href="#about" class="link smoothscroll">
+        <span class="arrow">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M18.707 12.707L17.293 11.293 13 15.586 13 6 11 6 11 15.586 6.707 11.293 5.293 12.707 12 19.414z"></path></svg>
         </span>
-        <span class="scroll-text">Scroll Down</span>
+        <span class="text">Scroll Down</span>
     </a>
 </div>
 
