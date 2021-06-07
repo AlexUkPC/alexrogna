@@ -3,7 +3,7 @@ class HomeController < ApplicationController
     @user=User.first
     @social_icons = SocialIcon.all.order("order_id ASC")
     @projects = Project.all
-    @skills = Skill.all
+    @skills = Skill.all.order("id ASC")
     @language_skills = LanguageSkill.all.order('created_at ASC')
     @works = Work.all.order('start_date DESC')
     @teches = Tech.all.order('order_id ASC')
