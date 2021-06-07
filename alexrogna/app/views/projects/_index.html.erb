@@ -30,11 +30,19 @@
         </div>
         <div id="modal-<%= project.id %>" hidden>
             <div class="modal-popup">
-                <% if project.cover_image.attached? %>
-                    <%= image_tag project.cover_image %>
-                <% end %>
-    
-                <div class="desc">
+                <div class="row img">
+                    <% if project.cover_image.attached? %>
+                        <%= image_tag project.cover_image %>
+                    <% end %>
+                    <% if project.logo.attached? %>
+                        <%= image_tag project.logo, class: "logo" %>
+                    <% end %>
+                    <% if project.main_tech.attached? %>
+                        <%= image_tag project.main_tech, class: "main-tech" %>
+                    <% end %>
+                </div>
+
+                <div class="row desc ">
                     <h5><%= project.name %></h5>
                     <p><%= project.description %></p>
                     <ul class="tag">
@@ -43,7 +51,24 @@
                         <% end %>
                     </ul>
                 </div>
-                <%= link_to 'Project link', project.url,class:"details" %>
+                <div class="links">
+                    <div class="row">
+                        <div class="column large-6">
+                            <%= link_to 'Go to the website', project.url, target: :_blank %>
+                        </div>
+                        <div class="column large-6">
+                            <%= link_to project.github_url, target: :_blankdo do %>
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                            <% end %>
+                            <%= link_to project.docker_url, target: :_blank do %>
+                                <i class="fab fa-docker" aria-hidden="true"></i>
+                            <% end %>
+                        </div>
+
+                    </div>
+                </div>
+                
+                
             </div>
         </div>
     <% end %>
