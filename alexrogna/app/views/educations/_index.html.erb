@@ -1,32 +1,30 @@
-<div class="row s-resume__section">
-  <div class="column large-12 tab-12">
-    <div class="row s-portfolio__header">
-        <div class="column large-12">
-            <h3>Education</h3>
-        </div>
+<header class="row">
+    <div class="column large-12">
+        <h3 class="section-header-allcaps">Education</h3>
     </div>
+</header>
+<main class="row">
     <% @educations.each do |education| %>
-       <div class="resume-block">
-
-          <div class="resume-block__header">
-            <h4 class="h3"><%= education.school %></h4>
-            <p class="resume-block__header-meta">
-                <span><%= education.location %></span> 
-                <span class="resume-block__header-date">
-                    <%= education.start_date %> - <%= education.end_date %>
-                </span>
-            </p>
-          </div>
+       <div class="education-place large-12">
+          <h4 class="h3"><%= education.school %></h4>
+          <p class="education-block__header-meta">
+              <span><%= education.location %></span> 
+              <span class="education-block__header-date">
+                  <%= education.start_date %> - <%= education.end_date %>
+              </span>
+          </p>
           <p>
             <%= education.specialization %>
           </p>
           
-          <div class="row block-small-1-12">
+          <div class="row collapse block-large-1-12 block-medium-1-8 block-tab-1-6 block-mob-1-4">
             <% for tech in education.teches.order('order_id ASC') %>
               <div class="column">
-                <% if tech.logo.attached? %>
-                  <%= image_tag tech.logo %>
-                <% end %>
+                <div class="techs">
+                  <% if tech.logo.attached? %>
+                    <%= image_tag tech.logo %>
+                  <% end %>
+                </div>  
               </div>  
             <% end %>
           </div> 
@@ -39,8 +37,8 @@
                 <% end %>
             <% end %>
       </div> 
-    <% end %> 
-        
-<% if current_user %>
-    <%= link_to new_education_path do %><i class="fas fa-plus fa-lg" ></i><% end %>
-<% end %>
+    <% end %>   
+    <% if current_user %>
+        <%= link_to new_education_path do %><i class="fas fa-plus fa-lg" ></i><% end %>
+    <% end %>
+</main>

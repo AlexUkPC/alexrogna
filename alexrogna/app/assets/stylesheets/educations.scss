@@ -1,3 +1,61 @@
-// Place all the styles related to the Educations controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+@import 'variables';
+ /* # education */
+  .s-education {
+    background-color: white;
+    padding-top: $vspace-1;
+    padding-bottom: $vspace-1;
+    header {
+        text-align: center;
+        h3 {
+            margin-top: 0;
+        }
+    }
+    main {
+        /* ## education place */
+        .education-place {
+            margin-bottom: $vspace-1_75;
+            h4 {
+                line-height: 1.080;
+                margin-top: 0;
+                margin-bottom: $vspace-0_25;
+            }
+            .header-meta {
+                font-family: $font-2;
+                font-size: ($text-size) * 1.1111;
+                font-style: italic;
+                margin-top: -.4rem;
+                margin-bottom: $vspace-0_75;
+                span:first-child {
+                    margin-right: .6rem;
+                }
+            }
+            .header-date {
+                display: inline-block;
+                font-family: $font-1;
+                font-size: ($text-size) * 0.8889;
+                font-size: $text-sm;
+                font-style: normal;
+                text-transform: uppercase;
+                letter-spacing: .12em;
+                color: $color-text-light;
+                &::before {
+                    content: "\2022";
+                    color: $color-text;
+                    margin-right: .2rem;
+                }
+            }
+            .techs {
+                img {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+/* responsive: education */
+@media screen and (max-width: 800px) {
+    .s-education {
+        padding-top: $vspace-4;
+    }
+}
