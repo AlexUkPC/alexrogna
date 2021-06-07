@@ -7,8 +7,6 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-import './modal'
-import './progress_bar'
 require("jquery")
 require("@nathanvda/cocoon")
 Rails.start()
