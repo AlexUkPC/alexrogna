@@ -1,0 +1,154 @@
+/* # settings and variables */
+/* ## fonts */
+ @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap");
+ 
+     $font-1: "Inter", sans-serif;
+     $font-2: "IBM Plex Serif", serif;
+     /* monospace */
+     $font-mono: Consolas, "Andale Mono", Courier, "Courier New", monospace;
+ 
+ 
+ /* ## colors */
+
+     $color-1: hsla(24, 100%, 57%, 1);
+     $color-2: hsla(24, 100%, 47%, 1);
+ 
+     /* theme color variations */
+     $color-1-lighter: hsla(182, 82%, 58%, 1);
+     $color-1-light  : hsla(182, 82%, 48%, 1);
+     $color-1-dark   : hsla(182, 82%, 28%, 1);
+     $color-1-darker : hsla(182, 82%, 18%, 1);
+     $color-2-lighter: hsla(24, 100%, 67%, 1);
+     $color-2-light  : hsla(24, 100%, 57%, 1);
+     $color-2-dark   : hsla(24, 100%, 37%, 1);
+     $color-2-darker : hsla(24, 100%, 27%, 1);
+ 
+     /* feedback colors */
+     $color-error          : hsla(359, 100%, 91%, 1);
+     $color-success        : hsla(76, 69%, 68%, 1);
+     $color-info           : hsla(205, 82%, 91%, 1);
+     $color-notice         : hsla(51, 100%, 80%, 1);
+     $color-error-content  : hsla(359, 50%, 50%, 1);
+     $color-success-content: hsla(76, 29%, 28%, 1);
+     $color-info-content   : hsla(205, 32%, 31%, 1);
+     $color-notice-content : hsla(51, 30%, 30%, 1);
+ 
+     /* shades */
+     $color-black  : #000000;
+     $color-gray-19: #0a0a0a;
+     $color-gray-18: #141414;
+     $color-gray-17: #1e1e1e;
+     $color-gray-16: #282828;
+     $color-gray-15: #323333;
+     $color-gray-14: #3b3d3d;
+     $color-gray-13: #454747;
+     $color-gray-12: #4f5151;
+     $color-gray-11: #595b5b;
+     $color-gray-10: #636565;
+     $color-gray-9 : #737474;
+     $color-gray-8 : #828484;
+     $color-gray-7 : #929393;
+     $color-gray-6 : #a1a3a3;
+     $color-gray-5 : #b1b2b2;
+     $color-gray-4 : #c1c1c1;
+     $color-gray-3 : #d0d1d1;
+     $color-gray-2 : #e0e0e0;
+     $color-gray-1 : #eff0f0;
+     $color-white  : #ffffff;
+ 
+     /* text */
+     $color-text       : $color-gray-16;
+     $color-text-dark  : $color-black;
+     $color-text-light : $color-gray-7;
+     $color-placeholder: $color-gray-1;
+ 
+     /* buttons */
+     $color-btn                   : $color-gray-3;
+     $color-btn-text              : $color-black;
+     $color-btn-hover             : $color-black;
+     $color-btn-hover-text        : $color-white;
+     $color-btn-primary           : $color-1;
+     $color-btn-primary-text      : $color-white;
+     $color-btn-primary-hover     : $color-2;
+     $color-btn-primary-hover-text: $color-white;
+     $color-btn-stroke            : $color-black;
+     $color-btn-stroke-text       : $color-black;
+     $color-btn-stroke-hover      : $color-black;
+     $color-btn-stroke-hover-text : $color-white;
+ 
+     /* others */
+     $color-bg     : $color-gray-18;
+     $color-border : $color-gray-2;
+     $border-radius: 5px;
+ 
+ 
+ /* ## vertical spacing and typescale */
+ 
+ 
+     /* spacing */
+     $base-size: 62.5%;
+     $base-font-size: 1.8rem;
+     $space: 3.2rem;
+ 
+     /* vertical spacing */
+     $vspace-0_125: 0.125 * $space;
+     $vspace-0_25 : 0.25 * $space;
+     $vspace-0_5  : 0.5 * $space;
+     $vspace-0_75 : 0.75 * $space;
+     $vspace-0_875: 0.875 * $space;
+     $vspace-1    : $space;
+     $vspace-1_25 : 1.25 * $space;
+     $vspace-1_5  : 1.5 * $space;
+     $vspace-1_75 : 1.75 * $space;
+     $vspace-2    : 2 * $space;
+     $vspace-2_5  : 2.5 * $space;
+     $vspace-3    : 3 * $space;
+     $vspace-3_5  : 3.5 * $space;
+     $vspace-4    : 4 * $space;
+     $vspace-4_5  : 4.5 * $space;
+     $vspace-5    : 5 * $space;
+ 
+     $text-scale-ratio: 1.2;
+     $text-size       : $base-font-size;
+     $text-xs         : $text-size / $text-scale-ratio / $text-scale-ratio;
+     $text-sm         : $text-xs * $text-scale-ratio;
+     $text-md         : $text-sm * $text-scale-ratio * $text-scale-ratio;
+     $text-lg         : $text-md * $text-scale-ratio;
+     $text-xl         : $text-lg * $text-scale-ratio;
+     $text-xxl        : $text-xl * $text-scale-ratio;
+     $text-xxxl       : $text-xxl * $text-scale-ratio;
+     $text-display-1  : $text-xxxl * $text-scale-ratio;
+     $text-display-2  : $text-display-1 * $text-scale-ratio;
+     $text-display-3  : $text-display-2 * $text-scale-ratio;
+ 
+     /* default button height */
+     $vspace-btn: $vspace-2;
+ 
+ 
+ /* on mobile devices below 600px */
+ @media screen and (max-width: 600px) {
+     
+         $base-font-size: 1.6rem;
+         $space: 2.8rem;
+     }
+ 
+ 
+ /* ## grid variables */
+ 
+ 
+     /* widths for rows and containers */
+     $width-full    : 100%;
+     $width-max     : 1080px;
+     $width-wide    : 1400px;
+     $width-wider   : 1600px;
+     $width-widest  : 1800px;
+     $width-narrow  : 800px;
+     $width-narrower: 600px;
+     $width-grid-max: $width-max;
+ 
+     /* gutters */
+     $gutter-lg : 2.4rem;
+     $gutter-md : 2rem;
+     $gutter-mob: 1rem;
+
+$header-height: 6.8rem;
