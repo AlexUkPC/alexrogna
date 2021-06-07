@@ -1,0 +1,90 @@
+@import 'variables';
+/* # about */
+  .s-about {
+     background-color: $color-gray-17;
+     padding-top: 3 * $space;
+     padding-bottom: $vspace-4;
+     color: rgba(255, 255, 255, 0.4);
+     h3 {
+        margin-top: 0;
+        color: white;
+    }
+    .pic {
+        width: $vspace-5;
+        height: $vspace-5;
+        border: 1.6rem solid rgba(255, 255, 255, 0.02);
+        border-radius: 50%;
+    }
+    .content-bottom {
+        margin-top: $vspace-2;
+        a {
+            color: rgba(255, 255, 255, 0.4);
+            &:hover, 
+            &:focus {
+                color: white;
+            }
+        }
+        .btn--download {
+            background-color: white;
+            border-color: white;
+            color: black;
+            margin-right: 0;
+            svg {
+                height: 2rem;
+                width: 2rem;
+                vertical-align: middle;
+                margin-right: 1.2rem;
+                -webkit-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+            }
+            &:hover, 
+            &:focus {
+                background-color: $color-2;
+                border-color: $color-2;
+                svg path {
+                    fill: white;
+                }
+            }
+        }
+    }
+ }
+ 
+ /* responsive:about */
+ @media screen and (max-width: 1200px) {
+     .pic {
+         width: $vspace-4_5;
+         height: $vspace-4_5;
+         border-width: 1.4rem;
+     }
+ }
+ 
+ @media screen and (max-width: 900px) {
+     .pic {
+         width: $vspace-4;
+         height: $vspace-4;
+         border-width: 1.2rem;
+     }
+ }
+ 
+ @media screen and (max-width: 800px) {
+     .s-about {
+         padding-top: $vspace-5;
+     }
+     .pic {
+         display: none;
+     }
+ }
+ 
+ @media screen and (max-width: 600px) {
+     .content-bottom .btn--download {
+         margin-top: $vspace-0_5;
+         width: 100%;
+     }
+ }
+ 
+ @media screen and (max-width: 360px) {
+     .content-bottom .btn--download svg {
+         display: none;
+     }
+ }
+ 
