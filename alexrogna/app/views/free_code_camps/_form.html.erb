@@ -20,7 +20,11 @@
     <%= form.label :url %>
     <%= form.text_field :url %>
   </div>
-
+  <% if free_code_camp.certificate.attached? %>
+        <%= image_tag free_code_camp.certificate.variant(resize_to_limit: local_assigns.fetch(:certificate_options, [200, 200])) %>
+    <% end %>
+    <%= form.label :certificate %>
+    <%= form.file_field :certificate %>
   <div class="actions">
     <%= form.submit %>
   </div>

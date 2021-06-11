@@ -1,0 +1,23 @@
+@import 'variables';
+/* ## free-code-camps modal popup */
+.modal-popup-skills-fcc {
+    background-color: #151515;
+    img {
+        display: block;
+        background-color: white;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 0;
+        padding: 20px;
+    }  
+}
+
+@media screen and (max-width: 600px) {
+    .modal-popup-skills-fcc  {
+        max-height: 90vh !important;
+        overflow-y: auto;
+    }
+    .row {
+        padding: 0 !important;
+    }
+}

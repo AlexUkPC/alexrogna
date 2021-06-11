@@ -64,6 +64,6 @@ class FreeCodeCampsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def free_code_camp_params
-      params.require(:free_code_camp).permit(:cerificate_name, :url)
+      params.require(:free_code_camp).permit(:cerificate_name, :url, :certificate)
     end
 end

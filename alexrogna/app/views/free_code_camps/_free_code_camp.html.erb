@@ -1,3 +1,5 @@
-<div class="modal-popup">
-    <p><%= free_code_camp.cerificate_name %></p>
+<div class="column align-center">
+    <% if free_code_camp.certificate.attached? %>
+        <%= image_tag free_code_camp.certificate %>
+    <% end %>
 </div>
