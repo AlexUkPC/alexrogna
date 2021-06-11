@@ -15,7 +15,11 @@
     <%= form.label :badge_name %>
     <%= form.text_field :badge_name %>
   </div>
-
+  <% if linkedin.badge.attached? %>
+        <%= image_tag linkedin.badge.variant(resize_to_limit: local_assigns.fetch(:badge_options, [200, 200])) %>
+    <% end %>
+    <%= form.label :badge %>
+    <%= form.file_field :badge %>
   <div class="actions">
     <%= form.submit %>
   </div>

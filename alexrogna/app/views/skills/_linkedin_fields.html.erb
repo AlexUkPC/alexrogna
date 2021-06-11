@@ -3,5 +3,9 @@
         <%= f.label :badge_name %>
         <%= f.text_field :badge_name %>   
     </div>
+    <div class="field">
+        <%= f.label :badge %>
+        <%= f.file_field :badge %>
+    </div>
     <%= link_to_remove_association "Remove Linkedin", f %>
 </div>

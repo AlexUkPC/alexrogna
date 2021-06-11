@@ -1,3 +1,5 @@
-<div class="modal-popup">
-    <p><%= linkedin.badge_name %></p>
+<div class="column align-center">
+    <% if linkedin.badge.attached? %>
+        <%= image_tag linkedin.badge %>
+    <% end %>
 </div>

@@ -1,0 +1,36 @@
+@import 'variables';
+/* ## linkedins modal popup */
+.modal-popup-skills-li {
+    background-color: #151515;
+    min-width: 60vw;
+    position: relative;
+    img {
+        display: block;
+        background-color: white;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 0;
+        padding: 20px;
+        
+    }  
+    .btn {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .modal-popup-skills-li  {
+        max-height: 90vh !important;
+        overflow-y: auto;
+    }
+    .row {
+        padding: 0 !important;
+    }
+}
+@media screen and (max-height: 600px) {
+    .modal-popup-skills-li  {
+        min-width: 30vw;
+    }
+}
