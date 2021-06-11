@@ -1,3 +1,20 @@
-<div class="modal-popup">
-    <p><%= hacker_rank.cerificate_name %></p>
-</div>
+<% if hacker_rank.is_badge? %>
+    <% if @badge==true %>
+        </div>
+        <div class="row modal-popup-skills-hr">
+        <div class="column large-12"><h3><i class="far fa-id-badge"></i> Badges</h3></div>
+
+        <% @badge=false %>
+    <% end %>
+    <div class="column large-2 tab-3 mob-6 badge">
+        <% if hacker_rank.badgeorcertificate.attached? %>
+            <%= image_tag hacker_rank.badgeorcertificate %>
+        <% end %>
+    </div>
+<% else %>
+        <div class="column large-2 tab-3 mob-6 certif">
+            <% if hacker_rank.badgeorcertificate.attached? %>
+                <%= image_tag hacker_rank.badgeorcertificate %>
+            <% end %>
+        </div>
+<% end %>

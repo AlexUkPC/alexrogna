@@ -1,0 +1,21 @@
+@import 'variables';
+/* ## hacker-ranks modal popup */
+.modal-popup-skills-hr {
+    min-width: 60vw;
+    min-height: 45vh;
+    padding: 20px;
+    background-color: $color-white;
+    position: relative;
+    h3{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    .btn {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+    }
+    .img{
+        margin-bottom: 0;
+    }
+}

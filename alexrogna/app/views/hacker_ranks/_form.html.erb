@@ -25,7 +25,11 @@
     <%= form.label :url %>
     <%= form.text_field :url %>
   </div>
-
+  <% if hacker_rank.badgeorcertificate.attached? %>
+        <%= image_tag hacker_rank.badgeorcertificate.variant(resize_to_limit: local_assigns.fetch(:badgeorcertificate_options, [200, 200])) %>
+    <% end %>
+    <%= form.label :badgeorcertificate %>
+    <%= form.file_field :badgeorcertificate %>
   <div class="actions">
     <%= form.submit %>
   </div>
