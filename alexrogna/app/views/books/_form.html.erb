@@ -45,7 +45,11 @@
     <%= form.label :github_link %>
     <%= form.text_field :github_link %>
   </div>
-
+  <% if book.cover.attached? %>
+        <%= image_tag book.cover.variant(resize_to_limit: local_assigns.fetch(:cover_options, [200, 200])) %>
+    <% end %>
+    <%= form.label :cover %>
+    <%= form.file_field :cover %>
   <div class="actions">
     <%= form.submit %>
   </div>

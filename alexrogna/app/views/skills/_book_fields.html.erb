@@ -27,5 +27,9 @@
         <%= f.label :github_link %>
         <%= f.text_field :github_link %>  
     </div>
+    <div class="field">
+        <%= f.label :cover %>
+        <%= f.file_field :cover %>
+    </div>
     <%= link_to_remove_association "Remove Book", f %>
 </div>

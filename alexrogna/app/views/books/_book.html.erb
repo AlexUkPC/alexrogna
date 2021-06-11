@@ -1,9 +1,17 @@
-<div class="modal-popup">
-    <p><%= book.title %></p>
-    <div class="modal-popup__desc">
-        <p><%= book.subtitle %></p>
-        <p><%= book.author%></p>
-        <p><%= book.dop %></p>
-        <p><%= book.publisher %></p>
+<div class="row">
+    <div class="column large-3 mob-12">
+        <% if book.cover.attached? %>
+            <%= image_tag book.cover %>
+        <% end %>
+    </div>
+    <div class="column large-9 mob-12">
+        <h5><%= book.title %></h5>
+        <%= book.subtitle %><br><br>
+        Author: <%= book.author%><br>
+        Publisher: <%= book.publisher %><br>
+        Date of publication: <%= book.dop %><br>
+            <%= link_to "Download resources", book.resources_link, class: " btn btn--primary btn--small" %>
+            <%= link_to "View on GitHub", book.github_link, class: "btn btn--primary btn--small" %>
     </div>
 </div>
+

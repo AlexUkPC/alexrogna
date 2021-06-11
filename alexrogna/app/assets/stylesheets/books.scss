@@ -1,0 +1,47 @@
+@import 'variables';
+/* ## books modal popup */
+.modal-popup-skills-b {
+    min-width: 60vw;
+    max-height: 90vh;
+    background-color: white;
+    font-size: ($text-size * 0.9444);
+    line-height: 1.647;
+    overflow-y: auto;
+    position: relative;
+
+    img {
+        margin-bottom: 0;
+        max-height: 25vh;
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        width: auto;
+        padding: 10px;
+    }
+    
+    h5 {
+        margin-top: 10px;
+    }
+}
+
+
+/* responsive: modals */
+
+@media screen and (max-width: 600px) {
+    .modal-popup-skills-b  {
+        max-height: 90vh !important;
+        overflow-y: auto;
+        .btn, .btn--primary{
+            font-size: $text-sm;
+        }
+        img {
+            margin-bottom: 0;
+            max-height: 60vh;
+        }
+    }
+    .row {
+        padding: 0 !important;
+    }
+}
+
