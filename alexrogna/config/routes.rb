@@ -10,7 +10,10 @@ Rails.application.routes.draw do
     resources :free_code_camps
     resources :linkedins
   end
-  
+  resources :books
+  resources :hacker_ranks
+  resources :free_code_camps
+  resources :linkedins
   resources :tags
   resources :projects
   resources :social_icons

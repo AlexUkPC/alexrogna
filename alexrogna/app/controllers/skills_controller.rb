@@ -85,6 +85,6 @@ class SkillsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def skill_params
-      params.require(:skill).permit(:name, :logo, book_ids: [], books_attributes:[:title, :subtitle, :author, :publisher, :dop, :resources_link, :github_link, :_destroy], linkedin_ids: [], linkedins_attributes:[:badge_name, :_destroy], free_code_camp_ids: [], free_code_camps_attributes:[:cerificate_name, :url, :_destroy], hacker_rank_ids: [], hacker_ranks_attributes:[:cerificate_name, :is_badge, :url, :_destroy] )
+      params.require(:skill).permit(:name, :logo, book_ids: [], books_attributes:[:title, :subtitle, :author, :publisher, :dop, :resources_link, :github_link, :cover, :_destroy], linkedin_ids: [], linkedins_attributes:[:badge_name, :badge, :_destroy], free_code_camp_ids: [], free_code_camps_attributes:[:cerificate_name, :url, :certificate, :_destroy], hacker_rank_ids: [], hacker_ranks_attributes:[:cerificate_name, :is_badge, :url, :badgeorcertificate, :_destroy] )
     end
 end

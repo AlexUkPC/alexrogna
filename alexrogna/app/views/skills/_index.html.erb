@@ -5,7 +5,7 @@
     </div>
 </header>
 
-<main class="row collapse block-large-1-6 block-medium-1-4 block-tab-1-2 block-500-stack">
+<main class="row collapse block-large-1-6 block-medium-1-4 block-tab-1-2 block-500-stack"><% @badge=true %>
     <% @skills.each do |skill| %>
         <div class="column">
             <div class="skill">
@@ -54,16 +54,28 @@
                 </div>
             </div> 
             <div id="modal-<%= skill.id %>-books" hidden>
-                <%= render skill.books %>
-            </div>
+                <div class="modal-popup-skills-b">
+                    <%= render skill.books %></div>
+                </div>
             <div id="modal-<%= skill.id %>-linkedins" hidden>
-                <%= render skill.linkedins %>
+                <div class="row collapse block-large-1-2 block-500-stack modal-popup-skills-li">
+                    <%= render skill.linkedins %>
+                    <a href="https://www.linkedin.com/in/alexrogna/" class="btn btn--primary btn--small h-pull-right" target="_blank">View on Linkedin</a>
+                </div>
             </div>
             <div id="modal-<%= skill.id %>-hacker_ranks" hidden>
-                <%= render skill.hacker_ranks %>
+                <div class="row modal-popup-skills-hr">
+                    <div class="column large-12"><h3><i class="far fa-file"></i> Verified Skills</h3></div>
+                    
+                    <%= render skill.hacker_ranks.order("is_badge ASC") %>
+                    <a href="https://www.hackerrank.com/vlad_rogna?hr_r=1" class="btn btn--primary btn--small h-pull-right" target="_blank">View on HackerRank</a>
+                </div>
+                
             </div>
             <div id="modal-<%= skill.id %>-free_code_camps" hidden>
-                <%= render skill.free_code_camps %>
+                <div class="row collapse block-large-1-2 block-500-stack modal-popup-skills-fcc">
+                    <%= render skill.free_code_camps %>
+                </div>
             </div>
             <% if current_user %>
                 <%= link_to edit_skill_path(skill) do %>

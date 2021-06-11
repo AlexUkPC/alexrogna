@@ -1673,15 +1673,21 @@
  }
  
  .btn--small, button.btn--small {
-     --btn-height: $vspace-btn - 1.6rem;
+     $btn-height: $vspace-btn - 1.6rem;
+     height: $btn-height;
+     line-height: $btn-height - .4rem;
  }
  
  .btn--medium, button.btn--medium {
-     --btn-height: $vspace-btn + .8rem;
+     $btn-height: $vspace-btn + .8rem;
+     height: $btn-height;
+     line-height: $btn-height - .4rem;
  }
  
  .btn--large, button.btn--large {
-     --btn-height: $vspace-btn + 1.6rem;
+     $btn-height: $vspace-btn + 1.6rem;
+     height: $btn-height;
+     line-height: $btn-height - .4rem;
  }
  
  .btn--stroke, button.btn--stroke {
