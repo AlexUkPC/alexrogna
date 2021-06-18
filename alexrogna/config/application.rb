@@ -23,5 +23,6 @@ end
 module App
   class Application < Rails::Application
     config.action_view.form_with_generates_remote_forms = true
+    config.exceptions_app = self.routes
   end
 end 
