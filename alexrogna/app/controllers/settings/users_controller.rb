@@ -19,11 +19,11 @@ class Settings::UsersController < ApplicationController
   def notify_friend
     @email_a_friend = EmailAFriend.new(email_a_friend_params)
     @user=User.first
-    if @email_a_friend.valid?
+    if verify_recaptcha(model: @email_a_friend) && @email_a_friend.valid?
       NotifierMailer.email_friend(@user, @email_a_friend.name, @email_a_friend.email).deliver_later
       redirect_to root_path, notice: 'Succesfully sent a message to your friend'
     else
-      render :notify_friend, status: :unprocessable_entity
+      render :fail_notify_friend, status: :unprocessable_entity
     end
   end
 private
