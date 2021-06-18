@@ -1,2 +1,4 @@
 document.querySelector('#email_me').innerHTML = "<%= escape_javascript render partial: 'contact_forms/form', locals: { contact_form: ContactForm.new } %>";
+
 $('#flash-message').html("<%= escape_javascript render 'home/flash' %>").delay(3000).fadeOut(4000);
+grecaptcha.render('contact_captcha');

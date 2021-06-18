@@ -32,8 +32,12 @@
     <%= form.label :message %>
     <%= form.text_area :message, class: "h-full-width", placeholder: "Your message" %>
   </div>
-
+  <div class="field" >
+    <%= recaptcha_tags id: 'contact_captcha' %>
+  </div>
+  
   <div class="actions">
     <%= form.submit 'Send', class:"btn btn--stroke h-full-width" %>
   </div>
+  
 <% end %>

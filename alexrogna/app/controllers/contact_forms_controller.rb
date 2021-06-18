@@ -24,17 +24,19 @@ class ContactFormsController < ApplicationController
     @contact_form = ContactForm.new(contact_form_params)
     @user = User.first
     
-    respond_to do |format|
-      if @contact_form.save
-          format.html { redirect_to root_path, notice: "Thank you for your message." }
-          format.js { flash[:notice] = @message = "Thank you for your message. I'll get back to you soon!" }
-          NotifierMailer.email_me(@user, @contact_form).deliver_later
-          
-      else
-          format.html { redirect_to root_path, notice: 'Unable to send message'  }
-          format.js { render :fail }
+      respond_to do |format|
+        
+          if verify_recaptcha(model: @contact_form) && @contact_form.save
+              format.html { redirect_to root_path, notice: "Thank you for your message." }
+              format.js { flash[:notice] = @message = "Thank you for your message. I'll get back to you soon!" }
+              NotifierMailer.email_me(@user, @contact_form).deliver_later
+              
+          else
+              format.html { redirect_to root_path, notice: 'Unable to send message'  }
+              format.js { render :fail }
+          end
+        
       end
-    end
   end
 
   # PATCH/PUT /contact_forms/1 or /contact_forms/1.json
