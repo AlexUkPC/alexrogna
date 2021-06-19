@@ -26,7 +26,7 @@ class ContactFormsController < ApplicationController
     
       respond_to do |format|
         
-          if verify_recaptcha(model: @contact_form) && @contact_form.save
+          if verify_recaptcha(model: @contact_form) && @contact_form.save && @contact_form.confirm_email==""
               format.html { redirect_to root_path, notice: "Thank you for your message." }
               format.js { flash[:notice] = @message = "Thank you for your message. I'll get back to you soon!" }
               NotifierMailer.email_me(@user, @contact_form).deliver_later
@@ -69,6 +69,6 @@ class ContactFormsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def contact_form_params
-      params.require(:contact_form).permit(:name, :email, :subject, :message)
+      params.require(:contact_form).permit(:name, :email, :subject, :message, :confirm_email)
     end
 end

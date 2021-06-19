@@ -22,6 +22,9 @@
     <%= form.label :email %>
     <%= form.text_field :email, class: "h-full-width", placeholder: "Your email address"%>
   </div>
+  <div class="field">
+    <%= form.hidden_field :confirm_email, class: "h-full-width", placeholder: "Confirm your email address"%>
+  </div>
 
   <div class="field">
     <%= form.label :subject %>
