@@ -15,28 +15,29 @@
   </div>
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name, class: "h-full-width", placeholder: "Your name" %>
+    <%= form.text_field :name, class: "h-full-width", placeholder: "Your name", required: true %>
   </div>
 
   <div class="field">
     <%= form.label :email %>
-    <%= form.text_field :email, class: "h-full-width", placeholder: "Your email address"%>
+    <%= form.email_field :email, class: "h-full-width", placeholder: "Your email address", required: true %>
   </div>
   <div class="field">
-    <%= form.hidden_field :confirm_email, class: "h-full-width", placeholder: "Confirm your email address"%>
+    <%= form.label :confirm_email, 'Confirm email', style: "display:none !important"%>
+    <%= form.text_field :confirm_email, class: "h-full-width", placeholder: "Confirm your email address", style: "display:none !important", tabindex: "-1", autocomplete: "off" %>
   </div>
 
   <div class="field">
     <%= form.label :subject %>
-    <%= form.text_field :subject, class: "h-full-width", placeholder: "Subject" %>
+    <%= form.text_field :subject, class: "h-full-width", placeholder: "Subject", required: true %>
   </div>
 
   <div class="field">
     <%= form.label :message %>
-    <%= form.text_area :message, class: "h-full-width", placeholder: "Your message" %>
+    <%= form.text_area :message, class: "h-full-width", placeholder: "Your message", required: true %>
   </div>
   <div class="field" >
-    <%= recaptcha_tags id: 'contact_captcha' %>
+    <%= recaptcha_tags id: 'contact_captcha', theme: 'dark' %>
   </div>
   
   <div class="actions">
