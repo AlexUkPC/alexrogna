@@ -24,7 +24,8 @@
                 color: white;
             }
         }
-        .btn--download {
+        
+        .btn--about {
             background-color: white;
             border-color: white;
             color: black;
@@ -43,6 +44,26 @@
                 border-color: $color-2;
                 svg path {
                     fill: white;
+                }
+            }
+        }
+        input[type="submit"].btn--about{
+            &:hover,
+            &:focus{
+                color: $color-white;
+            } 
+        }
+        #notify_friend{
+            .row{
+
+                .column{
+                    margin-top: 10px;
+                    &:first-child{
+                        padding-right: 4px;
+                    }
+                    &:last-child{
+                        padding-left: 4px;
+                    }
                 }
             }
         }

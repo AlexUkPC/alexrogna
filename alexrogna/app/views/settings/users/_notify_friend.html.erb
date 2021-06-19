@@ -11,17 +11,24 @@
     <% end %>
     <div class="field">
         <%= form.label :name, 'Your name' %>
-        <%= form.text_field :name, class: "h-full-width", placeholder: "Your name" %>
+        <%= form.text_field :name, class: "h-full-width", placeholder: "Your name", required: true %>
+    </div>
+    <div class="field">
+        <%= form.label :yemail, 'Your email', style: "display:none !important"%>
+        <%= form.text_field :yemail, class: "h-full-width", placeholder: "Your email address", style: "display:none !important", tabindex: "-1", autocomplete: "off" %>
     </div>
     <div class="field">
         <%= form.label :email, "Your friend's email" %>
-        <%= form.text_field :email, class: "h-full-width", placeholder: "Your email address" %>
+        <%= form.email_field :email, class: "h-full-width", placeholder: "Your friend's email", required: true %>
     </div>
+
     <div class="field" >
-        <%= recaptcha_tags id: 'notify_friend_captcha' %>
+        <%= recaptcha_tags id: 'notify_friend_captcha', theme: 'dark'  %>
     </div>
-    <div class="actions">
-        <%= form.submit 'Send', class:"btn btn--download" %> or
-        <%= link_to 'Cancel', '#' , onclick:"document.querySelector('#notify_friend').style.display='none';return false;", class:"btn btn--download" %>
+    <div class="actions row collapse block-large-1-2 block-mob-full">
+    <div class="column align-center"><%= form.submit 'Send', class:"btn btn--about h-full-width" %></div>
+    <div class="column align-center"><%= link_to 'Cancel', '#' , onclick:"document.querySelector('#notify_friend').style.display='none';return false;", class:"btn btn--about h-full-width" %></div>
+         
+        
     </div>
 <% end %>
