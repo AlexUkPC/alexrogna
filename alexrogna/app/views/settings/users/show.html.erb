@@ -1,40 +1,55 @@
-<h1>Settings::Users#show</h1>
-<p>Find me in app/views/settings/users/show.html.erb</p>
- <%= form_with model: current_user,
-        url: settings_user_path,
-        method: :patch do |f| %>
-    <%= f.label :salute %>
-    <%= f.text_field :salute %>
-    <%= f.label :short_description %>
-    <%= f.text_area :short_description %>
-    <%= f.label :long_description %>
-    <%= f.text_area :long_description %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.label :street_number %>
-    <%= f.text_field :street_number %>
-    <%= f.label :street_name %>
-    <%= f.text_field :street_name %>
-    <%= f.label :city %>
-    <%= f.text_field :city %>
-    <%= f.label :post_code %>
-    <%= f.text_field :post_code %>
-    <%= f.label :phone %>
-    <%= f.text_field :phone %>
-    <% if current_user.cover_image.attached? %>
-        <%= image_tag current_user.cover_image.variant(resize_to_limit: local_assigns.fetch(:cover_image_options, [200, 200])) %>
-    <% end %>
-    <%= f.label :cover_image %>
-    <%= f.file_field :cover_image %>
-    <% if current_user.profile_image.attached? %>
-        <%= image_tag current_user.profile_image.variant(resize_to_limit: local_assigns.fetch(:profile_image_options, [200, 200])) %>
-    <% end %>
-    <%= f.label :profile_image %>
-    <%= f.file_field :profile_image %>
-    <% if current_user.cv.attached? %>
-        <%= button_to 'Download', current_user.cv, method: :get, formtarget: :_blank %>
-    <% end %>
-    <%= f.label :cv %>
-    <%= f.file_field :cv %>
-     <%= f.submit "Update", class: "submit-btn" %>
-     <% end %>
+<section class="settings">
+  <div class="row">
+    <div class="column large-12 tab-8 mob-12 align-center">
+        <h1>Settings</h1>
+
+        <%= form_with model: current_user,
+                url: settings_user_path,
+                method: :patch do |f| %>
+            <%= f.label :salute %>
+            <%= f.text_field :salute, class: "h-full-width" %>
+            <%= f.label :short_description %>
+            <%= f.text_area :short_description, class: "h-full-width" %>
+            <%= f.label :long_description %>
+            <%= f.text_area :long_description, class: "h-full-width" %>
+            <%= f.label :name %>
+            <%= f.text_field :name, class: "h-full-width" %>
+            <%= f.label :street_number %>
+            <%= f.text_field :street_number, class: "h-full-width" %>
+            <%= f.label :street_name %>
+            <%= f.text_field :street_name, class: "h-full-width" %>
+            <%= f.label :city %>
+            <%= f.text_field :city, class: "h-full-width" %>
+            <%= f.label :post_code %>
+            <%= f.text_field :post_code, class: "h-full-width" %>
+            <%= f.label :phone %>
+            <%= f.text_field :phone, class: "h-full-width" %>
+            <div class="cover_image">
+                <%= f.label :cover_image %>
+                <% if current_user.cover_image.attached? %>
+                    <%= image_tag current_user.cover_image.variant(resize_to_limit: local_assigns.fetch(:cover_image_options, [400, 400])) %>
+                <% end %>
+                <%= f.file_field :cover_image %>
+            </div>
+            <hr>
+            <div class="profile_picture">
+                <%= f.label :profile_image %>
+                <% if current_user.profile_image.attached? %>
+                    <%= image_tag current_user.profile_image.variant(resize_to_limit: local_assigns.fetch(:profile_image_options, [200, 200])) %>
+                <% end %>
+                
+                <%= f.file_field :profile_image %>
+            </div>
+            <hr>
+            <%= f.label "Pdf CV" %>
+            <% if current_user.cv.attached? %>
+                <%= button_to 'Download', current_user.cv, method: :get, formtarget: :_blank,class: "btn btn--submit btn--cv" %>
+            <% end %>
+            <%= f.file_field :cv %>
+
+            <%= f.submit "Update", class: "btn btn--submit h-full-width" %>
+            <%= link_to 'Back', root_path %>
+            <% end %>
+        </div>
+  </div>
+</section>
