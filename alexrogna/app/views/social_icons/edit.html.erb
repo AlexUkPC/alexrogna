@@ -9,7 +9,9 @@
           <%= link_to 'Back', root_path %>
         </div>
         <div class="column">
-          <%= link_to 'New Social Icon', new_social_icon_path %>
+          <% if current_user %>
+            <%= link_to 'New Social Icon', new_social_icon_path %>
+          <% end %>
         </div>
       </div>
     </div>

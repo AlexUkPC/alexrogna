@@ -1,6 +1,23 @@
-<h1>Editing Project</h1>
+<section class="projects_form">
+  <div class="row">
+    <div class="column large-12 tab-8 mob-12 align-center">
+      <h1>Editing Project</h1>
 
-<%= render 'form', project: @project %>
+      <%= render 'form', project: @project %>
 
-<%= link_to 'Show', @project %> |
-<%= link_to 'Back', root_path %>
+      <div class="row">
+        <div class="column">
+          <%= link_to 'Back', root_path %>
+        </div>
+        <div class="column">
+          <% if current_user %>
+            <%= link_to 'New Project', new_project_path %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="portfolio" class="s-portfolio target-section">
+  <%= render 'projects/index', projects: @projects %>
+</section>

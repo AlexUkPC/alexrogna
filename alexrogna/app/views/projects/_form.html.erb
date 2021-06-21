@@ -13,27 +13,27 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: "h-full-width" %>
   </div>
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, class: "h-full-width" %>
   </div>
 
   <div class="field">
     <%= form.label :url %>
-    <%= form.text_field :url %>
+    <%= form.text_field :url, class: "h-full-width" %>
   </div>
 
   <div class="field">
     <%= form.label :github_url %>
-    <%= form.text_field :github_url %>
+    <%= form.text_field :github_url, class: "h-full-width" %>
   </div>
 
   <div class="field">
     <%= form.label :docker_url %>
-    <%= form.text_field :docker_url %>
+    <%= form.text_field :docker_url, class: "h-full-width" %>
   </div>
   <h3>Add Tags</h3>
   <%= form.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |b| %>
@@ -42,33 +42,33 @@
   <div class="links">
       <%= link_to_add_association "Add Tag", form, :tags %>
   </div>
-  <%= link_to "Remove tags", tags_path %>
-
-  <% if project.cover_image.attached? %>
-      <%= image_tag project.cover_image.variant(resize_to_limit: local_assigns.fetch(:cover_image_options, [200, 200])) %>
-  <% end %>
+  <%= link_to "View tags", tags_path %>
+  <hr>
   <%= form.label :cover_image %>
+  <% if project.cover_image.attached? %>
+      <%= image_tag project.cover_image.variant(resize_to_limit: local_assigns.fetch(:cover_image_options, [400, 400])) %>
+  <% end %>
   <%= form.file_field :cover_image %>
-
+  <hr>
+  <%= form.label :logo %>
   <% if project.logo.attached? %>
       <%= image_tag project.logo.variant(resize_to_limit: local_assigns.fetch(:logo_options, [200, 200])) %>
   <% end %>
-  <%= form.label :logo %>
   <%= form.file_field :logo %>
-  
-  <% if project.main_tech.attached? %>
-      <%= image_tag project.main_tech.variant(resize_to_limit: local_assigns.fetch(:main_tech_options, [200, 200])) %>
-  <% end %>
+  <hr>
   <%= form.label :main_tech %>
+  <% if project.main_tech.attached? %>
+      <%= image_tag project.main_tech.variant(resize_to_limit: local_assigns.fetch(:main_tech_options, [100, 100])) %>
+  <% end %>
   <%= form.file_field :main_tech %>
-
+  <hr>
+  <%= form.label :project_logo %>
   <% if project.project_logo.attached? %>
       <%= image_tag project.project_logo.variant(resize_to_limit: local_assigns.fetch(:project_logo_options, [200, 200])) %>
   <% end %>
-  <%= form.label :project_logo %>
   <%= form.file_field :project_logo %>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn--submit h-full-width" %>
   </div>
 <% end %>
