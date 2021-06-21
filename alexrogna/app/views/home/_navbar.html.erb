@@ -1,14 +1,21 @@
 <div class="row s-header__nav-wrap">
     <nav class="s-header__nav">
         <ul>
-            <li class="current"><a class="smoothscroll" href="#hero">Home</a></li>
-            <li><a class="smoothscroll" href="#about">About</a></li>
-            <li><a class="smoothscroll" href="#portfolio">Portfolio</a></li>
-            <li><a class="smoothscroll" href="#skills">Skills</a></li>
-            <li><a class="smoothscroll" href="#language_skills">Language Skills</a></li>
-            <li><a class="smoothscroll" href="#work">Work</a></li>
-            <li><a class="smoothscroll" href="#education">Education</a></li>
-            <li><a class="smoothscroll" href="#contact">Contact</a></li>
+            
+            <% if controller_path =="home" %>
+                <li class="current"><a class="smoothscroll" href="#hero">Home</a></li>
+                <li><a class="smoothscroll" href="#about">About</a></li>
+                <li><a class="smoothscroll" href="#portfolio">Portfolio</a></li>
+                <li><a class="smoothscroll" href="#skills">Skills</a></li>
+                <li><a class="smoothscroll" href="#language_skills">Language Skills</a></li>
+                <li><a class="smoothscroll" href="#work">Work</a></li>
+                <li><a class="smoothscroll" href="#education">Education</a></li>
+                <li><a class="smoothscroll" href="#contact">Contact</a></li>
+                <% else %>
+                <li><%= link_to "Home", root_path %></li>
+            <% end %>
+            
+           
             <% if current_user %>
                 <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
             <% else %>
