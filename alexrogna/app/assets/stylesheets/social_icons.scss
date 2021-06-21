@@ -1,1 +1,91 @@
-
+@import 'variables';
+.social_icon_form{
+    background-color: $color-gray-18;
+    color: black;
+    h1, h2{
+        color: $color-white;
+    }
+    form{
+        label{
+            color: $color-white;
+            display: inline-block;
+        }
+        input[type="email"]:focus, 
+        input[type="number"]:focus, 
+        input[type="search"]:focus, 
+        input[type="text"]:focus, 
+        input[type="tel"]:focus, 
+        input[type="url"]:focus, 
+        input[type="password"]:focus, 
+        textarea:focus, 
+        select:focus {
+            color: $color-white;
+        }
+        input[type="submit"]{
+            margin-top: $vspace-1;
+        }
+    }
+    .btn--submit {
+        background-color: white;
+        border-color: white;
+        color: black;
+        margin-right: 0;
+        svg {
+            height: 2rem;
+            width: 2rem;
+            vertical-align: middle;
+            margin-right: 1.2rem;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+        }
+        &:hover, 
+        &:focus {
+            background-color: $color-2;
+            border-color: $color-2;
+            svg path {
+                fill: white;
+            }
+        }
+    }
+    input[type="submit"].btn--submit{
+        &:hover,
+        &:focus{
+            color: $color-white;
+        } 
+    }
+    .alert {
+        color: $color-error-content;
+    }
+    .social {
+        display: -ms-inline-flexbox;
+        display: -webkit-inline-box;
+        display: inline-flex;
+        -ms-flex-flow: row wrap;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-flow: row wrap;
+        font-size: 1.5rem;
+        line-height: 1;
+        margin-top: $vspace-0_5;
+        a {
+            color: white;
+            margin-right: $vspace-0_75;
+            &:hover, 
+            &:focus {
+                color: $color-2-light;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    .row{
+        .column{
+            .row{
+                .column:last-child{
+                    text-align: right;
+                }
+            }
+        }
+    }
+}

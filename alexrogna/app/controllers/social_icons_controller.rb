@@ -1,6 +1,7 @@
 class SocialIconsController < ApplicationController
   before_action :set_social_icon, only: %i[ show edit update destroy ]
   def new
+    @social_icons = SocialIcon.all.order("order_id ASC")
     @social_icon = SocialIcon.new
   end
 

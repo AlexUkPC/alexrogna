@@ -1,5 +1,17 @@
-<h1>New Social Icon</h1>
+<section class="social_icon_form">
+  <div class="row">
+    <div class="column large-6 tab-8 mob-12 align-center">
+      <h1>New Social Icon</h1>
 
-<%= render 'form', social_icon: @social_icon %>
+      <%= render 'form', social_icon: @social_icon %>
 
-<%= link_to 'Back', root_path %>
+      <%= link_to 'Back', root_path %>
+      <div class="div">
+        <h2>Existed Social Icons</h2>
+        <div class="social">
+          <%= render '/home/social_icons', social_icons: @social_icons %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

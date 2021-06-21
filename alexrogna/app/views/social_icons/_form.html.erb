@@ -13,18 +13,18 @@
 
   <div class="field">
     <%= form.label :icon %>
-    <%= form.text_field :icon %>
+    <%= form.text_field :icon, class: "h-full-width" %>
   </div>
 
   <div class="field">
     <%= form.label :link %>
-    <%= form.text_field :link %>
+    <%= form.text_field :link, class: "h-full-width" %>
   </div>
   <div class="field">
     <%= form.label :order_id %>
-    <%= form.number_field :order_id %>
+    <%= form.number_field :order_id, class: "h-full-width" %>
   </div>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit  class: "btn btn--submit h-full-width" %>
   </div>
 <% end %>
