@@ -13,14 +13,14 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: "h-full-width" %>
   </div>
+  <%= form.label :logo %>
   <% if skill.logo.attached? %>
       <%= image_tag skill.logo.variant(resize_to_limit: local_assigns.fetch(:logo_options, [200, 200])) %>
   <% end %>
-  <%= form.label :logo %>
   <%= form.file_field :logo %>
-
+  <hr>
   <h3>Add Linkedin</h3>
   <%= form.collection_check_boxes(:linkedin_ids, Linkedin.all, :id, :badge_name) do |b| %>
     <% b.label {b.check_box + b.text } %>
@@ -28,7 +28,7 @@
   <div class="links">
       <%= link_to_add_association "Add Linkedin", form, :linkedins %>
   </div>
-
+  <hr>
   <h3>Add FreeCodeCamp</h3>
   <%= form.collection_check_boxes(:free_code_camp_ids, FreeCodeCamp.all, :id, :cerificate_name) do |b| %>
     <% b.label {b.check_box + b.text } %>
@@ -36,7 +36,7 @@
   <div class="links">
       <%= link_to_add_association "Add FreeCodeCamp", form, :free_code_camps %>
   </div>
-
+  <hr>
   <h3>Add HackerRank</h3>
   <%= form.collection_check_boxes(:hacker_rank_ids, HackerRank.all, :id, :cerificate_name) do |b| %>
     <% b.label {b.check_box + b.text } %>
@@ -44,7 +44,7 @@
   <div class="links">
       <%= link_to_add_association "Add HackerRank", form, :hacker_ranks %>
   </div>
-
+  <hr>
   <h3>Add Book</h3>
   <%= form.collection_check_boxes(:book_ids, Book.all, :id, :title) do |b| %>
     <% b.label {b.check_box + b.text} %>
@@ -54,6 +54,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn--submit h-full-width" %>
   </div>
 <% end %>

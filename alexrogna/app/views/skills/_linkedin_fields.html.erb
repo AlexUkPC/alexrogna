@@ -1,10 +1,10 @@
 <div class="nested-fields">
     <div class="field">
         <%= f.label :badge_name %>
-        <%= f.text_field :badge_name %>   
+        <%= f.text_field :badge_name, class: "h-full-width" %>   
     </div>
     <div class="field">
-        <%= f.label :badge %>
+        <%= f.label :badge, class: "h-full-width" %>
         <%= f.file_field :badge %>
     </div>
     <%= link_to_remove_association "Remove Linkedin", f %>

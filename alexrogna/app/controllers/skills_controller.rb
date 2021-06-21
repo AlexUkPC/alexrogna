@@ -34,10 +34,12 @@ class SkillsController < ApplicationController
   # GET /skills/new
   def new
     @skill = Skill.new
+    @skills = Skill.all.order("id ASC")
   end
 
   # GET /skills/1/edit
   def edit
+    @skills = Skill.all.order("id ASC")
   end
 
   # POST /skills or /skills.json
