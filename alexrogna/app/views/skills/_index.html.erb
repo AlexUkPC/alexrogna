@@ -11,13 +11,13 @@
             <div class="skill">
                 <div class="row">
                     <% if skill.logo.attached? %>
-                        <%= image_tag skill.logo %>
+                        <%= image_tag skill.logo, title: skill.name %>
                     <% end %>
                 </div>
                 <div class="row collapse">
                     <div class="column skill-item">  
                         <% if skill.books.count()>0 %>              
-                            <%= link_to "#modal-#{skill.id}-books" do %>
+                            <%= link_to "#modal-#{skill.id}-books", title: "View what books I've read" do %>
                                 <i class="fas fa-book"></i>
                             <% end %>   
                         <% else %> 
@@ -26,7 +26,7 @@
                     </div>  
                     <div class="column collapse skill-item">
                         <% if skill.linkedins.count()>0 %>
-                            <%= link_to "#modal-#{skill.id}-linkedins" do %>
+                            <%= link_to "#modal-#{skill.id}-linkedins", title: "View what LinkedIn badges I have" do %>
                                 <i class="fab fa-linkedin-in"></i>
                             <% end %> 
                             <% else %>    
@@ -35,7 +35,7 @@
                     </div>  
                     <div class="column collapse skill-item">
                         <% if skill.hacker_ranks.count()>0 %>
-                            <%= link_to "#modal-#{skill.id}-hacker_ranks" do %>
+                            <%= link_to "#modal-#{skill.id}-hacker_ranks", title: "View what HackerRank badges and certificates I have" do %>
                                 <i class="fab fa-hackerrank"></i>
                             <% end %> 
                             <% else %>      
@@ -44,7 +44,7 @@
                     </div>  
                     <div class="column collapse skill-item">
                         <% if skill.free_code_camps.count()>0 %>
-                            <%= link_to "#modal-#{skill.id}-free_code_camps" do %>
+                            <%= link_to "#modal-#{skill.id}-free_code_camps", title: "View what FreeCodeCamp certificates I have" do %>
                                 <i class="fab fa-free-code-camp"></i>
                             <% end %>  
                             <% else %>         
