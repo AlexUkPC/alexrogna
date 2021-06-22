@@ -15,7 +15,7 @@
           <% if language_skill.is_native %>
             <p>Native language</p>
           <% else %>
-            <%= link_to language_skill.certificate_url, target: :_blank do %> 
+            <%= link_to language_skill.certificate_url, target: :_blank, title: "View online" do %> 
               <p>View <%= language_skill.certificate_name %></p>
             <%end %>
           <%end %>
@@ -32,7 +32,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="progress-bar large-12" style="--width: <%= language_skill.procent %>" data-label="<%= language_skill.procent %>%"></div>
+        <div class="progress-bar large-12" style="--width: <%= language_skill.procent %>" data-label="<%= language_skill.procent %>%" title="<%= language_skill.procent %>%"></div>
       </div>
     <% end %>
   </div>
