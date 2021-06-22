@@ -1,13 +1,14 @@
 class SocialIconsController < ApplicationController
   before_action :set_social_icon, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
-  
+
   def new
     @social_icons = SocialIcon.all.order("order_id ASC")
     @social_icon = SocialIcon.new
   end
 
   def edit
+    @social_icons = SocialIcon.all.order("order_id ASC")
   end
 
   def create
@@ -15,7 +16,7 @@ class SocialIconsController < ApplicationController
 
     respond_to do |format|
       if @social_icon.save
-        format.html { redirect_to root_path, notice: "Social icon was successfully created." }
+        format.html { redirect_to new_social_icon_path, notice: "Social icon was successfully created." }
         format.json { render :show, status: :created, location: @social_icon }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -26,7 +27,7 @@ class SocialIconsController < ApplicationController
   def update
     respond_to do |format|
       if @social_icon.update(social_icon_params)
-        format.html { redirect_to root_path, notice: "Social icon was successfully updated." }
+        format.html { redirect_to new_social_icon_path, notice: "Social icon was successfully updated." }
         format.json { render :show, status: :ok, location: @social_icon }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -47,6 +48,6 @@ class SocialIconsController < ApplicationController
     end
 
     def social_icon_params
-      params.require(:social_icon).permit(:icon, :link, :order_id)
+      params.require(:social_icon).permit(:icon, :link, :order_id, :name)
     end
 end

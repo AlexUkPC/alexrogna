@@ -1,6 +1,6 @@
 <% social_icons.each do |social_icon| %>
     <%= link_to social_icon.link, target: :_blank do %>
-        <i class='<%= social_icon.icon %> fa-2x'></i>
+        <i class='<%= social_icon.icon %> fa-2x' title='<%= social_icon.name %>'></i>
     <% end %>
     <% if current_user %>
         <%= link_to edit_social_icon_path(social_icon) do %>

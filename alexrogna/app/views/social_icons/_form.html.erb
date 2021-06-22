@@ -12,10 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :icon %>
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "h-full-width" %>
+  </div>
+  <div class="field">
+    <%= form.label :icon do %>
+      Icon from <a href="https://fontawesome.com/v5.0/icons" target="_blank">Font Awesome</a>
+    <% end %>
+    
     <%= form.text_field :icon, class: "h-full-width" %>
   </div>
-
   <div class="field">
     <%= form.label :link %>
     <%= form.text_field :link, class: "h-full-width" %>
