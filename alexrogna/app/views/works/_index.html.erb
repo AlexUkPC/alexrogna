@@ -25,17 +25,17 @@
             <% end %>
         </div>
         <% if current_user %>
-            <%= link_to edit_work_path(work) do %>
+            <%= link_to edit_work_path(work), title: "Edit" do %>
                 <i class="fas fa-pen fa-xs" aria-hidden="true"></i>
             <% end %>
-            <%= link_to work, method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <%= link_to work, method: :delete, data: { confirm: 'Are you sure?' }, title: "Delete" do %>
                 <i class="fas fa-times-circle fa-xs" style="color:red"></i>
             <% end %>
         <% end %>
       </div> 
     <% end %> 
     <% if current_user %>
-        <%= link_to new_work_path do %><i class="fas fa-plus fa-lg" ></i><% end %>
+        <%= link_to new_work_path, title: "Add new" do %><i class="fas fa-plus fa-lg" ></i><% end %>
     <% end %>
 </main>
 <footer class="row"></footer>

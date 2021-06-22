@@ -3,14 +3,14 @@
         <i class='<%= social_icon.icon %> fa-2x' ></i>
     <% end %>
     <% if current_user %>
-        <%= link_to edit_social_icon_path(social_icon) do %>
+        <%= link_to edit_social_icon_path(social_icon), title: "Edit" do %>
             <i class="fas fa-pen fa-xs" aria-hidden="true"></i>
         <% end %>
-        <%= link_to social_icon, method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <%= link_to social_icon, method: :delete, data: { confirm: 'Are you sure?' }, title: "Delete" do %>
             <i class="fas fa-times-circle fa-xs" style="color:red"></i>
         <% end %>
     <% end %>
 <% end %>
 <% if current_user %>
-    <%= link_to new_social_icon_path do %><i class="fas fa-plus fa-lg" ></i><% end %>
+    <%= link_to new_social_icon_path, title: "Add new" do %><i class="fas fa-plus fa-lg" ></i><% end %>
 <% end %>

@@ -20,10 +20,10 @@
         </div>
         <div>
             <% if current_user %>
-                <%= link_to edit_project_path(project) do %>
+                <%= link_to edit_project_path(project), title: "Edit" do %>
                     <i class="fas fa-pen fa-xs" aria-hidden="true"></i>
                 <% end %>
-                <%= link_to project, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <%= link_to project, method: :delete, data: { confirm: 'Are you sure?' }, title: "Delete" do %>
                     <i class="fas fa-times-circle fa-xs" style="color:red"></i>
                 <% end %>
             <% end %>
@@ -77,6 +77,6 @@
         </div>
     <% end %>
     <% if current_user %>
-        <%= link_to new_project_path do %><i class="fas fa-plus fa-lg" ></i><% end %>
+        <%= link_to new_project_path, title: "Add new" do %><i class="fas fa-plus fa-lg" ></i><% end %>
     <% end %>
 </div>

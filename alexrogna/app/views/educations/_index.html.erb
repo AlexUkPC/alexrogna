@@ -29,16 +29,16 @@
             <% end %>
           </div> 
           <% if current_user %>
-                <%= link_to edit_education_path(education) do %>
+                <%= link_to edit_education_path(education), title: "Edit" do %>
                     <i class="fas fa-pen fa-xs" aria-hidden="true"></i>
                 <% end %>
-                <%= link_to education, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <%= link_to education, method: :delete, data: { confirm: 'Are you sure?' }, title: "Delete" do %>
                     <i class="fas fa-times-circle fa-xs" style="color:red"></i>
                 <% end %>
             <% end %>
       </div> 
     <% end %>   
     <% if current_user %>
-        <%= link_to new_education_path do %><i class="fas fa-plus fa-lg" ></i><% end %>
+        <%= link_to new_education_path, title: "Add new" do %><i class="fas fa-plus fa-lg" ></i><% end %>
     <% end %>
 </main>
