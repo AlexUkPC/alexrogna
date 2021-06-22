@@ -1,6 +1,23 @@
-<h1>Editing Language Skill</h1>
+<section class="language_skills_form">
+  <div class="row">
+    <div class="column large-12 tab-8 mob-12 align-center">
+        <h1>Editing Language Skill</h1>
 
-<%= render 'form', language_skill: @language_skill %>
+        <%= render 'form', language_skill: @language_skill %>
 
-<%= link_to 'Show', @language_skill %> |
-<%= link_to 'Back', language_skills_path %>
+        <div class="row">
+          <div class="column">
+            <%= link_to 'Back', root_path + "#language_skills" %>
+          </div>
+          <div class="column">
+          <% if current_user %>
+            <%= link_to 'New Skill', new_language_skill_path %>
+          <% end %>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+<section id="language_skills" class="s-language_skills target-section">
+  <%= render 'language_skills/index' %>
+</section>

@@ -13,10 +13,12 @@ class LanguageSkillsController < ApplicationController
   # GET /language_skills/new
   def new
     @language_skill = LanguageSkill.new
+    @language_skills = LanguageSkill.all.order('created_at ASC')
   end
 
   # GET /language_skills/1/edit
   def edit
+    @language_skills = LanguageSkill.all.order('created_at ASC')
   end
 
   # POST /language_skills or /language_skills.json
