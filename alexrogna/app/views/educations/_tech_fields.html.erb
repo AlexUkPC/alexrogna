@@ -1,9 +1,9 @@
 <div class="nested-fields">
     <div class="field">
         <%= f.label :name %>
-        <%= f.text_field :name %>
+        <%= f.text_field :name, class: "h-full-width" %>
         <%= f.label :logo %>
-        <%= f.file_field :logo %>
+        <%= f.file_field :logo, class: "h-full-width" %>
         <%= link_to_remove_association "Remove Tech", f %>
     </div>
 </div>

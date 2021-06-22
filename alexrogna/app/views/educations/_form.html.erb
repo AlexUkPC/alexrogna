@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= form.label :school %>
-    <%= form.text_field :school %>
+    <%= form.text_field :school, class: "h-full-width" %>
   </div>
 
   <div class="field">
     <%= form.label :location %>
-    <%= form.text_field :location %>
+    <%= form.text_field :location, class: "h-full-width" %>
   </div>
 
   <div class="field">
@@ -33,7 +33,7 @@
 
   <div class="field">
     <%= form.label :specialization %>
-    <%= form.text_area :specialization %>
+    <%= form.text_area :specialization, class: "h-full-width" %>
   </div>
   
   <h3>Add Techs</h3>
@@ -46,6 +46,6 @@
   <%= link_to "Remove Techs", teches_path %>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn--submit h-full-width" %>
   </div>
 <% end %>

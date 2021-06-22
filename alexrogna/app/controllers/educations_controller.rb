@@ -20,10 +20,12 @@ class EducationsController < ApplicationController
   # GET /educations/new
   def new
     @education = Education.new
+    @educations = Education.all.order('start_date DESC')
   end
 
   # GET /educations/1/edit
   def edit
+    @educations = Education.all.order('start_date DESC')
   end
 
   # POST /educations or /educations.json

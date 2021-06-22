@@ -1,6 +1,23 @@
-<h1>Editing Education</h1>
+<section class="education_form">
+  <div class="row">
+    <div class="column large-12 tab-8 mob-12 align-center">
+      <h1>Editing Education</h1>
 
-<%= render 'form', education: @education %>
+      <%= render 'form', education: @education %>
 
-<%= link_to 'Show', @education %> |
-<%= link_to 'Back', educations_path %>
+      <div class="row">
+        <div class="column">
+          <%= link_to 'Back', root_path + "#education" %>
+        </div>
+        <div class="column">
+        <% if current_user %>
+          <%= link_to 'New Skill', new_education_path %>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="education" class="s-education target-section">
+  <%= render 'educations/index' %>
+</section>
