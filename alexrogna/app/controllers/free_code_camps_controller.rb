@@ -1,6 +1,7 @@
 class FreeCodeCampsController < ApplicationController
   before_action :set_free_code_camp, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!
+  
   # GET /free_code_camps or /free_code_camps.json
   def index
     @free_code_camps = FreeCodeCamp.all

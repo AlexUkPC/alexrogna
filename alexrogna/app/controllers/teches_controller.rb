@@ -1,5 +1,6 @@
 class TechesController < ApplicationController
   before_action :set_tech, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /teches or /teches.json
   def index

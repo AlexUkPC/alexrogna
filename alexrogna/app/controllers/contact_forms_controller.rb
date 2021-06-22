@@ -1,6 +1,6 @@
 class ContactFormsController < ApplicationController
   before_action :set_contact_form, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!, except: [ :create]
   # GET /contact_forms or /contact_forms.json
   def index
     @contact_forms = ContactForm.all

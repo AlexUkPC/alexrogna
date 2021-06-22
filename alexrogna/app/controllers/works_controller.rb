@@ -1,6 +1,7 @@
 class WorksController < ApplicationController
   before_action :set_work, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!
+  
   # GET /works or /works.json
   def index
     @teches = Tech.all

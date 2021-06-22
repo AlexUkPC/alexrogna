@@ -1,6 +1,7 @@
 class HackerRanksController < ApplicationController
   before_action :set_hacker_rank, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!
+  
   # GET /hacker_ranks or /hacker_ranks.json
   def index
     @hacker_ranks = HackerRank.all

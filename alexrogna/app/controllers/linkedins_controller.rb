@@ -1,6 +1,7 @@
 class LinkedinsController < ApplicationController
   before_action :set_linkedin, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!
+  
   # GET /linkedins or /linkedins.json
   def index
     @linkedins = Linkedin.all

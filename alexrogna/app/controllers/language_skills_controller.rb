@@ -1,6 +1,7 @@
 class LanguageSkillsController < ApplicationController
   before_action :set_language_skill, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!
+  
   # GET /language_skills or /language_skills.json
   def index
     @language_skills = LanguageSkill.all

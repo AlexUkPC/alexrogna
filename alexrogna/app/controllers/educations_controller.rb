@@ -1,6 +1,7 @@
 class EducationsController < ApplicationController
   before_action :set_education, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!
+  
   # GET /educations or /educations.json
   def index
     

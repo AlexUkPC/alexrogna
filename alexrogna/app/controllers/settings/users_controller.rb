@@ -1,4 +1,5 @@
 class Settings::UsersController < ApplicationController
+  before_action :authenticate_user!, except: [ :notify_friend]
   def show
   end
 
