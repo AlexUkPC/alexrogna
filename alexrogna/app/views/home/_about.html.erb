@@ -21,7 +21,7 @@
                 <%= user.street_number %> <%= user.street_name %> <br>
                 <%= user.city %>, <%= user.post_code %> <br>
                 <a href="tel:<%= user.phone %>" title="Call me"><%= user.phone %></a> <br>
-                <a href="mailto:<%= user.email %>" title="Email me"><%= user.email %></a>
+                <a class="mailtoui" href="mailto:<%= user.email %>" title="Email me"><%= user.email %></a>
                 </p>
                 <% if current_user %>
                     <p><%= link_to "settings", settings_user_path %></p>

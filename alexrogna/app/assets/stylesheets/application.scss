@@ -2065,7 +2065,114 @@
      -webkit-transition: all .5s;
      transition: all .5s;
  }
+/* ## MailtoUI style overrides */
+ .mailtoui-modal {
+    font-family: $font-1;
+    background-color: #151515;
+    color: white;
+}
 
+.mailtoui-modal-content {
+    background-color: $mailtoui-modal-body-bgcolor;
+    border-radius: $border-radius;
+}
+
+.mailtoui-modal-content button {
+    font-weight: 400;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+.mailtoui-modal-head {
+    background-color: $mailtoui-modal-head-bgcolor;
+}
+
+.mailtoui-modal-title {
+    font-family: $font-1;
+    font-weight: 400;
+    font-size: 16px;
+    color: $mailtoui-modal-head-title-color;
+}
+
+.mailtoui-modal-close {
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
+    font-size: 32px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.mailtoui-modal-close:hover, .mailtoui-modal-close:focus {
+    color: white;
+    font-weight: 300;
+}
+
+.mailtoui-modal-body {
+    background-color: $mailtoui-modal-body-bgcolor;
+}
+
+.mailtoui-button-text {
+    font-size: $mailtoui-button-text-size;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.mailtoui-button:focus .mailtoui-button-content {
+    background-color: $color-2;
+    color: white;
+}
+
+.mailtoui-button-content, .mailtoui-button-copy {
+    background-color: $mailtoui-button-bgcolor;
+    color: $mailtoui-button-text-color;
+    border-radius: $border-radius;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.mailtoui-button-content:hover, 
+.mailtoui-button-content:focus, 
+.mailtoui-button-copy:hover, 
+.mailtoui-button-copy:focus {
+    background-color: $mailtoui-button-bgcolor-hover;
+    color: $mailtoui-button-text-color-hover;
+}
+
+.mailtoui-copy {
+    border-radius: $border-radius;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.mailtoui-button-icon-copy {
+    line-height: $vspace-1;
+}
+
+.mailtoui-button-copy-clicked, 
+.mailtoui-button-copy-clicked:hover, 
+.mailtoui-button-copy-clicked:focus {
+    background-color: #1F9D55;
+    color: white;
+}
+
+.mailtoui-email-address {
+    background-color: $mailtoui-email-address-bgcolor;
+    color: $mailtoui-email-address-text-color;
+    font-size: 16px;
+    line-height: 1;
+    border-radius: $border-radius;
+}
+
+.mailtoui-brand a {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.mailtoui-brand a:hover, .mailtoui-brand a:focus {
+    font-weight: 400;
+    color: white;
+}
  
  /* # common and reusable styles */
  .wide {
