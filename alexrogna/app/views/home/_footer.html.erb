@@ -2,7 +2,7 @@
     <div class="column large-4 medium-6 w-1000-stack s-footer__social-block">
         <ul class="s-footer__social">
             <% social_icons.each do |social_icon| %>
-                <li><%= link_to social_icon.link, target: :_blank do %><i class='<%= social_icon.icon %>'></i><% end %></li>
+                <li><%= link_to social_icon.link, target: :_blank, title: social_icon.name do %><i class='<%= social_icon.icon %>'></i><% end %></li>
                 <% if current_user %>
                     <%= link_to edit_social_icon_path(social_icon) do %><i class="fas fa-pen fa-xs" style="color:green"></i><% end %>
                     <%= link_to social_icon, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fas fa-times-circle fa-xs" style="color:red"></i><% end %>
