@@ -7,10 +7,10 @@
     <% @educations.each do |education| %>
        <div class="education-place large-12">
           <h4 class="h3"><%= education.school %></h4>
-          <p class="education-block__header-meta">
+          <p class="header-meta">
               <span><%= education.location %></span> 
-              <span class="education-block__header-date">
-                  <%= education.start_date %> - <%= education.end_date %>
+              <span class="header-date">
+                  <%= verbose_date(education.start_date) %> - <%= verbose_date(education.end_date) %>
               </span>
           </p>
           <p>
