@@ -18,7 +18,7 @@
                 <div class="column">
                     <div class="techs tech-<%= tech.id %>" data-tech-class="<%= tech.id %>">
                         <% if tech.logo.attached? %>
-                            <%= image_tag tech.logo %>
+                            <%= image_tag tech.logo,title: "Click to highlight where I've used #{tech.name} in work and education" %>
                         <% end %>
                     </div>
                 </div> 
