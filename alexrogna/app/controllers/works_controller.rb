@@ -19,10 +19,12 @@ class WorksController < ApplicationController
   # GET /works/new
   def new
     @work = Work.new
+    @works = Work.all.order('start_date DESC')
   end
 
   # GET /works/1/edit
   def edit
+    @works = Work.all.order('start_date DESC')
   end
 
   # POST /works or /works.json

@@ -1,6 +1,23 @@
-<h1>Editing Work</h1>
+<section class="works_form">
+  <div class="row">
+    <div class="column large-12 tab-8 mob-12 align-center">
+      <h1>Editing Work</h1>
 
-<%= render 'form', work: @work %>
+      <%= render 'form', work: @work %>
 
-<%= link_to 'Show', @work %> |
-<%= link_to 'Back', works_path %>
+      <div class="row">
+        <div class="column">
+          <%= link_to 'Back', root_path + "#work" %>
+        </div>
+        <div class="column">
+        <% if current_user %>
+          <%= link_to 'New Skill', new_work_path %>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="work" class="s-work target-section">
+  <%= render 'works/index' %>
+</section>
