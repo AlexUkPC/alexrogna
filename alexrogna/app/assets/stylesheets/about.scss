@@ -15,6 +15,12 @@
         border: 1.6rem solid rgba(255, 255, 255, 0.02);
         border-radius: 50%;
     }
+    ul{
+        list-style: none;
+        li{
+            color: $color-error-content;
+        }
+    }
     .content-bottom {
         margin-top: $vspace-2;
         a {

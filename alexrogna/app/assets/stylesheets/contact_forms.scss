@@ -4,6 +4,13 @@
     background-color: $color-gray-18;
     padding-top: $vspace-2;
     padding-bottom: $vspace-1;
+    ul{
+        list-style: none;
+        li{
+            color: $color-error-content;
+        }
+    }
+    
     header{
         .icon {
             color: white;
