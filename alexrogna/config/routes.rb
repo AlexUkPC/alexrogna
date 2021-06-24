@@ -25,7 +25,8 @@ Rails.application.routes.draw do
     end
   end
   devise_for :users, controllers: { sessions: "sessions" }
-  root "home#index"
+  get :cv, to: "cv#pdf"
+  root 'home#index'
   if Rails.env.production?
     get '404', :to => 'application#page_not_found'
   end

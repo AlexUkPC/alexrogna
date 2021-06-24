@@ -1,0 +1,65 @@
+<div class="nobreak">
+<%= @user.name %>
+<br>
+<%= @user.street_number %>,
+<%= @user.street_name %>,
+<%= @user.city %>,
+<%= @user.post_code %>
+<br>
+<%= @user.phone %> - 
+<%= @user.email %> - 
+<%= link_to "www.alexrogna.com", "https://alexrogna.com" %>
+<hr>
+Technical Skills
+<p>
+
+  <% @skills.each do |skill| %>
+    <%= skill.name %> : <%= procent(skill) %>%
+    <br>
+  <% end %>
+  
+</p>
+<hr>
+Language Skills
+<% @language_skills.each do |language_skill| %>
+  <p>
+    <%= language_skill.language %>
+    <% if language_skill.is_native %>
+      Native language
+    <% else %>
+      <%= link_to language_skill.certificate_url, target: :_blank, title: "View online" do %> 
+      View <%= language_skill.certificate_name %>
+      <%end %>
+    <%end %>
+    <%= language_skill.procent %>
+  </p>
+<% end %>
+<hr>
+Personal Skills
+????
+</div>
+<div class="alwaysbreak">
+Work Experience
+<% @works.each do |work| %>
+<h4 class="h3"><%= work.company %></h4>
+  <p class="header-meta">
+    <span><%= work.position %></span> 
+    <span class="header-date">
+      <%= verbose_date(work.start_date) %> - <%= work.present ? "Present" : verbose_date(work.end_date)%>
+    </span>
+  </p>
+<% end %>
+Education
+<% @educations.each do |education| %>
+ <h4 class="h3"><%= education.school %></h4>
+  <p class="header-meta">
+    <span><%= education.location %></span> 
+    <span class="header-date">
+      <%= verbose_date(education.start_date) %> - <%= verbose_date(education.end_date) %>
+    </span>
+  </p>
+  <p>
+    <%= education.specialization %>
+  </p>
+<% end %>
+</div>
