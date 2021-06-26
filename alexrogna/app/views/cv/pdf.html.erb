@@ -1,0 +1,197 @@
+<div class="cv">
+    <div class="nobreak">
+        <table class="header">
+            <tr>
+                <th colspan="2">Contact</th>
+
+                <th rowspan="3">
+                    <h3><%= @user.name %></h3>
+                    Web Designer and Programmer
+                </th>
+
+            </tr>
+            <tr>
+                <td>
+                    <a href="tel:<%= @user.phone %>">
+                        <i class="fas fa-mobile-alt"></i>
+                    </a>
+                </td>
+                <td>
+                <a href="tel:<%= @user.phone %>">
+                    <%= @user.phone %>
+                </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="mailto:<%= @user.email %>">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                </td>
+                <td>
+                    <a href="mailto:<%= @user.email %>">
+                        <%= @user.email %>
+                    </a>
+                </td>
+                
+            </tr>
+            <tr>
+                <td>
+                    <%= link_to  "https://alexrogna.com" do%>
+                        <i class="fas fa-globe"></i>
+                    <% end %>
+                </td>
+                <td>
+                    <%= link_to "alexrogna.com", "https://alexrogna.com" %>
+                </td>
+            </tr>
+            <% @social_icons.each do |social_icon| %>
+                <tr>
+                    <td>
+                        <%= link_to social_icon.link do %>
+                            <i class='<%= social_icon.icon %>' ></i>
+                        <% end %>
+                    </td>
+                    <td>
+                        <%= link_to social_icon.link do %>
+                            <%= links(social_icon.link) %>
+                        <% end %>
+                    </td>
+                </tr>
+            <% end %>
+            
+            <tr>
+                <td>
+                    <a href="https://www.google.com/maps/place/99-203+Turners+Hill,+Hemel+Hempstead/@51.7509002,-0.4655196,18z/data=!3m1!4b1!4m5!3m4!1s0x4876415ca62b7b11:0x7a3e497cbaeaa198!8m2!3d51.7508344!4d-0.4642179">
+                        <i class="fas fa-map-marker"></i>
+                    </a>
+                </td>
+                <td>
+                    <a href="https://www.google.com/maps/place/99-203+Turners+Hill,+Hemel+Hempstead/@51.7509002,-0.4655196,18z/data=!3m1!4b1!4m5!3m4!1s0x4876415ca62b7b11:0x7a3e497cbaeaa198!8m2!3d51.7508344!4d-0.4642179">
+                        <%= @user.city %>, <%= @user.post_code %>
+                    </a>
+                </td>
+            </tr>
+        </table> 
+        <hr>
+        <table class="first-page about">
+            <tr>
+                <td>About:</td>
+
+                <td>
+                    <%= @user.long_description %>
+                </td>
+
+            </tr>
+        
+            
+         </table>
+         <hr>
+        <table class="first-page technical-skills">
+            <tr>
+                <td>Technical Skills:</td>
+                <td>
+                    <table>
+                    <% @skills.each do |skill| %>
+                    <tr>
+                        <td>
+                            <%= skill.name %>
+                        </td>
+                        <td>
+                            <div class="progress-bar p-<%= procent(skill) %>" style="--width: <%= procent(skill) %>%" data-label="<%= procent(skill) %>%&nbsp&nbsp&nbsp"></div>
+                            
+                        </td>
+                    </tr>
+                    <% end %>
+                    </table>
+                </td>
+            </tr>
+            
+         </table>
+         <hr>
+        <table class="first-page language-skills">
+            <tr>
+                <td>Language Skills:</td>
+                <td>
+                    <table>
+                        <% @language_skills.each do |language_skill| %>
+                            <tr>
+                                <td>
+                                    <%= language_skill.language %>
+                                </td>
+                            
+                                <td>
+                                    <div class="progress-bar p-<%= language_skill.procent %>" style="--width: <%= language_skill.procent %>%" data-label="<%= language_skill.procent %>%&nbsp&nbsp&nbsp">
+                                        <div class="certificate">
+                                            <% if language_skill.is_native %>
+                                                <div class="more-than-half"> Native language</div>
+                                            <% elsif language_skill.procent < 50 %>
+                                            <%=  language_skill.procent %>
+                                                    <div class="less-than-half">
+                                                        <%= link_to language_skill.certificate_url do %> 
+                                                            <%= links(language_skill.certificate_url) %>
+                                                        <%end %>
+                                                    </div>
+                                            <% else %>
+                                                    <div class="more-than-half">
+                                                        <%= link_to language_skill.certificate_url do %> 
+                                                            <%= links(language_skill.certificate_url) %>
+                                                        <%end %>
+                                                    </div>
+                                            <%end %>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        <% end %>
+                    </table>
+                </td>
+            </tr>      
+         </table>
+         <hr>
+    
+            
+           
+            
+           <table class="first-page personal-skills">
+            <tr>
+                <td>Personal Skills:</td>
+
+                <td>
+                   ????
+                </td>
+
+            </tr>
+        
+            
+         </table>
+         <hr>
+
+    </div>
+    <div class="alwaysbreak">
+        Work Experience
+        <% @works.each do |work| %>
+        <h4 class="h3"><%= work.company %></h4>
+        <p class="header-meta">
+            <span><%= work.position %></span> 
+            <span class="header-date">
+            <%= verbose_date(work.start_date) %> - <%= work.present ? "Present" : verbose_date(work.end_date)%>
+            </span>
+        </p>
+        <% end %>
+        Education
+        <% @educations.each do |education| %>
+        <h4 class="h3"><%= education.school %></h4>
+        <p class="header-meta">
+            <span><%= education.location %></span> 
+            <span class="header-date">
+            <%= verbose_date(education.start_date) %> - <%= verbose_date(education.end_date) %>
+            </span>
+        </p>
+        <p>
+            <%= education.specialization %>
+        </p>
+        <% end %>
+        </div>
+    </div>
+</div>
