@@ -11,16 +11,23 @@
                 <li><a class="smoothscroll" href="#work">Work</a></li>
                 <li><a class="smoothscroll" href="#education">Education</a></li>
                 <li><a class="smoothscroll" href="#contact">Contact</a></li>
+                <% if current_user %>
+                    <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+                <% else %>
+                    <li><%= link_to "Log in", new_user_session_path %></li>
+                <% end %>
+                <% elsif controller_path =="cv" %>
                 <% else %>
                 <li><%= link_to "Home", root_path %></li>
+                <% if current_user %>
+                    <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+                <% else %>
+                    <li><%= link_to "Log in", new_user_session_path %></li>
+                <% end %>
             <% end %>
             
            
-            <% if current_user %>
-                <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-            <% else %>
-                <li><%= link_to "Log in", new_user_session_path %></li>
-            <% end %>
+            
         </ul>
     </nav>
 </div>
