@@ -2235,7 +2235,26 @@
      -webkit-animation-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
      animation-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
  }
- 
+ trix-toolbar {
+    .trix-button-group {
+        button {
+            background-color: white;
+          }
+    }
+    input.trix-input.trix-input--dialog{
+        &:focus{
+            color:black;
+        }
+        &::placeholder{
+            color: $color-gray-17;
+        }
+        color:black;
+    }
+ }
+ trix-editor{
+    color: white;
+ }
+  
  /* fade in up */
  @-webkit-keyframes fadeInUp {
      from {

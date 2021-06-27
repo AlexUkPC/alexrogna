@@ -5,4 +5,5 @@ class Project < ApplicationRecord
   has_one_attached :logo
   has_one_attached :main_tech
   has_one_attached :project_logo
+  has_rich_text :description
 end
