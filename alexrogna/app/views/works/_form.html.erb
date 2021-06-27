@@ -35,6 +35,10 @@
     <%= form.label :present %>
     <%= form.check_box :present %>
   </div>
+  <div class="field">
+    <%= form.label :key_responsibilities %>
+    <%= form.rich_text_area :key_responsibilities, class: "h-full-width" %>
+  </div>
   <h3>Add Techs</h3>
   <%= form.collection_check_boxes(:tech_ids, Tech.all, :id, :name) do |b| %>
     <% b.label {b.check_box + b.text } %>
