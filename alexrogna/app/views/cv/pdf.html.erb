@@ -180,6 +180,28 @@
                                 <td>
                                 <%= verbose_date(work.start_date) %> - <%= work.present ? "Present" : verbose_date(work.end_date)%> </td> 
                             </tr>
+                            <tr>
+                                <td colspan="2">
+                                    Key Responsibilities:
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="key-resp">
+                                    <%= work.key_responsibilities %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    Core Tools:
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <% for tech in work.teches.order('order_id ASC') %>
+                                        <span class="tech-name"><%= tech.name %></span>
+                                    <% end %>
+                                </td>
+                            </tr>
                         <% end %>
                         </table>
                     </td>

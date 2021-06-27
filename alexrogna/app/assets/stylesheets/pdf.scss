@@ -414,5 +414,16 @@
       h4{
         margin: 0;
       }
+      .tech-name::after{
+        content: ", ";
+      }
+      .tech-name:last-child::after{
+        content: "";
+      }
+    }
+    .key-resp{
+      ul{
+        margin: 0 auto;
+      }
     }
 }
