@@ -35,7 +35,10 @@
     <%= form.label :specialization %>
     <%= form.text_area :specialization, class: "h-full-width" %>
   </div>
-  
+  <div class="field">
+    <%= form.label :courses %>
+    <%= form.rich_text_area :courses, class: "h-full-width" %>
+  </div>
   <h3>Add Techs</h3>
   <%= form.collection_check_boxes(:tech_ids, Tech.all, :id, :name) do |b| %>
     <% b.label {b.check_box + b.text } %>
