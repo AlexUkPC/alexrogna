@@ -1,4 +1,5 @@
 <div class="cv">
+          
     <div class="nobreak">
         <table class="header">
             <tr>
@@ -72,9 +73,9 @@
                     </a>
                 </td>
             </tr>
-        </table> 
-        <hr>
-        <table class="first-page about">
+        </table>
+        <hr> 
+        <table class="main about">
             <tr>
                 <td>About:</td>
 
@@ -85,31 +86,31 @@
             </tr>
         
             
-         </table>
-         <hr>
-        <table class="first-page technical-skills">
+        </table>
+        <hr>
+        <table class="main technical-skills">
             <tr>
                 <td>Technical Skills:</td>
                 <td>
                     <table>
-                    <% @skills.each do |skill| %>
-                    <tr>
-                        <td>
-                            <%= skill.name %>
-                        </td>
-                        <td>
-                            <div class="progress-bar p-<%= procent(skill) %>" style="--width: <%= procent(skill) %>%" data-label="<%= procent(skill) %>%&nbsp&nbsp&nbsp"></div>
-                            
-                        </td>
-                    </tr>
-                    <% end %>
+                        <% @skills.each do |skill| %>
+                            <tr>
+                                <td>
+                                    <%= skill.name %>
+                                </td>
+                                <td>
+                                    <div class="progress-bar p-<%= procent(skill) %>" style="--width: <%= procent(skill) %>%" data-label="<%= procent(skill) %>%&nbsp&nbsp&nbsp"></div>
+                                    
+                                </td>
+                            </tr>
+                        <% end %>
                     </table>
                 </td>
             </tr>
             
-         </table>
-         <hr>
-        <table class="first-page language-skills">
+        </table>
+        <hr>
+        <table class="main language-skills">
             <tr>
                 <td>Language Skills:</td>
                 <td>
@@ -147,51 +148,75 @@
                     </table>
                 </td>
             </tr>      
-         </table>
-         <hr>
-    
-            
-           
-            
-           <table class="first-page personal-skills">
+        </table>
+        <hr> 
+        <table class="main personal-skills">
             <tr>
                 <td>Personal Skills:</td>
 
                 <td>
-                   ????
+                ????
                 </td>
 
             </tr>
         
             
-         </table>
-         <hr>
+        </table>
+        <hr>
 
     </div>
     <div class="alwaysbreak">
-        Work Experience
-        <% @works.each do |work| %>
-        <h4 class="h3"><%= work.company %></h4>
-        <p class="header-meta">
-            <span><%= work.position %></span> 
-            <span class="header-date">
-            <%= verbose_date(work.start_date) %> - <%= work.present ? "Present" : verbose_date(work.end_date)%>
-            </span>
-        </p>
-        <% end %>
-        Education
-        <% @educations.each do |education| %>
-        <h4 class="h3"><%= education.school %></h4>
-        <p class="header-meta">
-            <span><%= education.location %></span> 
-            <span class="header-date">
-            <%= verbose_date(education.start_date) %> - <%= verbose_date(education.end_date) %>
-            </span>
-        </p>
-        <p>
-            <%= education.specialization %>
-        </p>
-        <% end %>
-        </div>
+        <table class="main work-experience">
+                <tr>
+                    <td >Work Experience</td>
+                    <td>
+                        <table>
+                        <% @works.each do |work| %>
+                            <tr>
+                                <td colspan="2"><h4><%= work.company %></h4></td>
+                            </tr>
+                            <tr>
+                                <td><%= work.position %></td>
+                                <td>
+                                <%= verbose_date(work.start_date) %> - <%= work.present ? "Present" : verbose_date(work.end_date)%> </td> 
+                            </tr>
+                        <% end %>
+                        </table>
+                    </td>
+                </tr>
+                
+            </table>
+            <hr>
+        <table class="main education">
+            <tr>
+                <td >Education</td>
+                <td>
+                    <table>
+                    <% @educations.each do |education| %>
+                        <tr>
+                            <td colspan="2">
+                                <h4><%= education.school %></h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <%= education.location %>
+                            </td>
+                            <td>
+                                <%= verbose_date(education.start_date) %> - <%= verbose_date(education.end_date) %> 
+                            </td> 
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <%= education.specialization %>
+                            </td>
+                        </tr>
+                    <% end %>
+                    </table>
+                </td>
+            </tr>
+            
+        </table>
+        <hr>
     </div>
 </div>

@@ -1,7 +1,7 @@
 .cv{
-    div.alwaysbreak { page-break-before: always; }
-    div.nobreak:before { clear:both; }
-    div.nobreak { page-break-inside: avoid; }
+    .alwaysbreak { page-break-before: always; }
+    .nobreak:before { clear:both; }
+    .nobreak { page-break-inside: avoid; }
     h3 {
         font-size: xx-large; 
         margin: 0 0 10px 0;
@@ -13,10 +13,10 @@
         th{
             text-align: left; 
             &:first-child{
-                width: 30%;
+                width: 40%;
             }
             &:nth-child(2){
-                width: 70%;
+                width: 60%;
             }
         }
         i{
@@ -28,16 +28,17 @@
             color: black;
         }
     }
-    .first-page{
+
+    .main{
         td{
-            text-align: left; 
-            vertical-align: top;
-            &:first-child{
-                width: 20%;
-            }
-            &:nth-child(2){
-                width: 80%;
-            }
+          text-align: left; 
+          vertical-align: top;
+          &:first-child{
+              width: 20%;
+          }
+          &:nth-child(2){
+              width: 80%;
+          }
         }
         .progress-bar {
             position: relative;
@@ -408,5 +409,10 @@
                 }
             }
         }
+    }
+    .work-experience, .education{
+      h4{
+        margin: 0;
+      }
     }
 }
