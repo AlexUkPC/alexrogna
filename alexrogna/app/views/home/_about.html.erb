@@ -28,13 +28,11 @@
                 <% end %>
             </div>
             <div class="column w-1000-stack">
-                <% if user.cv.attached? %>
-                    <%= link_to cv_path(format: :pdf), method: :get, target: :_blank, class:"btn btn--about h-full-width", title: "Download my CV" do %>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M12 16L16 11 13 11 13 4 11 4 11 11 8 11z"></path><path d="M20,18H4v-7H2v7c0,1.103,0.897,2,2,2h16c1.103,0,2-0.897,2-2v-7h-2V18z"></path></svg>
-                        Download CV
-                    <% end %>
-                    
+                <%= link_to cv_path(format: :pdf), method: :get, target: :_blank, class:"btn btn--about h-full-width", title: "Download my CV" do %>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M12 16L16 11 13 11 13 4 11 4 11 11 8 11z"></path><path d="M20,18H4v-7H2v7c0,1.103,0.897,2,2,2h16c1.103,0,2-0.897,2-2v-7h-2V18z"></path></svg>
+                    Download CV
                 <% end %>
+                    
                 <%= link_to  '#', onclick: "document.querySelector('#notify_friend').style.display='block';return false;", class:"btn btn--about h-full-width", title: "Send an email with my CV to a friend" do %>
                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><path d="M256,132.129c-68.302,0-123.871,55.569-123.871,123.871S187.698,379.871,256,379.871
                 c43.574,0,81.937-22.635,104.024-56.744c16.151,14.722,37.614,23.712,61.138,23.712C471.25,346.839,512,306.088,512,256

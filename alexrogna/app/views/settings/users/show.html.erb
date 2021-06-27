@@ -24,6 +24,8 @@
             <%= f.text_field :post_code, class: "h-full-width" %>
             <%= f.label :phone %>
             <%= f.text_field :phone, class: "h-full-width" %>
+            <%= f.label :email %>
+            <%= f.text_field :email, class: "h-full-width" %>
             <div class="cover_image">
                 <%= f.label :cover_image %>
                 <% if current_user.cover_image.attached? %>
@@ -41,14 +43,10 @@
                 <%= f.file_field :profile_image %>
             </div>
             <hr>
-            <%= f.label "Pdf CV" %>
-            <% if current_user.cv.attached? %>
-                <%= button_to 'Download', current_user.cv, method: :get, formtarget: :_blank,class: "btn btn--submit btn--cv" %>
-            <% end %>
-            <%= f.file_field :cv %>
-
-            <%= f.submit "Update", class: "btn btn--submit h-full-width" %>
-            <%= link_to 'Back', root_path %>
+            <div class="actions">
+                <%= f.submit "Update", class: "btn btn--submit h-full-width" %>
+                <%= link_to 'Back', root_path %>
+            </div>
             <% end %>
         </div>
   </div>
