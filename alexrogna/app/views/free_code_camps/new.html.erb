@@ -1,5 +1,9 @@
-<h1>New Free Code Camp</h1>
-
-<%= render 'form', free_code_camp: @free_code_camp %>
-
-<%= link_to 'Back', free_code_camps_path %>
+<section class="free_code_camps">
+  <div class="row">
+    <h1>New Free Code Camp</h1>
+  </div>
+  <div class="row">
+    <%= render 'form', free_code_camp: @free_code_camp %>
+    <%= link_to 'Back', free_code_camps_path %>
+  </div>
+</section>

@@ -11,7 +11,17 @@
         padding: 20px;
     }  
 }
-
+.free_code_camps{
+    background-color: white;
+    margin-top: $vspace-3;
+    padding-bottom: $vspace-1;
+    label{
+        color: black;
+    }
+    input[type="text"]:focus{
+        color: black;
+    }
+}
 @media screen and (max-width: 600px) {
     .modal-popup-skills-fcc  {
         max-height: 90vh !important;

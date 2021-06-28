@@ -26,7 +26,7 @@ class FreeCodeCampsController < ApplicationController
 
     respond_to do |format|
       if @free_code_camp.save
-        format.html { redirect_to @free_code_camp, notice: "Free code camp was successfully created." }
+        format.html { redirect_to free_code_camps_url, notice: "Free code camp was successfully created." }
         format.json { render :show, status: :created, location: @free_code_camp }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ class FreeCodeCampsController < ApplicationController
   def update
     respond_to do |format|
       if @free_code_camp.update(free_code_camp_params)
-        format.html { redirect_to @free_code_camp, notice: "Free code camp was successfully updated." }
+        format.html { redirect_to free_code_camps_url, notice: "Free code camp was successfully updated." }
         format.json { render :show, status: :ok, location: @free_code_camp }
       else
         format.html { render :edit, status: :unprocessable_entity }
