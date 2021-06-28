@@ -1,6 +1,9 @@
-<h1>Editing Linkedin</h1>
-
-<%= render 'form', linkedin: @linkedin %>
-
-<%= link_to 'Show', @linkedin %> |
-<%= link_to 'Back', linkedins_path %>
+<section class="linkedins">
+  <div class="row">
+    <h1>Editing Linkedin</h1>
+  </div>
+  <div class="row">
+    <%= render 'form', linkedin: @linkedin %>
+    <%= link_to 'Back', linkedins_path %>
+  </div>
+</section>

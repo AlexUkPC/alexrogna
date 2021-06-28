@@ -26,7 +26,7 @@ class LinkedinsController < ApplicationController
 
     respond_to do |format|
       if @linkedin.save
-        format.html { redirect_to @linkedin, notice: "Linkedin was successfully created." }
+        format.html { redirect_to linkedins_url, notice: "Linkedin was successfully created." }
         format.json { render :show, status: :created, location: @linkedin }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ class LinkedinsController < ApplicationController
   def update
     respond_to do |format|
       if @linkedin.update(linkedin_params)
-        format.html { redirect_to @linkedin, notice: "Linkedin was successfully updated." }
+        format.html { redirect_to linkedins_url, notice: "Linkedin was successfully updated." }
         format.json { render :show, status: :ok, location: @linkedin }
       else
         format.html { render :edit, status: :unprocessable_entity }

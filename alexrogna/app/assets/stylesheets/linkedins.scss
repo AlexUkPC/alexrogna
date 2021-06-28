@@ -19,7 +19,17 @@
         right: 10px;
     }
 }
-
+.linkedins{
+    background-color: white;
+    margin-top: $vspace-3;
+    padding-bottom: $vspace-1;
+    label{
+        color: black;
+    }
+    input[type="text"]:focus{
+        color: black;
+    }
+}
 @media screen and (max-width: 600px) {
     .modal-popup-skills-li  {
         max-height: 90vh !important;
