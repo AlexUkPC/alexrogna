@@ -28,7 +28,7 @@ class LanguageSkillsController < ApplicationController
 
     respond_to do |format|
       if @language_skill.save
-        format.html { redirect_to @language_skill, notice: "Language skill was successfully created." }
+        format.html { redirect_to root_path + "#language_skills", notice: "Language skill was successfully created." }
         format.json { render :show, status: :created, location: @language_skill }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -41,7 +41,7 @@ class LanguageSkillsController < ApplicationController
   def update
     respond_to do |format|
       if @language_skill.update(language_skill_params)
-        format.html { redirect_to @language_skill, notice: "Language skill was successfully updated." }
+        format.html { redirect_to root_path + "#language_skills", notice: "Language skill was successfully updated." }
         format.json { render :show, status: :ok, location: @language_skill }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -54,7 +54,7 @@ class LanguageSkillsController < ApplicationController
   def destroy
     @language_skill.destroy
     respond_to do |format|
-      format.html { redirect_to language_skills_url, notice: "Language skill was successfully destroyed." }
+      format.html { redirect_to root_path + "#language_skills", notice: "Language skill was successfully destroyed." }
       format.json { head :no_content }
     end
   end
