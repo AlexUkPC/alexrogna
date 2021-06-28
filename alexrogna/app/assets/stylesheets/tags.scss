@@ -1,0 +1,12 @@
+@import 'variables';
+.tags{
+    background-color: white;
+    margin-top: $vspace-3;
+    padding-bottom: $vspace-1;
+    label{
+        color: black;
+    }
+    input[type="text"]:focus{
+        color: black;
+    }
+}
