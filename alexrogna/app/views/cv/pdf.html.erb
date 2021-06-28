@@ -3,10 +3,10 @@
     <div class="nobreak">
         <table class="header">
             <tr>
-                <th colspan="2">Contact</th>
+                <th colspan="2"><h2>Contact</h2></th>
 
                 <th rowspan="3">
-                    <h3><%= @user.name %></h3>
+                    <h1><%= @user.name %></h1>
                     Web Designer and Programmer
                 </th>
 
@@ -77,7 +77,7 @@
         <hr> 
         <table class="main about">
             <tr>
-                <td>About:</td>
+                <td><h2>About</h2></td>
 
                 <td>
                     <%= @user.long_description %>
@@ -90,7 +90,7 @@
         <hr>
         <table class="main technical-skills">
             <tr>
-                <td>Technical Skills:</td>
+                <td><h2>Technical Skills</h2></td>
                 <td>
                     <table>
                         <% @skills.each do |skill| %>
@@ -112,7 +112,7 @@
         <hr>
         <table class="main language-skills">
             <tr>
-                <td>Language Skills:</td>
+                <td><h2>Language Skills</h2></td>
                 <td>
                     <table>
                         <% @language_skills.each do |language_skill| %>
@@ -152,14 +152,13 @@
         <hr> 
         <table class="main personal-skills">
             <tr>
-                <td>Personal Skills:</td>
+                <td><h2>Personal Skills</h2></td>
 
                 <td>
                 ????
                 </td>
 
             </tr>
-        
             
         </table>
         <hr>
@@ -168,15 +167,15 @@
     <div class="alwaysbreak">
         <table class="main work-experience">
                 <tr>
-                    <td >Work Experience</td>
+                    <td><h1>Work Experience</h1></td>
                     <td>
                         <table>
                         <% @works.each do |work| %>
                             <tr>
-                                <td colspan="2"><h4><%= work.company %></h4></td>
+                                <td colspan="2"><h2><%= work.company %></h2></td>
                             </tr>
                             <tr>
-                                <td><%= work.position %></td>
+                                <td><i><%= work.position %></i></td>
                                 <td>
                                 <%= verbose_date(work.start_date) %> - <%= work.present ? "Present" : verbose_date(work.end_date)%> </td> 
                             </tr>
@@ -190,13 +189,9 @@
                                     <%= work.key_responsibilities %>
                                 </td>
                             </tr>
+
                             <tr>
-                                <td colspan="2">
-                                    Core Tools:
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
+                                <td colspan="2">Tools:
                                     <% for tech in work.teches.order('order_id ASC') %>
                                         <span class="tech-name"><%= tech.name %></span>
                                     <% end %>
@@ -211,31 +206,38 @@
             <hr>
         <table class="main education">
             <tr>
-                <td >Education</td>
+                <td><h1>Education</h1></td>
                 <td>
                     <table>
                     <% @educations.each do |education| %>
                         <tr>
                             <td colspan="2">
-                                <h4><%= education.school %></h4>
+                                <h2><%= education.school %></h2>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <%= education.location %>
+                                <i><%= education.location %></i>
                             </td>
                             <td>
                                 <%= verbose_date(education.start_date) %> - <%= verbose_date(education.end_date) %> 
                             </td> 
                         </tr>
                         <tr>
-                            <td colspan="2">
+                            <td>
                                 <%= education.specialization %>
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2">
+                            <td>
                                 <%= education.courses %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Tools:
+                                <% for tech in education.teches.order('order_id ASC') %>
+                                    <span class="tech-name"><%= tech.name %></span>
+                                <% end %>
                             </td>
                         </tr>
                     <% end %>
@@ -244,6 +246,5 @@
             </tr>
             
         </table>
-        <hr>
     </div>
 </div>

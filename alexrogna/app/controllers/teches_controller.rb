@@ -4,7 +4,7 @@ class TechesController < ApplicationController
 
   # GET /teches or /teches.json
   def index
-    @teches = Tech.all
+    @teches = Tech.all.order('order_id ASC')
   end
 
   # GET /teches/1 or /teches/1.json
@@ -26,7 +26,7 @@ class TechesController < ApplicationController
 
     respond_to do |format|
       if @tech.save
-        format.html { redirect_to @tech, notice: "Tech was successfully created." }
+        format.html { redirect_to new_tech_path, notice: "Tech was successfully created." }
         format.json { render :show, status: :created, location: @tech }
       else
         format.html { render :new, status: :unprocessable_entity }

@@ -2,9 +2,14 @@
     .alwaysbreak { page-break-before: always; }
     .nobreak:before { clear:both; }
     .nobreak { page-break-inside: avoid; }
-    h3 {
-        font-size: xx-large; 
-        margin: 0 0 10px 0;
+    h1,h2{
+      margin: 0;
+    }
+    h2{
+      font-size: 16px;
+    }
+    h1{
+      font-size: xx-large;
     }
     table{
         width: 100%;
@@ -411,8 +416,8 @@
         }
     }
     .work-experience, .education{
-      h4{
-        margin: 0;
+      h1{
+        font-size: 16px;
       }
       .tech-name::after{
         content: ", ";
@@ -420,10 +425,22 @@
       .tech-name:last-child::after{
         content: "";
       }
-    }
-    .key-resp{
-      ul{
-        margin: 0 auto;
+      .key-resp{
+        ul{
+          margin: 0 auto;
+        }
       }
+      table{
+        td{
+            &:first-child{
+                width: 50%;
+            }
+            &:nth-child(2){
+                width: 40%;
+                text-align: right;
+            }
+        }
+      } 
     }
+    
 }
