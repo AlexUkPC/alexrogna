@@ -26,7 +26,7 @@ class HackerRanksController < ApplicationController
 
     respond_to do |format|
       if @hacker_rank.save
-        format.html { redirect_to @hacker_rank, notice: "Hacker rank was successfully created." }
+        format.html { redirect_to hacker_ranks_url, notice: "Hacker rank was successfully created." }
         format.json { render :show, status: :created, location: @hacker_rank }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ class HackerRanksController < ApplicationController
   def update
     respond_to do |format|
       if @hacker_rank.update(hacker_rank_params)
-        format.html { redirect_to @hacker_rank, notice: "Hacker rank was successfully updated." }
+        format.html { redirect_to hacker_ranks_url, notice: "Hacker rank was successfully updated." }
         format.json { render :show, status: :ok, location: @hacker_rank }
       else
         format.html { render :edit, status: :unprocessable_entity }
