@@ -1,6 +1,9 @@
-<h1>Editing Tech</h1>
-
-<%= render 'form', tech: @tech %>
-
-<%= link_to 'Show', @tech %> |
-<%= link_to 'Back', teches_path %>
+<section class="techs-form">
+  <div class="row">
+    <h2>Editing Tech</h2>
+  </div>
+  <div class="row">
+    <%= render 'form', tech: @tech %>
+    <%= link_to 'Back', teches_path %>
+  </div>
+</section>

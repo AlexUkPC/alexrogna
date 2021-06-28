@@ -26,7 +26,7 @@ class TechesController < ApplicationController
 
     respond_to do |format|
       if @tech.save
-        format.html { redirect_to new_tech_path, notice: "Tech was successfully created." }
+        format.html { redirect_to teches_url, notice: "Tech was successfully created." }
         format.json { render :show, status: :created, location: @tech }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ class TechesController < ApplicationController
   def update
     respond_to do |format|
       if @tech.update(tech_params)
-        format.html { redirect_to @tech, notice: "Tech was successfully updated." }
+        format.html { redirect_to teches_url, notice: "Tech was successfully updated." }
         format.json { render :show, status: :ok, location: @tech }
       else
         format.html { render :edit, status: :unprocessable_entity }
