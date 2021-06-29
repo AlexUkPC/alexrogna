@@ -1,5 +1,5 @@
 <section class="books">
-  <div class="row">
+  <div>
     <p id="notice"><%= notice %></p>
 
     <h1>Books</h1>
@@ -14,6 +14,7 @@
           <th>Dop</th>
           <th>Resources link</th>
           <th>Github link</th>
+          <th>Cover</th>
           <th>Skill</th>
           <th colspan="2"></th>
         </tr>
@@ -29,6 +30,11 @@
             <td><%= book.dop %></td>
             <td><%= book.resources_link %></td>
             <td><%= book.github_link %></td>
+            <td>
+              <% if book.cover.attached? %>
+                <%= image_tag book.cover %>
+              <% end %>
+            </td>
             <td><% for skill in book.skills %>
                 <%= link_to skill.name, edit_skill_path(skill.id) %> <br>
             <% end %></td>

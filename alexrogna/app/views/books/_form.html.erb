@@ -13,44 +13,54 @@
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: "h-full-width" %>
   </div>
 
   <div class="field">
     <%= form.label :subtitle %>
-    <%= form.text_field :subtitle %>
+    <%= form.text_field :subtitle, class: "h-full-width" %>
   </div>
 
   <div class="field">
     <%= form.label :author %>
-    <%= form.text_field :author %>
+    <%= form.text_field :author, class: "h-full-width" %>
   </div>
 
   <div class="field">
     <%= form.label :publisher %>
-    <%= form.text_field :publisher %>
+    <%= form.text_field :publisher, class: "h-full-width" %>
   </div>
 
   <div class="field">
-    <%= form.label :dop %>
+    <%= form.label "Date of publish" %>
     <%= form.date_select :dop, start_year: 2000, end_year: Date.today.year %>
   </div>
 
   <div class="field">
     <%= form.label :resources_link %>
-    <%= form.text_field :resources_link %>
+    <%= form.text_field :resources_link, class: "h-full-width" %>
   </div>
 
   <div class="field">
     <%= form.label :github_link %>
-    <%= form.text_field :github_link %>
+    <%= form.text_field :github_link, class: "h-full-width" %>
   </div>
-  <% if book.cover.attached? %>
+
+  <div class="field">
+    <%= form.label :cover %>
+    <% if book.cover.attached? %>
         <%= image_tag book.cover.variant(resize_to_limit: local_assigns.fetch(:cover_options, [200, 200])) %>
     <% end %>
-    <%= form.label :cover %>
     <%= form.file_field :cover %>
+  </div>
+
+  <div class="field">
+    <%= form.collection_check_boxes(:skill_ids, Skill.all, :id, :name) do |b| %>
+      <% b.label {b.check_box + b.text} %>
+    <% end %>
+  </div>
+  
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn--submit h-full-width" %>
   </div>
 <% end %>
