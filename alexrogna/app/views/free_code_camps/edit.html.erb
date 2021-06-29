@@ -3,7 +3,11 @@
     <h1>Editing Free Code Camp</h1>
   </div>
   <div class="row">
-    <%= render 'form', free_code_camp: @free_code_camp %>
+    <div class="column large-12 tab-8 mob-12 align-center">
+      <%= render 'form', free_code_camp: @free_code_camp %>
+    </div>
+  </div>
+  <div class="row">
     <%= link_to 'Back', free_code_camps_path %>
   </div>
 </section>
