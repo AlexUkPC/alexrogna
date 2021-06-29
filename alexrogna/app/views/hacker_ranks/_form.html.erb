@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :cerificate_name %>
-    <%= form.text_field :cerificate_name %>
+    <%= form.text_field :cerificate_name, class: "h-full-width" %>
   </div>
 
   <div class="field">
@@ -23,14 +23,23 @@
 
   <div class="field">
     <%= form.label :url %>
-    <%= form.text_field :url %>
+    <%= form.text_field :url, class: "h-full-width" %>
   </div>
-  <% if hacker_rank.badgeorcertificate.attached? %>
-        <%= image_tag hacker_rank.badgeorcertificate.variant(resize_to_limit: local_assigns.fetch(:badgeorcertificate_options, [200, 200])) %>
+  <div class="field">
+    <%= form.label "Badge or Certificate" %>
+    <% if hacker_rank.badgeorcertificate.attached? %>
+      <%= image_tag hacker_rank.badgeorcertificate.variant(resize_to_limit: local_assigns.fetch(:badgeorcertificate_options, [200, 200])) %>
     <% end %>
-    <%= form.label :badgeorcertificate %>
     <%= form.file_field :badgeorcertificate %>
+  </div>
+
+  <div class="field">
+    <%= form.collection_check_boxes(:skill_ids, Skill.all, :id, :name) do |b| %>
+      <% b.label {b.check_box + b.text} %>
+    <% end %>
+  </div>
+  
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn--submit h-full-width" %>
   </div>
 <% end %>

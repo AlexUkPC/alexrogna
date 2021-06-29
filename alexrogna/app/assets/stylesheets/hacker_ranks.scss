@@ -23,10 +23,24 @@
     background-color: white;
     margin-top: $vspace-3;
     padding-bottom: $vspace-1;
-    label{
-        color: black;
-    }
-    input[type="text"]:focus{
-        color: black;
+    form{
+        label{
+            display: inline-block;
+            color: black;
+        }
+        input[type="text"]:focus{
+            color: black;
+        }
+        img{
+            display: block;
+            margin-bottom: 0;
+            height: 150px;
+            width: auto;
+        }
+        label>input[type="checkbox"]{
+            margin-right: 5px;
+            margin-left: 20px;
+            top: 0;
+        }
     }
 }

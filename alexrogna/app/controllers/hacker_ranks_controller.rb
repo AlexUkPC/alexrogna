@@ -65,6 +65,6 @@ class HackerRanksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def hacker_rank_params
-      params.require(:hacker_rank).permit(:cerificate_name, :is_badge, :url, :badgeorcertificate)
+      params.require(:hacker_rank).permit(:cerificate_name, :is_badge, :url, :badgeorcertificate, skill_ids: [])
     end
 end

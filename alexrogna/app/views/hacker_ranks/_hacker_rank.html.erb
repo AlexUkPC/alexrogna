@@ -10,11 +10,31 @@
         <% if hacker_rank.badgeorcertificate.attached? %>
             <%= image_tag hacker_rank.badgeorcertificate %>
         <% end %>
+        <div>
+            <% if current_user %>
+                <%= link_to edit_hacker_rank_path(hacker_rank), title: "Edit" do %>
+                    <i class="fas fa-pen fa-xs" aria-hidden="true"></i>
+                <% end %>
+                <%= link_to hacker_rank, method: :delete, data: { confirm: 'Are you sure?' }, title: "Delete" do %>
+                    <i class="fas fa-times-circle fa-xs" style="color:red"></i>
+                <% end %>
+            <% end %>
+        </div>
     </div>
 <% else %>
         <div class="column large-2 tab-3 mob-6 certif">
             <% if hacker_rank.badgeorcertificate.attached? %>
                 <%= image_tag hacker_rank.badgeorcertificate %>
             <% end %>
+            <div>
+                <% if current_user %>
+                    <%= link_to edit_hacker_rank_path(hacker_rank), title: "Edit" do %>
+                        <i class="fas fa-pen fa-xs" aria-hidden="true"></i>
+                    <% end %>
+                    <%= link_to hacker_rank, method: :delete, data: { confirm: 'Are you sure?' }, title: "Delete" do %>
+                        <i class="fas fa-times-circle fa-xs" style="color:red"></i>
+                    <% end %>
+                <% end %>
+            </div>
         </div>
 <% end %>
