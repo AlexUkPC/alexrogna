@@ -65,6 +65,6 @@ class LinkedinsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def linkedin_params
-      params.require(:linkedin).permit(:badge_name, :badge)
+      params.require(:linkedin).permit(:badge_name, :badge, skill_ids: [])
     end
 end

@@ -3,7 +3,11 @@
     <h1>Editing Linkedin</h1>
   </div>
   <div class="row">
-    <%= render 'form', linkedin: @linkedin %>
+    <div class="column large-12 tab-8 mob-12 align-center">
+      <%= render 'form', linkedin: @linkedin %>
+    </div>
+  </div>
+  <div class="row">
     <%= link_to 'Back', linkedins_path %>
   </div>
 </section>

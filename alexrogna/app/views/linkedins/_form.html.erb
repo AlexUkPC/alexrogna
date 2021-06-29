@@ -13,14 +13,24 @@
 
   <div class="field">
     <%= form.label :badge_name %>
-    <%= form.text_field :badge_name %>
+    <%= form.text_field :badge_name, class: "h-full-width" %>
   </div>
-  <% if linkedin.badge.attached? %>
-        <%= image_tag linkedin.badge.variant(resize_to_limit: local_assigns.fetch(:badge_options, [200, 200])) %>
-    <% end %>
+  
+  <div class="field">
     <%= form.label :badge %>
+    <% if linkedin.badge.attached? %>
+      <%= image_tag linkedin.badge.variant(resize_to_limit: local_assigns.fetch(:badge_options, [200, 200])) %>
+    <% end %>
     <%= form.file_field :badge %>
+  </div>
+
+  <div class="field">
+    <%= form.collection_check_boxes(:skill_ids, Skill.all, :id, :name) do |b| %>
+      <% b.label {b.check_box + b.text} %>
+    <% end %>
+  </div>
+
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn--submit h-full-width" %>
   </div>
 <% end %>

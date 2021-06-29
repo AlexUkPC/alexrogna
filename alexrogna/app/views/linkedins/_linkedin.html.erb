@@ -2,4 +2,14 @@
     <% if linkedin.badge.attached? %>
         <%= image_tag linkedin.badge %>
     <% end %>
+    <div>
+        <% if current_user %>
+            <%= link_to edit_linkedin_path(linkedin), title: "Edit" do %>
+                <i class="fas fa-pen fa-xs" aria-hidden="true"></i>
+            <% end %>
+            <%= link_to linkedin, method: :delete, data: { confirm: 'Are you sure?' }, title: "Delete" do %>
+                <i class="fas fa-times-circle fa-xs" style="color:red"></i>
+            <% end %>
+        <% end %>
+    </div>
 </div>
