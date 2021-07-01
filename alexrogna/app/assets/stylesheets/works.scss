@@ -2,8 +2,8 @@
  /* # work */
 .s-work {
     background-color: white;
-    padding-top: $vspace-1;
-    padding-bottom: $vspace-1;
+    padding-top: 0;
+    padding-bottom: $vspace-2_5;
     header {
         text-align: center;
         h3 {
@@ -54,7 +54,7 @@
     footer {
         border-bottom: 1px solid $color-border;
         padding-bottom: $vspace-0_75;
-        margin-bottom: $vspace-2_5;
+        margin-bottom: 0;
     }
 }
 .works_form{
