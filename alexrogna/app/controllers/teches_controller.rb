@@ -65,6 +65,6 @@ class TechesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def tech_params
-      params.require(:tech).permit(:name, :order_id, :logo)
+      params.require(:tech).permit(:name, :order_id, :logo, skill_ids: [])
     end
 end
