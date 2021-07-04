@@ -15,7 +15,12 @@
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
-
+  <div class="field">
+    <%= form.label "Related to" %>
+    <%= form.collection_check_boxes(:skill_ids, Skill.all.order('name ASC'), :id, :name) do |b| %>
+      <% b.label {b.check_box + b.text } %>
+    <% end %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

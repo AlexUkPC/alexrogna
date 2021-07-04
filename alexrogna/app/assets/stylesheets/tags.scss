@@ -1,12 +1,20 @@
 @import 'variables';
-.tags{
+.tags-form, .tags{
     background-color: white;
     margin-top: $vspace-3;
     padding-bottom: $vspace-1;
-    label{
-        color: black;
-    }
-    input[type="text"]:focus{
-        color: black;
+    form{
+        label{
+            color: black;
+            display: inline-block;
+        }
+        input[type="text"]:focus{
+            color: black;
+        }
+        label>input[type="checkbox"]{
+            margin-right: 5px;
+            margin-left: 20px;
+            top: 0;
+        }
     }
 }
