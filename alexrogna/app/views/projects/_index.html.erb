@@ -35,15 +35,15 @@
                         <%= image_tag project.cover_image %>
                     <% end %>
                     <% if project.logo.attached? %>
-                        <%= image_tag project.logo, class: "logo" %>
+                        <%= image_tag project.logo, class: "logo", title: "Logo" %>
                     <% end %>
                     <% if project.main_tech.attached? %>
-                        <%= image_tag project.main_tech, class: "main-tech" %>
+                        <%= image_tag project.main_tech, class: "main-tech", title: "Main technology" %>
                     <% end %>
                 </div>
                 <div class="row"><h5><%= project.name %></h5></div>
                 <div class="row desc">
-                    <p><%= project.description %></p>
+                    <%= project.description %>
                 </div>
                 <div class="row">
                     <ul class="tag">
