@@ -20,6 +20,11 @@
         </div>
         <div>
             <% if current_user %>
+                <% if project.hidden %>
+                    <i class="fal fa-eye-slash fa-xs" aria-hidden="true"></i>
+                <% else %>
+                    <i class="fal fa-eye fa-xs" aria-hidden="true"></i>
+                <% end %>
                 <%= link_to edit_project_path(project), title: "Edit" do %>
                     <i class="fas fa-pen fa-xs" aria-hidden="true"></i>
                 <% end %>

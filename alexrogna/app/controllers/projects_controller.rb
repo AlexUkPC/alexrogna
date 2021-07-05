@@ -20,12 +20,12 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   def new
     @project = Project.new
-    @projects = Project.all
+    @projects = Project.all.order("id DESC")
   end
 
   # GET /projects/1/edit
   def edit
-    @projects = Project.all
+    @projects = Project.all.order("id DESC")
   end
 
   # POST /projects or /projects.json
