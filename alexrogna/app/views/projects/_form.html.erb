@@ -67,7 +67,10 @@
       <%= image_tag project.project_logo.variant(resize_to_limit: local_assigns.fetch(:project_logo_options, [200, 200])) %>
   <% end %>
   <%= form.file_field :project_logo %>
-
+  <div class="field">
+    <%= form.label :hidden %>
+    <%= form.check_box :hidden %>
+  </div>
   <div class="actions">
     <%= form.submit class: "btn btn--submit h-full-width" %>
   </div>
