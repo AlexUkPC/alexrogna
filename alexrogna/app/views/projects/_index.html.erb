@@ -6,9 +6,9 @@
     </div>
 </header>
 
-<div class="row collapse block-large-1-6 block-medium-1-3 block-tab-1-2 block-500-stack projects-list">
+<div class="row collapse block-large-1-4 block-medium-1-3 block-tab-1-2 block-500-stack projects-list">
     <% projects.each do |project| %>
-        <div class="column project-item">
+        <div class="column project-item" style="--content: '<%= project.name %>'">
             <%= link_to "#modal-#{project.id}", class:"thumb", title: "View #{project.name}" do %>
                 <% if project.project_logo.attached? %>
                     <%= image_tag project.project_logo %>

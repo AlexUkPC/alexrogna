@@ -48,16 +48,19 @@
             }
             &::after {
                 z-index: 1;
-                content: "...";
-                font-family: $font-2;
+                content: var(--content)"\00000a ...";
+                white-space: pre;
+                font-family: $font-1;
                 font-weight: 300;
-                font-size: 3rem;
+                text-align: center;
+                text-transform: uppercase;
+                font-weight: bold;
                 color: white;
                 display: block;
                 height: 32px;
-                width: 32px;
+                width: 100%;
                 line-height: 32px;
-                margin-left: -16px;
+                margin-left: -50%;
                 margin-top: -16px;
                 text-align: center;
                 opacity: 0;
@@ -88,7 +91,12 @@
                 transform: scale(1.05);
                 }
             }
+            .title{
+                visibility: hidden;
+                transition: all, 0.25s ease-in-out;
+            }
         }
+        
     }
 }
 /* ## modal popup */
