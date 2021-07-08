@@ -8,15 +8,22 @@
         -webkit-transition: all, .5s;
         transition: all, .5s;
         }
-    &:hover{
-        img {
-            -webkit-transform: scale(1.05);
-            transform: scale(1.05);
-            }
+    .thumb{
+        display: block;
+        background-color: white;
+        position: relative;
+        overflow: hidden;
+        &:hover{
+            img {
+                -webkit-transform: scale(1.05);
+                transform: scale(1.05);
+                }
+        }
+        &::before {
+            content: "";
+        }
     }
-    &::before {
-        content: "";
-    }
+    
 }
 .shadowed{
     display: block;
@@ -42,6 +49,8 @@
     }
     
 }
+
+
 .techs-form{
     background-color: white;
     margin-top: $vspace-3;
