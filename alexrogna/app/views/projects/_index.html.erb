@@ -65,12 +65,12 @@
                         <div class="column large-6">
                             <% if project.github_url? %>
                                 <%= link_to project.github_url, target: :_blank, title: "View on GitHub" do %>
-                                    <i class="fab fa-github" aria-hidden="true"></i>
+                                    <i class="fab fa-github"></i>
                                 <% end %>
                             <% end %>
                             <% if project.docker_url? %>
                                 <%= link_to project.docker_url, target: :_blank, title: "View on DockerHub " do %>
-                                    <i class="fab fa-docker" aria-hidden="true"></i>
+                                    <i class="fab fa-docker"></i>
                                 <% end %>
                             <% end %>
                         </div>
