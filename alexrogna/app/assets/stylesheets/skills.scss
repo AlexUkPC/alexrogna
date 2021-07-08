@@ -17,15 +17,40 @@
             margin: 4px;
             padding: 10px;
             background-color: $color-white;
-            img {
-                display: block;
-                background-color: white;
-                position: relative;
-                overflow: hidden;
-                margin-bottom: 0;
+            .thumb{
+                img {
+                    display: block;
+                    background-color: white;
+                    position: relative;
+                    overflow: hidden;
+                    margin-bottom: 0;
+                    -webkit-transition: all, .5s;
+                    transition: all, .5s;
+                }
+                &:hover {
+                        img {
+                        -webkit-transform: scale(1.05);
+                        transform: scale(1.05);
+                        }
+                }
             }
             .deactivated {
                 color: $color-gray-6;
+            }
+            .skill-item {
+                i{
+                    display: inline-block;
+                    -webkit-transition: all, .35s;
+                    transition: all, .35s ease-in-out;
+                }
+                &:hover {
+                    i{
+                        font-size: larger;
+                    }
+                    .deactivated{
+                        font-size:inherit;
+                    }
+                }
             }
         }
         
