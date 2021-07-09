@@ -50,6 +50,7 @@
                 z-index: 1;
                 content: var(--content)"\00000a ...";
                 white-space: pre;
+                letter-spacing: 2px;
                 font-family: $font-1;
                 font-weight: 300;
                 text-align: center;
@@ -427,4 +428,5 @@
             } 
         }  
     }
+
 }

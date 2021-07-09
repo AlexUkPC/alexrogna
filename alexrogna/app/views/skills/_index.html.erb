@@ -11,9 +11,10 @@
             <div class="skill">
                 <div class="row">
                     <div class="thumb">
-                    <% if skill.logo.attached? %>
-                        <%= image_tag skill.logo, title: skill.name %>
-                    <% end %></div>
+                        <% if skill.logo.attached? %>
+                            <%= image_tag skill.logo, title: skill.name %>
+                        <% end %>
+                    </div>
                 </div>
                 <div class="row collapse">
                     <div class="column skill-item">  

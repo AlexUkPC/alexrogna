@@ -38,6 +38,7 @@
                 color: $color-gray-6;
             }
             .skill-item {
+                flex-basis: 25%;
                 i{
                     display: inline-block;
                     -webkit-transition: all, .35s;
