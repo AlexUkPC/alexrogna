@@ -20,12 +20,12 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   def new
     @project = Project.new
-    @projects = Project.all.order("id DESC")
+    @projects = Project.all.order("order_id DESC")
   end
 
   # GET /projects/1/edit
   def edit
-    @projects = Project.all.order("id DESC")
+    @projects = Project.all.order("order_id DESC")
   end
 
   # POST /projects or /projects.json
@@ -73,6 +73,6 @@ class ProjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def project_params
-      params.require(:project).permit(:name, :description, :url, :github_url, :docker_url, :cover_image, :logo, :main_tech, :project_logo, :hidden, tag_ids: [], tags_attributes:[:name, :_destroy])
+      params.require(:project).permit(:name, :description, :url, :github_url, :docker_url, :cover_image, :logo, :main_tech, :project_logo, :hidden, :order_id, tag_ids: [], tags_attributes:[:name, :_destroy])
     end
 end

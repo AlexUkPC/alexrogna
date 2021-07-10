@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   def index
     @user=User.first
     @social_icons = SocialIcon.all.order("order_id ASC")
-    @projects = Project.where(hidden: false).order("id DESC")
+    @projects = Project.where(hidden: false).order("order_id DESC")
     @skills = Skill.all.order("id ASC")
     @language_skills = LanguageSkill.all.order('created_at ASC')
     @works = Work.all.order('start_date DESC')
