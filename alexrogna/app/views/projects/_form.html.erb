@@ -36,7 +36,7 @@
     <%= form.text_field :docker_url, class: "h-full-width" %>
   </div>
   <h3>Add Tags</h3>
-  <%= form.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |b| %>
+  <%= form.collection_check_boxes(:tag_ids, Tag.all.order("name ASC"), :id, :name) do |b| %>
     <% b.label {b.check_box + b.text } %>
   <% end %>
   <div class="links">

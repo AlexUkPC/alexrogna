@@ -52,7 +52,7 @@
                 </div>
                 <div class="row">
                     <ul class="tag">
-                        <% for tag in project.tags %>
+                        <% for tag in project.tags.order("name ASC") %>
                             <li><%= tag.name %></li>
                         <% end %>
                     </ul>

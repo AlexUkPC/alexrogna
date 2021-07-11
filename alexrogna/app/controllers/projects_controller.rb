@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects or /projects.json
   def index
-    @tags = Tag.all
+    @tags = Tag.all.order("name ASC")
     tag = params[:tag]
     if !tag.nil?
       @projects = Project.joins(:tags).where(tags: {id: tag})
