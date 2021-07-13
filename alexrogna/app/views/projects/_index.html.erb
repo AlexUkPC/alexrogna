@@ -47,15 +47,16 @@
                     <% end %>
                 </div>
                 <div class="row"><h5><%= project.name %></h5></div>
-                <div class="row desc">
-                    <%= project.description %>
-                </div>
+                
                 <div class="row">
                     <ul class="tag">
                         <% for tag in project.tags.order("name ASC") %>
                             <li><%= tag.name %></li>
                         <% end %>
                     </ul>
+                </div>
+                <div class="row desc">
+                    <%= project.description %>
                 </div>
                 <div class="links">
                     <div class="row">
