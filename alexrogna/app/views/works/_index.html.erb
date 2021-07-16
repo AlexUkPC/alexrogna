@@ -13,7 +13,13 @@
                 <%= verbose_date(work.start_date) %> - <%= work.present ? "Present" : verbose_date(work.end_date)%>
             </span>
         </p>
-        <div>Key Responsibilities <br>
+        <div>
+            <% if work.description? %>
+                Description
+            <% else %>
+                Key Responsibilities 
+            <% end %>
+            <br>
             <%= work.key_responsibilities %>
         </div>
         Tools <br>

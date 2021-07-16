@@ -181,7 +181,11 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    Key Responsibilities:
+                                    <% if work.description? %>
+                                        Description:
+                                    <% else %>
+                                        Key Responsibilities:
+                                    <% end %>
                                 </td>
                             </tr>
                             <tr>
