@@ -5,6 +5,7 @@ class CvController < ApplicationController
     @projects = Project.all
     @skills = Skill.all.order("id ASC")
     @language_skills = LanguageSkill.all.order('created_at ASC')
+    @personal_skills = PersonalSkill.all.order("order_id ASC")
     @works = Work.all.order('start_date DESC')
     @teches = Tech.all.order('order_id ASC')
     @educations = Education.all.order('start_date DESC')
@@ -13,7 +14,7 @@ class CvController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: 'CV-AlexRogna', template: '/cv/pdf.html.erb'      # Excluding ".pdf" extension.
+        render pdf: 'CV-AlexRogna', template: '/cv/pdf.html.erb',show_as_html: params.key?('debug')     # Excluding ".pdf" extension.
       end
     end
   end

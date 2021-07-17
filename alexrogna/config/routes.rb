@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :personal_skills
   resources :contact_forms
   resources :educations
   resources :teches

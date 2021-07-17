@@ -1,0 +1,2 @@
+class PersonalSkill < ApplicationRecord
+end

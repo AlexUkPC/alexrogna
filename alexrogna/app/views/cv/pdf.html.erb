@@ -1,5 +1,4 @@
 <div class="cv">
-          
     <div class="nobreak">
         <table class="header">
             <tr>
@@ -155,13 +154,26 @@
                 <td><h2>Personal Skills</h2></td>
 
                 <td>
-                ????
+                    <table>
+                    <% i=0 %>
+                        <tr>
+                            <% @personal_skills.each do |personal_skill| %>
+                                <% if i%3==0 %><% i=0 %>
+                                    </tr><tr>
+                                <% end %>
+                                <td>
+                                <i class="<%= personal_skill.icon %> fa-2x"></i> <br><%= personal_skill.skill %>
+                                </td>
+                                <% i+=1 %>
+                            <% end %>
+                        </tr>
+                    </table>
                 </td>
 
             </tr>
             
         </table>
-        <hr>
+     
 
     </div>
     <div class="alwaysbreak">

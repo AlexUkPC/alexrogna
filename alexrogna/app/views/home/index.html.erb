@@ -1,8 +1,4 @@
 
-<div id="preloader">
-  <div id="loader"></div>
-</div>
-
 <section id="hero" class="s-hero target-section">
   <%= render 'hero', social_icons: @social_icons, user: @user %>
 </section>
@@ -20,6 +16,10 @@
   
   <section id="language_skills" class="s-language_skills target-section">
     <%= render 'language_skills/index' %>
+  </section>
+
+  <section id="personal_skills" class="s-personal_skills target-section">
+    <%= render 'personal_skills/index' %>
   </section>
   
   <section id="work" class="s-work target-section">

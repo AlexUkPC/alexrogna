@@ -1,0 +1,23 @@
+<section class="personal_skills_form">
+  <div class="row">
+    <div class="column large-12 tab-8 mob-12 align-center">
+        <h1>Editing Personal Skill</h1>
+
+        <%= render 'form', personal_skill: @personal_skill %>
+
+        <div class="row">
+          <div class="column">
+            <%= link_to 'Back', root_path + "#personal_skills" %>
+          </div>
+          <div class="column">
+          <% if current_user %>
+            <%= link_to 'New Personal Skill', new_personal_skill_path %>
+          <% end %>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+<section id="personal_skills" class="s-personal_skills target-section">
+  <%= render 'personal_skills/index' %>
+</section>
