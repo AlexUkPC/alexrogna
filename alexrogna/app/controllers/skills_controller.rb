@@ -35,12 +35,12 @@ class SkillsController < ApplicationController
   # GET /skills/new
   def new
     @skill = Skill.new
-    @skills = Skill.all.order("id ASC")
+    @skills = Skill.all.order("order_id ASC")
   end
 
   # GET /skills/1/edit
   def edit
-    @skills = Skill.all.order("id ASC")
+    @skills = Skill.all.order("order_id ASC")
   end
 
   # POST /skills or /skills.json
@@ -88,6 +88,6 @@ class SkillsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def skill_params
-      params.require(:skill).permit(:name, :logo, book_ids: [], books_attributes:[:title, :subtitle, :author, :publisher, :dop, :resources_link, :github_link, :cover, :_destroy], linkedin_ids: [], linkedins_attributes:[:badge_name, :badge, :_destroy], free_code_camp_ids: [], free_code_camps_attributes:[:cerificate_name, :url, :certificate, :_destroy], hacker_rank_ids: [], hacker_ranks_attributes:[:cerificate_name, :is_badge, :url, :badgeorcertificate, :_destroy] )
+      params.require(:skill).permit(:name, :logo, :order_id, book_ids: [], books_attributes:[:title, :subtitle, :author, :publisher, :dop, :resources_link, :github_link, :cover, :_destroy], linkedin_ids: [], linkedins_attributes:[:badge_name, :badge, :_destroy], free_code_camp_ids: [], free_code_camps_attributes:[:cerificate_name, :url, :certificate, :_destroy], hacker_rank_ids: [], hacker_ranks_attributes:[:cerificate_name, :is_badge, :url, :badgeorcertificate, :_destroy] )
     end
 end

@@ -24,6 +24,10 @@
     <hr>
   </div>
   <div class="field">
+    <%= form.label :order_id %>
+    <%= form.number_field :order_id, class: "h-full-width" %>
+  </div>
+  <div class="field">
     <h3>Add Linkedin</h3>
     <%= form.collection_check_boxes(:linkedin_ids, Linkedin.all, :id, :badge_name) do |b| %>
       <% b.label {b.check_box + b.text } %>
