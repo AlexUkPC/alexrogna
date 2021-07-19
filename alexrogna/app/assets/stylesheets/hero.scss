@@ -200,8 +200,10 @@
     .content {
         -webkit-animation-name: fadeInUp;
         animation-name: fadeInUp;
-        -webkit-animation-duration: 3s;
-        animation-duration: 3s;
+        -webkit-animation-delay: 2s;
+        animation-delay: 2s;
+        -webkit-animation-duration: 5s;
+        animation-duration: 5s;
         -webkit-animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
         animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
         -webkit-animation-fill-mode: both;

@@ -18,6 +18,9 @@
     .img{
         margin-bottom: 0;
     }
+    .badge-title{
+        text-anchor: middle;
+    }
 }
 .hacker_ranks{
     background-color: white;
@@ -28,7 +31,7 @@
             display: inline-block;
             color: black;
         }
-        input[type="text"]:focus{
+        input[type="text"]:focus, textarea:focus{
             color: black;
         }
         img{

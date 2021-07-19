@@ -26,11 +26,8 @@
     <%= form.text_field :url, class: "h-full-width" %>
   </div>
   <div class="field">
-    <%= form.label "Badge or Certificate" %>
-    <% if hacker_rank.badgeorcertificate.attached? %>
-      <%= image_tag hacker_rank.badgeorcertificate.variant(resize_to_limit: local_assigns.fetch(:badgeorcertificate_options, [200, 200])) %>
-    <% end %>
-    <%= form.file_field :badgeorcertificate %>
+    <%= form.label "Badge or certificate (on hackerrank->right click->inspect->copy all svg tag here)" %>
+    <%= form.text_area :badgeorcertificate, class: "h-full-width" %>
   </div>
 
   <div class="field">

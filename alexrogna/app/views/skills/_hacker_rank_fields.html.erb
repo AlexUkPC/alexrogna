@@ -12,8 +12,8 @@
         <%= f.text_field :url, class: "h-full-width" %>
     </div>
     <div class="field">
-        <%= f.label :badgeorcertificate, class: "h-full-width" %>
-        <%= f.file_field :badgeorcertificate %>
+        <%= f.label "Badge or certificate (on hackerrank->right click->inspect->copy all svg tag here)", class: "h-full-width" %>
+        <%= f.text_area :badgeorcertificate, class: "h-full-width" %>
     </div>
     <%= link_to_remove_association "Remove Hacker Rank", f %>
 </div>

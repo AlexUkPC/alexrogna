@@ -66,10 +66,14 @@
                 </div>
             </div>
             <div id="modal-<%= skill.id %>-hacker_ranks" hidden>
-                <div class="row modal-popup-skills-hr">
-                    <div class="column large-12"><h3><i class="far fa-file"></i> Verified Skills</h3></div>
-                    
-                    <%= render skill.hacker_ranks.order("is_badge ASC") %>
+                <% if skill.hacker_ranks.count{ |hacker_rank| hacker_rank.is_badge? } > 0 %>
+                    <div class="row modal-popup-skills-hr">
+                        <div class="column large-12"><h3><i class="far fa-id-badge"></i> Badges</h3></div>
+                <% else %>
+                    <div>
+                <% end %>
+                    <% @badge=true %>
+                    <%= render skill.hacker_ranks.order("is_badge DESC") %>
                     <a href="https://www.hackerrank.com/vlad_rogna?hr_r=1" class="btn btn--primary btn--small h-pull-right" target="_blank">View on HackerRank</a>
                 </div>
                 
