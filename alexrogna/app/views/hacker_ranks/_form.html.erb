@@ -26,7 +26,9 @@
     <%= form.text_field :url, class: "h-full-width" %>
   </div>
   <div class="field">
-    <%= form.label "Badge or certificate (on hackerrank->right click->inspect->copy all svg tag here)" %>
+    <%= form.label :badgeorcertificate do %>
+    Badge or certificate (on <a href="https://www.hackerrank.com/vlad_rogna" target="_blank">HackerRank</a>->right click->inspect->right click->Edit as SVG->copy all svg tag here) 
+    <% end %>
     <%= form.text_area :badgeorcertificate, class: "h-full-width" %>
   </div>
 

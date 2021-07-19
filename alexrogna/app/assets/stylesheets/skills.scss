@@ -40,16 +40,17 @@
             .skill-item {
                 flex-basis: 25%;
                 i{
+                    font-size: larger;
                     display: inline-block;
                     -webkit-transition: all, .35s;
                     transition: all, .35s ease-in-out;
                 }
                 &:hover {
                     i{
-                        font-size: larger;
+                        font-size: x-large;
                     }
                     .deactivated{
-                        font-size:inherit;
+                        font-size: larger;
                     }
                 }
             }
