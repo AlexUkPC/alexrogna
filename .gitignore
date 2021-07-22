@@ -1,5 +1,5 @@
 .env/
 old_cv/
-images/
+**/images/icons/
 old/
 Resources/
