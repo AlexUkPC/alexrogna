@@ -3,11 +3,21 @@
         <% if user.profile_image.attached? %>
             <%= image_tag user.profile_image.variant(resize_to_limit: local_assigns.fetch(:profile_image_options, [200, 200])), class:"pic" %>
         <% end %>
+        <% if current_user %>
+            <%= link_to settings_user_path + "#profile_image", title: "Change Profile Image" do %> 
+                <i class="fal fa-pen" aria-hidden="true"></i>
+            <% end %>
+        <% end %>
     </div>
     <div class="column large-9 tab-12">
         <h3>About Me</h3>
         <p>
         <%= user.long_description %>
+        <% if current_user %>
+            <%= link_to settings_user_path + "#long_description", title: "Change Long Description" do %> 
+                <i class="fal fa-pen" aria-hidden="true"></i>
+            <% end %>
+        <% end %>
         </p>
 
         <hr>
@@ -17,11 +27,52 @@
                 <h3>Contact Details</h3>
 
                 <p>
-                <%= user.name %> <br>
-                <%= user.street_number %> <%= user.street_name %> <br>
-                <%= user.city %>, <%= user.post_code %> <br>
-                <a href="tel:<%= user.phone %>" title="Call me"><%= user.phone %></a> <br>
+                <%= user.name %>  
+                <% if current_user %>
+                    <%= link_to settings_user_path + "#name", title: "Change Name" do %> 
+                        <i class="fal fa-pen" aria-hidden="true"></i>
+                    <% end %>
+                <% end %>
+                <br>
+                <%= user.street_number %> 
+                <% if current_user %>
+                    <%= link_to settings_user_path + "#street_number", title: "Change Street Number" do %> 
+                        <i class="fal fa-pen" aria-hidden="true"></i>
+                    <% end %>
+                <% end %> 
+                <%= user.street_name %> 
+                <% if current_user %>
+                    <%= link_to settings_user_path + "#street_name", title: "Change Street Name" do %> 
+                        <i class="fal fa-pen" aria-hidden="true"></i>
+                    <% end %>
+                <% end %> 
+                <br>
+                <%= user.city %> 
+                <% if current_user %>
+                    <%= link_to settings_user_path + "#city", title: "Change City" do %> 
+                        <i class="fal fa-pen" aria-hidden="true"></i>
+                    <% end %>
+                <% end %>, 
+                <%= user.post_code %>
+                <% if current_user %>
+                    <%= link_to settings_user_path + "#post_code", title: "Change Postcode" do %> 
+                        <i class="fal fa-pen" aria-hidden="true"></i>
+                    <% end %>
+                <% end %>
+                <br>
+                <a href="tel:<%= user.phone %>" title="Call me"><%= user.phone %></a>
+                <% if current_user %>
+                    <%= link_to settings_user_path + "#phone", title: "Change Phone" do %> 
+                        <i class="fal fa-pen" aria-hidden="true"></i>
+                    <% end %>
+                <% end %>
+                <br>
                 <a class="mailtoui" href="mailto:<%= user.email %>" title="Email me"><%= user.email %></a>
+                <% if current_user %>
+                    <%= link_to settings_user_path + "#email", title: "Change Email" do %> 
+                        <i class="fal fa-pen" aria-hidden="true"></i>
+                    <% end %>
+                <% end %>
                 </p>
             </div>
             <div class="column w-1000-stack">

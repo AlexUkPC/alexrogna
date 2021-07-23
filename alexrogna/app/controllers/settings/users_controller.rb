@@ -11,7 +11,7 @@ class Settings::UsersController < ApplicationController
       if current_user.save
         flash[:notice] = "Profile's settings updated"
       else 
-        flash[:alert] = "Unablet to update the profile settings"
+        flash[:alert] = "Unable to update the profile settings"
       end
     
 

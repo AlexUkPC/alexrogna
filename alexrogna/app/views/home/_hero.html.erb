@@ -1,14 +1,33 @@
 <div class="bg rellax" data-rellax-speed="-7" style="--background: url(<% if @user.cover_image.attached? %>
         <%=rails_blob_url(@user.cover_image) %>
     <% end %>);">
+    <% if current_user %>
+        <div class="edit">
+            <%= link_to settings_user_path + "#cover_image", title: "Change Cover Image" do %> 
+                <i class="fal fa-pen" aria-hidden="true"></i>
+            <% end %>
+        </div>
+    <% end %>
 </div>
 
 <div class="row content">
     <div class="column">
-        <h1><%= user.salute %></h1>
+        <h1>
+            <%= user.salute %>
+            <% if current_user %>
+                <%= link_to settings_user_path + "#salute", title: "Change Salute" do %> 
+                    <i class="fal fa-pen" aria-hidden="true"></i>
+                <% end %>
+            <% end %>
+        </h1>
 
         <h3>
             <%= user.short_description %>
+            <% if current_user %>
+                <%= link_to settings_user_path + "#short_description", title: "Change Short Description" do %> 
+                    <i class="fal fa-pen fa-xs" aria-hidden="true"></i>
+                <% end %>
+            <% end %>
         </h3>
         <div class="social">
             <%= render 'social_icons', social_icons: social_icons %>

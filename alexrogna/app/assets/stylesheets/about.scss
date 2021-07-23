@@ -21,15 +21,24 @@
             color: $color-error-content;
         }
     }
+    a {
+        color: rgba(255, 255, 255, 0.4);
+        &:hover, 
+        &:focus {
+            color: white;
+        }
+    }
+    i {
+        color: white;
+        &:hover, 
+        &:focus {
+            color: $color-2;
+            transition: all 0.3s ease-in-out;
+        }
+    }
     .content-bottom {
         margin-top: $vspace-2;
-        a {
-            color: rgba(255, 255, 255, 0.4);
-            &:hover, 
-            &:focus {
-                color: white;
-            }
-        }
+        
         
         .btn--about {
             background-color: white;
