@@ -107,15 +107,21 @@
             font-size: 2.6rem;
             line-height: 1;
             margin-top: $vspace-0_5;
-            a {
-                color: white;
+            .icon{
                 margin-right: $vspace-0_75;
-                &:hover, 
-                &:focus {
-                    color: $color-2;
+                a {
+                    color: white;
+                    &:hover, 
+                    &:focus {
+                        color: $color-2;
+                    }
                 }
                 &:last-child {
                     margin-right: 0;
+                }
+                .controls{
+                    font-size: 2.6rem;
+                    margin-bottom: 20px;
                 }
             }
         }

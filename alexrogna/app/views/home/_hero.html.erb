@@ -13,6 +13,11 @@
         <div class="social">
             <%= render 'social_icons', social_icons: social_icons %>
         </div>
+        <div class="add-new">
+            <% if current_user %>
+                <%= link_to new_social_icon_path, title: "Add new" do %><i class="fal fa-plus-circle fa-lg" ></i><% end %>
+            <% end %>
+        </div>
     </div>
 </div> 
 
