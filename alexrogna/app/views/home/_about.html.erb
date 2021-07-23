@@ -23,9 +23,6 @@
                 <a href="tel:<%= user.phone %>" title="Call me"><%= user.phone %></a> <br>
                 <a class="mailtoui" href="mailto:<%= user.email %>" title="Email me"><%= user.email %></a>
                 </p>
-                <% if current_user %>
-                    <p><%= link_to "settings", settings_user_path %></p>
-                <% end %>
             </div>
             <div class="column w-1000-stack">
                 <%= link_to cv_path(format: :pdf), method: :get, target: :_blank, class:"btn btn--about h-full-width", title: "Download my CV" do %>

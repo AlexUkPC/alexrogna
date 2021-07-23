@@ -13,17 +13,52 @@
                 <li><a class="smoothscroll" href="#education">Education</a></li>
                 <li><a class="smoothscroll" href="#contact">Contact</a></li>
                 <% if current_user %>
-                    <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+                    <li class="admin-controls">
+                        <%= link_to settings_user_path, title: "Change Settings" do %> 
+                            <i class="fal fa-cog" aria-hidden="true"></i>
+                        <% end %>
+                    </li>
+                    <li class="admin-controls">
+                        <%= link_to contact_forms_path, title: "Contact Forms" do %> 
+                            <i class="fal fa-file-contract" aria-hidden="true"></i>
+                        <% end %>
+                    </li>
+                    <li class="admin-controls">
+                        <%= link_to destroy_user_session_path, title: "Log out", method: :delete do%>
+                            <i class="fal fa-sign-out-alt" aria-hidden="true"></i> 
+                        <% end %>
+                    </li>
                 <% else %>
-                    <li><%= link_to "Log in", new_user_session_path %></li>
+                    <li>
+                        <%= link_to new_user_session_path, title: "Log in" do%>
+                            <i class="fal fa-sign-in-alt" aria-hidden="true"></i> 
+                        <% end %>
+                    </li>
                 <% end %>
-                <% elsif controller_path =="cv" %>
                 <% else %>
                 <li><%= link_to "Home", root_path %></li>
                 <% if current_user %>
-                    <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+                    <li class="admin-controls">
+                        <%= link_to settings_user_path, title: "Change Settings" do %> 
+                            <i class="fal fa-cog" aria-hidden="true"></i>
+                        <% end %>
+                    </li>
+                    <li class="admin-controls">
+                        <%= link_to contact_forms_path, title: "Contact Forms" do %> 
+                            <i class="fal fa-file-contract" aria-hidden="true"></i>
+                        <% end %>
+                    </li>
+                    <li class="admin-controls">
+                        <%= link_to destroy_user_session_path, title: "Log out", method: :delete do%>
+                            <i class="fal fa-sign-out-alt" aria-hidden="true"></i> 
+                        <% end %>
+                    </li>
                 <% else %>
-                    <li><%= link_to "Log in", new_user_session_path %></li>
+                    <li>
+                        <%= link_to new_user_session_path, title: "Log in" do%>
+                            <i class="fal fa-sign-in-alt" aria-hidden="true"></i> 
+                        <% end %>
+                    </li>
                 <% end %>
             <% end %>
             

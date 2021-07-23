@@ -63,17 +63,21 @@
             padding: 0;
             margin: 0;
             position: relative;
+            &.admin-controls a{
+                padding: 0 0.2rem;
+            }
         }
     }
     a {
         display: block;
         height: $header-height;
         line-height: $header-height;
-        padding: 0 1.6rem;
+        padding: 0 1.4rem;
         color: rgba(255, 255, 255, 0.5);
         &:hover, &:focus {
             color: white;
         }
+        
     }
     .current {
         a {
