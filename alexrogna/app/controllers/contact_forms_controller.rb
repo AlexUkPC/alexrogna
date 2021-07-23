@@ -32,7 +32,7 @@ class ContactFormsController < ApplicationController
               NotifierMailer.email_me(@user, @contact_form).deliver_later
               
           else
-              format.html { redirect_to root_path, notice: 'Unable to send message'  }
+              format.html { redirect_to root_path, notice: 'Unable to send message' }
               format.js { render :fail }
           end
         
@@ -42,12 +42,11 @@ class ContactFormsController < ApplicationController
   # PATCH/PUT /contact_forms/1 or /contact_forms/1.json
   def update
     respond_to do |format|
-      if @contact_form.update(contact_form_params)
+      if verify_recaptcha(model: @contact_form) && @contact_form.update(contact_form_params) && @contact_form.confirm_email==""
         format.html { redirect_to @contact_form, notice: "Contact form was successfully updated." }
-        format.json { render :show, status: :ok, location: @contact_form }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @contact_form.errors, status: :unprocessable_entity }
+        format.js { render :fail }
       end
     end
   end
@@ -57,7 +56,6 @@ class ContactFormsController < ApplicationController
     @contact_form.destroy
     respond_to do |format|
       format.html { redirect_to contact_forms_url, notice: "Contact form was successfully destroyed." }
-      format.json { head :no_content }
     end
   end
 

@@ -1,6 +1,14 @@
-<h1>Editing Contact Form</h1>
-
-<%= render 'form', contact_form: @contact_form %>
-
-<%= link_to 'Show', @contact_form %> |
-<%= link_to 'Back', contact_forms_path %>
+<section class="contact_forms">
+  <div class="row">
+    <h1>Editing Contact Form</h1>
+  </div>
+  <div class="row">
+    <div class="column large-12 tab-8 mob-12 align-center">
+      <%= render 'form', contact_form: @contact_form %>
+    </div>
+  </div>
+  <div class="row">
+    <%= link_to 'Show', @contact_form %> |
+    <%= link_to 'Back', contact_forms_path %>
+  </div>
+</section>

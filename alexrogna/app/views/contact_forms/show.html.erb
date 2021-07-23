@@ -1,24 +1,30 @@
-<p id="notice"><%= notice %></p>
+<section class="contact_forms">
+  <div class="row">
+    <div class="column">
+      <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @contact_form.name %>
-</p>
+      <p>
+        <strong>Name:</strong>
+        <%= @contact_form.name %>
+      </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @contact_form.email %>
-</p>
+      <p>
+        <strong>Email:</strong>
+        <%= @contact_form.email %>
+      </p>
 
-<p>
-  <strong>Subject:</strong>
-  <%= @contact_form.subject %>
-</p>
+      <p>
+        <strong>Subject:</strong>
+        <%= @contact_form.subject %>
+      </p>
 
-<p>
-  <strong>Message:</strong>
-  <%= @contact_form.message %>
-</p>
+      <p>
+        <strong>Message:</strong>
+        <%= @contact_form.message %>
+      </p>
 
-<%= link_to 'Edit', edit_contact_form_path(@contact_form) %> |
-<%= link_to 'Back', contact_forms_path %>
+      <%= link_to 'Edit', edit_contact_form_path(@contact_form) %> |
+      <%= link_to 'Back', contact_forms_path %>
+    </div>
+  </div>
+</section>

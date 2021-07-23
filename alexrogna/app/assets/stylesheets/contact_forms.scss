@@ -67,7 +67,31 @@
         }     
     }
 }
-
+.contact_forms{
+    background-color: white;
+    margin-top: $vspace-3;
+    padding-bottom: $vspace-1;
+    form{
+        label{
+            display: inline-block;
+            color: black;
+        }
+        input[type="text"]:focus, textarea:focus{
+            color: black;
+        }
+        img{
+            display: block;
+            margin-bottom: 0;
+            height: 150px;
+            width: auto;
+        }
+        label>input[type="checkbox"]{
+            margin-right: 5px;
+            margin-left: 20px;
+            top: 0;
+        }
+    }
+}
 /* responsive: contact */
 @media screen and (max-width: 1200px) {
     .s-contact {
