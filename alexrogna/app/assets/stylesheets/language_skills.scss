@@ -43,6 +43,25 @@
                 border-radius: 4px;
                 padding: 1em;
                 animation: fill-progress-bar 2s ease;
+            } 
+        }
+        .controls{
+            a {
+                color: black;
+                margin-left: 0.5vw;
+                &:hover,
+                &:focus{
+                    color: $color-2;
+                    transition: all 0.3s ease-in-out;
+                }    
+            }
+            .red{ 
+                
+                &:hover,
+                &:focus{
+                    color: red;
+                    transition: all 0.3s ease-in-out;
+                }
             }
         }
     }

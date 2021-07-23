@@ -55,7 +55,31 @@
                 }
             }
         }
-        
+        .controls{
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            a {
+                color: black;
+                margin-right: 0.5vw;
+                &:hover,
+                &:focus{
+                    color: $color-2;
+                    transition: all 0.3s ease-in-out;
+                }    
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
+            .red{ 
+                
+                &:hover,
+                &:focus{
+                    color: red;
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+        }
     }
     footer {
         border-bottom: 1px solid $color-border;

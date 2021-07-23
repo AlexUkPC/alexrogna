@@ -84,18 +84,20 @@
                 </div>
             </div>
             <% if current_user %>
-                <%= link_to edit_skill_path(skill), title: "Edit" do %>
-                    <i class="fas fa-pen fa-xs" aria-hidden="true"></i>
-                <% end %>
-                <%= link_to skill, method: :delete, data: { confirm: 'Are you sure?' }, title: "Delete" do %>
-                    <i class="fas fa-times-circle fa-xs" style="color:red"></i>
-                <% end %>
+                <div class="controls">
+                    <%= link_to edit_skill_path(skill), title: "Edit" do %>
+                        <i class="fal fa-pen fa-xs" aria-hidden="true"></i>
+                    <% end %>
+                    <%= link_to skill, method: :delete, data: { confirm: 'Are you sure?' }, title: "Delete" do %>
+                        <i class="fal fa-trash-alt fa-xs red"></i>
+                    <% end %>
+                </div>
             <% end %>
         </div>
     <% end %>
-    <div class="row">
+    <div class="row h-add-half-top">
         <% if current_user %>
-            <%= link_to new_skill_path, title: "Add new" do %><i class="fas fa-plus fa-lg" ></i><% end %>
+            <%= link_to new_skill_path, title: "Add new" do %><i class="fal fa-plus-circle fa-lg" ></i><% end %>
         <% end %>
     </div>
 </main>

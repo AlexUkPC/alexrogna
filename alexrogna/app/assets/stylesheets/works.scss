@@ -18,6 +18,7 @@
                 line-height: 1.080;
                 margin-top: 0;
                 margin-bottom: $vspace-0_25;
+                display: inline-block;
             }
             .header-meta {
                 font-family: $font-2;
@@ -47,6 +48,34 @@
             .techs {
                 img {
                     margin-bottom: 0;
+                }
+            }
+            .controls{
+                display: inline-block;
+                margin-top: -$vspace-1;
+                a {
+                    color: black;
+                    margin-left: 0.5vw;
+                    &:hover,
+                    &:focus{
+                        color: $color-2;
+                        transition: all 0.3s ease-in-out;
+                    }    
+                    i{
+                        &:hover,
+                        &:focus{
+                            color: $color-2;
+                            transition: all 0.3s ease-in-out;
+                        }    
+                    }
+                }
+                .red{ 
+                    
+                    &:hover,
+                    &:focus{
+                        color: red;
+                        transition: all 0.3s ease-in-out;
+                    }
                 }
             }
         }

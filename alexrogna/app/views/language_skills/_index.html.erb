@@ -9,26 +9,33 @@
     <% @language_skills.each do |language_skill| %>
       <div class="row">
         <div class="column large-3 mob-4">
-          <p><%= language_skill.language %></p>
+          <p class="controls">
+            <%= language_skill.language %>
+            <% if current_user %>
+              
+                <%= link_to edit_language_skill_path(language_skill), title: "Edit" do %>
+                    <i class="fal fa-pen" aria-hidden="true"></i>
+                <% end %>
+                <%= link_to language_skill, method: :delete, data: { confirm: 'Are you sure?' }, title: "Delete" do %>
+                    <i class="fal fa-trash-alt red" ></i>
+                <% end %>
+              
+            <% end %>
+          </p>
         </div>
         <div class="column large-8 mob-8">
           <% if language_skill.is_native %>
             <p>Native language</p>
           <% else %>
-            <%= link_to language_skill.certificate_url, target: :_blank, title: "View online" do %> 
-              <p>View <%= language_skill.certificate_name %></p>
-            <%end %>
+            <p>
+              <%= link_to language_skill.certificate_url, target: :_blank, title: "View online" do %> 
+                View <%= language_skill.certificate_name %>
+              <%end %>
+            </p>
           <%end %>
         </div>
         <div class="column large-1">
-          <% if current_user %>
-              <%= link_to edit_language_skill_path(language_skill), title: "Edit" do %>
-                  <i class="fas fa-pen fa-xs" aria-hidden="true"></i>
-              <% end %>
-              <%= link_to language_skill, method: :delete, data: { confirm: 'Are you sure?' }, title: "Delete" do %>
-                  <i class="fas fa-times-circle fa-xs" style="color:red"></i>
-              <% end %>
-          <% end %>
+         
         </div>
       </div>
       <div class="row">
@@ -38,7 +45,7 @@
   </div>
   <div class="row">
     <% if current_user %>
-      <%= link_to new_language_skill_path, title: "Add new" do %><i class="fas fa-plus fa-lg" ></i><% end %>
+      <%= link_to new_language_skill_path, title: "Add new" do %><i class="fal fa-plus-circle fa-lg" ></i><% end %>
     <% end %>
   </div>
 </main>

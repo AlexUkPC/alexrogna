@@ -5,9 +5,6 @@
     padding-bottom: $vspace-2_5;
     header {
         text-align: center;
-        h3 {
-            margin-top: 0;
-        }
     }
     .personal_skills {
         margin-bottom: $vspace-1_75;
@@ -15,6 +12,33 @@
             margin-top: $vspace-1;
             i {
                 color: $color-gray-13;
+            }
+        }
+        .controls{
+            margin-top: -$vspace-1;
+            a {
+                color: black;
+                margin-left: 0.5vw;
+                &:hover,
+                &:focus{
+                    color: $color-2;
+                    transition: all 0.3s ease-in-out;
+                }    
+                i{
+                    &:hover,
+                    &:focus{
+                        color: $color-2;
+                        transition: all 0.3s ease-in-out;
+                    }    
+                }
+            }
+            .red{ 
+                
+                &:hover,
+                &:focus{
+                    color: red;
+                    transition: all 0.3s ease-in-out;
+                }
             }
         }
     }

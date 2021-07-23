@@ -92,9 +92,40 @@
                 transform: scale(1.05);
                 }
             }
-        }
-        
+        } 
     }
+    .item {
+        .controls{
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            a {
+                color: black;
+                &:hover,
+                &:focus{
+                    color: $color-2;
+                    transition: all 0.3s ease-in-out;
+                }    
+            }
+            i, a{
+                margin-right: 0.5vw;
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
+            .red{ 
+                
+                &:hover,
+                &:focus{
+                    color: red;
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+        }
+    }
+}
+.add-new{
+    text-align: center;
 }
 /* ## modal popup */
 .modal-popup {

@@ -872,7 +872,9 @@
  .h-remove-bottom {
      margin-bottom: 0;
  }
- 
+ .h-add-half-top {
+    margin-top: $vspace-0_5 !important;
+ }
  .h-add-half-bottom {
      margin-bottom: $vspace-0_5 !important;
  }
