@@ -6,8 +6,12 @@
                 <%= link_to edit_hacker_rank_path(hacker_rank), title: "Edit" do %>
                     <i class="fal fa-pen fa-xs" aria-hidden="true"></i>
                 <% end %>
-                <%= link_to hacker_rank, method: :delete, data: { confirm: 'Are you sure?' }, title: "Delete" do %>
-                    <i class="fal fa-trash-alt fa-xs red"></i>
+                <% if is_admin(current_user) %>
+                    <%= link_to hacker_rank, method: :delete, data: { confirm: 'Are you sure?' }, title: "Delete" do %>
+                        <i class="fal fa-trash-alt fa-xs red"></i>
+                    <% end %>
+                <% else %>
+                    <a onClick="alert('You are not an admin!')" title="Delete"><i class="fal fa-trash-alt fa-xs red"></i></a>
                 <% end %>
             </div>
         <% end %>
@@ -26,8 +30,12 @@
                 <%= link_to edit_hacker_rank_path(hacker_rank), title: "Edit" do %>
                     <i class="fal fa-pen fa-xs" aria-hidden="true"></i>
                 <% end %>
-                <%= link_to hacker_rank, method: :delete, data: { confirm: 'Are you sure?' }, title: "Delete" do %>
-                    <i class="fal fa-trash-alt fa-xs red"></i>
+                <% if is_admin(current_user) %>
+                    <%= link_to hacker_rank, method: :delete, data: { confirm: 'Are you sure?' }, title: "Delete" do %>
+                        <i class="fal fa-trash-alt fa-xs red"></i>
+                    <% end %>
+                <% else %>
+                    <a onClick="alert('You are not an admin!')" title="Delete"><i class="fal fa-trash-alt fa-xs red"></i></a>
                 <% end %>
             </div>
         <% end %>

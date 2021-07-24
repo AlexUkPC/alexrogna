@@ -13,8 +13,12 @@
                 <%= link_to edit_work_path(work), title: "Edit" do %>
                     <i class="fal fa-pen" aria-hidden="true"></i>
                 <% end %>
-                <%= link_to work, method: :delete, data: { confirm: 'Are you sure?' }, title: "Delete" do %>
-                    <i class="fal fa-trash-alt red"></i>
+                <% if is_admin(current_user) %>
+                    <%= link_to work, method: :delete, data: { confirm: 'Are you sure?' }, title: "Delete" do %>
+                        <i class="fal fa-trash-alt red"></i>
+                    <% end %>
+                <% else %>
+                    <a onClick="alert('You are not an admin!')" title="Delete"><i class="fal fa-trash-alt red"></i></a>
                 <% end %>
             </div>
         <% end %>
@@ -50,8 +54,12 @@
                             <%= link_to edit_tech_path(tech), title: "Edit" do %>
                                 <i class="fal fa-pen" aria-hidden="true"></i>
                             <% end %>
-                            <%= link_to tech, method: :delete, data: { confirm: 'Are you sure?' }, title: "Delete" do %>
-                                <i class="fal fa-trash-alt red"></i>
+                            <% if is_admin(current_user) %>
+                                <%= link_to tech, method: :delete, data: { confirm: 'Are you sure?' }, title: "Delete" do %>
+                                    <i class="fal fa-trash-alt red"></i>
+                                <% end %>
+                            <% else %>
+                                <a onClick="alert('You are not an admin!')" title="Delete"><i class="fal fa-trash-alt red"></i></a>
                             <% end %>
                         </div>
                     <% end %>

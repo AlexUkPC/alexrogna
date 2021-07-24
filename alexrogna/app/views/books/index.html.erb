@@ -39,7 +39,13 @@
                 <%= link_to skill.name, edit_skill_path(skill.id) %> <br>
             <% end %></td>
             <td><%= link_to 'Edit', edit_book_path(book) %></td>
-            <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td>
+              <% if is_admin(current_user) %>
+                <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <% else %>
+                <a onClick="alert('You are not an admin!')">Destroy</a>
+              <% end %>
+            </td>
           </tr>
         <% end %>
       </tbody>

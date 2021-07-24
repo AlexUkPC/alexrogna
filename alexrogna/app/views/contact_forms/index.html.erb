@@ -24,7 +24,13 @@
             <td><%= contact_form.message %></td>
             <td><%= link_to 'Show', contact_form %></td>
             <td><%= link_to 'Edit', edit_contact_form_path(contact_form) %></td>
-            <td><%= link_to 'Destroy', contact_form, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td>
+              <% if is_admin(current_user) %>
+                <%= link_to 'Destroy', contact_form, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <% else %>
+                <a onClick="alert('You are not an admin!')">Destroy</a>
+              <% end %>
+            </td>
           </tr>
         <% end %>
       </tbody>
