@@ -10,6 +10,37 @@
         margin-bottom: 0;
         padding: 20px;
     }  
+    .badge{
+        position: relative;
+    }
+    .controls{
+        font-size: 2rem;
+        margin-left: 0.5vw;
+        text-align: center;
+        position: absolute;
+        top: 25%;
+        right: 10%;
+        a {
+            color: black;
+            margin-right: 0.5vw;
+            &:hover,
+            &:focus{
+                color: $color-2;
+                transition: all 0.3s ease-in-out;
+            }    
+            &:last-child{
+                margin-right: 0;
+            }
+        }
+        .red{ 
+            
+            &:hover,
+            &:focus{
+                color: red;
+                transition: all 0.3s ease-in-out;
+            }
+        }
+    }
 }
 .free_code_camps{
     background-color: white;

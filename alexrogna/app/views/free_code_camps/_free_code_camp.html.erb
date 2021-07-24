@@ -1,17 +1,19 @@
 <div class="column align-center">
-    <% if free_code_camp.certificate.attached? %>
-        <%= link_to free_code_camp.url, target: :_blank do %> 
-            <%= image_tag free_code_camp.certificate %>
+    <div class="badge">
+        <% if free_code_camp.certificate.attached? %>
+            <%= link_to free_code_camp.url, target: :_blank do %> 
+                <%= image_tag free_code_camp.certificate %>
+            <% end %>
         <% end %>
-    <% end %>
-    <div>
         <% if current_user %>
-            <%= link_to edit_free_code_camp_path(free_code_camp), title: "Edit" do %>
-                <i class="fas fa-pen fa-xs" aria-hidden="true"></i>
-            <% end %>
-            <%= link_to free_code_camp, method: :delete, data: { confirm: 'Are you sure?' }, title: "Delete" do %>
-                <i class="fas fa-times-circle fa-xs" style="color:red"></i>
-            <% end %>
+            <div class="controls">
+                <%= link_to edit_free_code_camp_path(free_code_camp), title: "Edit" do %>
+                    <i class="fal fa-pen fa-xs" aria-hidden="true"></i>
+                <% end %>
+                <%= link_to free_code_camp, method: :delete, data: { confirm: 'Are you sure?' }, title: "Delete" do %>
+                    <i class="fal fa-trash-alt fa-xs red"></i>
+                <% end %>
+            </div>
         <% end %>
     </div>
 </div>
