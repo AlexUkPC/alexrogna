@@ -79,6 +79,16 @@
                 }
             }
         }
+        .education-place .row .controls{
+            width: 100%;
+            text-align: center;
+            a {
+                font-size: 1.3rem;
+                &:first-child{
+                    margin-left: 0;
+                }
+            }
+        }
     }
 }
 .education_form{
