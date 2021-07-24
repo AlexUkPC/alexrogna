@@ -37,7 +37,11 @@
   </div>
   
   <div class="actions">
-    <%= form.submit 'Send', class:"btn btn--stroke h-full-width" %>
+    <% if controller_path =="home" %>
+      <%= form.submit 'Send', class:"btn btn--stroke h-full-width" %>
+    <% else %>
+      <%= form.submit 'Send', class:"btn btn--stroke h-full-width", disabled: !is_admin(current_user) %>
+    <% end %>
   </div>
   
 <% end %>
