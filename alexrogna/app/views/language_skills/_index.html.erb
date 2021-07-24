@@ -26,7 +26,7 @@
         <div class="column large-8 mob-8">
           <% if language_skill.is_native %>
             <p>Native language</p>
-          <% else %>
+          <% elsif language_skill.certificate_url != "" %>
             <p>
               <%= link_to language_skill.certificate_url, target: :_blank, title: "View online" do %> 
                 View <%= language_skill.certificate_name %>
