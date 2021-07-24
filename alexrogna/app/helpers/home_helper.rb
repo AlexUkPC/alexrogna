@@ -1,7 +1,7 @@
 module HomeHelper
   def procent(skill)
     # total projects, books, linkedin badges, hacker rank certificate and badges, free code camp certificate work places and education places
-     total = @projects.count + Book.all.count + Linkedin.all.count + HackerRank.all.count + FreeCodeCamp.all.count + @works.count + @educations.count
+     total = @projects.count + @works.count + @educations.count
     #37
      found_in_projects=found_in_work_places=found_in_education_places=0 
      # how many times is found the skill by name in projects

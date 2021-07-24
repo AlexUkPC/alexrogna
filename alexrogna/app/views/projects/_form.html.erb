@@ -76,6 +76,6 @@
     <%= form.number_field :order_id %>
   </div>
   <div class="actions">
-    <%= form.submit class: "btn btn--submit h-full-width" %>
+    <%= form.submit class: "btn btn--submit h-full-width", disabled: !is_admin(current_user) %>
   </div>
 <% end %>

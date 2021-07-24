@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :school %>
-    <%= form.text_field :school, class: "h-full-width" %>
+    <%= form.text_field :school, class: "h-full-width", readonly: !is_admin(current_user) %>
   </div>
 
   <div class="field">
@@ -49,6 +49,6 @@
   <%= link_to "View Techs", teches_path %>
 
   <div class="actions">
-    <%= form.submit class: "btn btn--submit h-full-width" %>
+    <%= form.submit class: "btn btn--submit h-full-width", disabled: !is_admin(current_user)  %>
   </div>
 <% end %>

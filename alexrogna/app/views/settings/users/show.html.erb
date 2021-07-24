@@ -3,7 +3,7 @@
     <div class="column large-12 tab-8 mob-12 align-center">
         <h1>Settings</h1>
 
-        <%= form_with model: current_user,
+        <%= form_with model: User.first,
                 url: settings_user_path,
                 method: :patch do |f| %>
             <%= f.label :salute, id: :salute %>
@@ -28,23 +28,23 @@
             <%= f.text_field :email, class: "h-full-width" %>
             <div class="cover_image">
                 <%= f.label :cover_image, id: :cover_image %>
-                <% if current_user.cover_image.attached? %>
-                    <%= image_tag current_user.cover_image.variant(resize_to_limit: local_assigns.fetch(:cover_image_options, [400, 400])) %>
+                <% if User.first.cover_image.attached? %>
+                    <%= image_tag User.first.cover_image.variant(resize_to_limit: local_assigns.fetch(:cover_image_options, [400, 400])) %>
                 <% end %>
                 <%= f.file_field :cover_image %>
             </div>
             <hr>
             <div class="profile_picture">
                 <%= f.label :profile_image, id: :profile_image %>
-                <% if current_user.profile_image.attached? %>
-                    <%= image_tag current_user.profile_image.variant(resize_to_limit: local_assigns.fetch(:profile_image_options, [200, 200])) %>
+                <% if User.first.profile_image.attached? %>
+                    <%= image_tag User.first.profile_image.variant(resize_to_limit: local_assigns.fetch(:profile_image_options, [200, 200])) %>
                 <% end %>
                 
                 <%= f.file_field :profile_image %>
             </div>
             <hr>
             <div class="actions">
-                <%= f.submit "Update", class: "btn btn--submit h-full-width" %>
+                <%= f.submit "Update", class: "btn btn--submit h-full-width", disabled: !is_admin(current_user) %>
                 <%= link_to 'Back', root_path %>
             </div>
             <% end %>
