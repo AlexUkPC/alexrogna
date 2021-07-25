@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
   helper HomeHelper, CvHelper, ApplicationHelper
-  default from: 'contact@alexrogna.com'
+  default from: 'Alex Rogna<contact@alexrogna.com>'
   layout 'mailer'
 end

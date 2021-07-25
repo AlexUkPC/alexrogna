@@ -10,6 +10,7 @@ class NotifierMailer < ApplicationMailer
     @projects = Project.all
     @skills = Skill.all.order("id ASC")
     @language_skills = LanguageSkill.all.order('created_at ASC')
+    @personal_skills = PersonalSkill.all.order("order_id ASC")
     @works = Work.all.order('start_date DESC')
     @teches = Tech.all.order('order_id ASC')
     @educations = Education.all.order('start_date DESC')
