@@ -32,6 +32,6 @@
   <% end %>
   <%= form.file_field :logo %>
   <div class="actions">
-    <%= form.submit, disabled: !is_admin(current_user) %>
+    <%= form.submit disabled: !is_admin(current_user) %>
   </div>
 <% end %>
