@@ -1,7 +1,9 @@
 <div class="column align-center">
     <div class="badge">
         <% if linkedin.badge.attached? %>
-            <%= image_tag linkedin.badge %>
+            <a href="https://www.linkedin.com/in/alexrogna/" target="_blank">
+                <%= image_tag linkedin.badge %>
+            </a>    
         <% end %>
         <% if current_user %>
             <div class="controls">

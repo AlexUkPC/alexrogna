@@ -62,7 +62,6 @@
             <div id="modal-<%= skill.id %>-linkedins" hidden>
                 <div class="row collapse block-large-1-2 block-500-stack modal-popup-skills-li">
                     <%= render skill.linkedins %>
-                    <a href="https://www.linkedin.com/in/alexrogna/" class="btn btn--primary btn--small h-pull-right" target="_blank">View on Linkedin</a>
                 </div>
             </div>
             <div id="modal-<%= skill.id %>-hacker_ranks" hidden>
@@ -74,7 +73,6 @@
                 <% end %>
                     <% @badge=true %>
                     <%= render skill.hacker_ranks.order("is_badge DESC") %>
-                    <a href="https://www.hackerrank.com/vlad_rogna?hr_r=1" class="btn btn--primary btn--small h-pull-right" target="_blank">View on HackerRank</a>
                 </div>
                 
             </div>

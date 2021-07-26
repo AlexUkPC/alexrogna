@@ -30,7 +30,7 @@
         Publisher: <%= book.publisher %><br>
         Date of publication: <%= book.dop %><br>
         <% if book.github_link != "" %>
-            <%= link_to "View my code on GitHub", book.github_link, class: "btn btn--primary btn--small" %>
+            <%= link_to "View my code on GitHub", book.github_link, class: "btn btn--primary btn--small", target: :_blank %>
         <% end %>
     </div>
     
