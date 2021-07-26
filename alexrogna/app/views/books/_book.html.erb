@@ -29,11 +29,8 @@
         Author: <%= book.author %><br>
         Publisher: <%= book.publisher %><br>
         Date of publication: <%= book.dop %><br>
-        <% if book.resources_link != "" %>
-            <%= link_to "Download resources", book.resources_link, class: " btn btn--primary btn--small" %>
-        <% end %>
         <% if book.github_link != "" %>
-            <%= link_to "View on GitHub", book.github_link, class: "btn btn--primary btn--small" %>
+            <%= link_to "View my code on GitHub", book.github_link, class: "btn btn--primary btn--small" %>
         <% end %>
     </div>
     
