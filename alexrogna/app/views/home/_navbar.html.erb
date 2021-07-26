@@ -3,15 +3,15 @@
         <ul>
             
             <% if controller_path =="home" %>
-                <li class="current"><a class="smoothscroll" href="#hero">Home</a></li>
-                <li><a class="smoothscroll" href="#about">About</a></li>
-                <li><a class="smoothscroll" href="#portfolio">Portfolio</a></li>
-                <li><a class="smoothscroll" href="#skills">Skills</a></li>
-                <li><a class="smoothscroll" href="#language_skills">Language Skills</a></li>
-                <li><a class="smoothscroll" href="#personal_skills">Personal Skills</a></li>
-                <li><a class="smoothscroll" href="#work">Work</a></li>
-                <li><a class="smoothscroll" href="#education">Education</a></li>
-                <li><a class="smoothscroll" href="#contact">Contact</a></li>
+                <li class="current"><a class="smoothscroll" href="#hero" data-turbolinks="false" >Home</a></li>
+                <li><a class="smoothscroll" href="#about" data-turbolinks="false" >About</a></li>
+                <li><a class="smoothscroll" href="#portfolio" data-turbolinks="false" >Portfolio</a></li>
+                <li><a class="smoothscroll" href="#skills" data-turbolinks="false" >Skills</a></li>
+                <li><a class="smoothscroll" href="#language_skills" data-turbolinks="false" >Language Skills</a></li>
+                <li><a class="smoothscroll" href="#personal_skills" data-turbolinks="false" >Personal Skills</a></li>
+                <li><a class="smoothscroll" href="#work" data-turbolinks="false" >Work</a></li>
+                <li><a class="smoothscroll" href="#education" data-turbolinks="false" >Education</a></li>
+                <li><a class="smoothscroll" href="#contact" data-turbolinks="false" >Contact</a></li>
                 <% if current_user %>
                     <li class="admin-controls">
                         <%= link_to settings_user_path, title: "Change Settings" do %> 
