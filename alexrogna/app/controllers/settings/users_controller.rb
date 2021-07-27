@@ -20,11 +20,16 @@ class Settings::UsersController < ApplicationController
   def notify_friend
     @email_a_friend = EmailAFriend.new(email_a_friend_params)
     @user=User.first
-    if verify_recaptcha(model: @email_a_friend) && @email_a_friend.valid? && @email_a_friend.yemail==""
-      NotifierMailer.email_friend(@user, @email_a_friend.name, @email_a_friend.email).deliver_later
-      redirect_to root_path, notice: 'Succesfully sent a message to your friend'
-    else
-      render :fail_notify_friend, status: :unprocessable_entity
+    respond_to do |format|
+      if verify_recaptcha(model: @email_a_friend) && @email_a_friend.yemail=="" && @email_a_friend.valid?
+        NotifierMailer.email_friend(@user, @email_a_friend.name, @email_a_friend.email).deliver_later
+        format.html { redirect_to root_path, notice: "Succesfully sent my CV to your friend. Thank you." }
+        format.js { flash[:notice] = @message = "Succesfully sent my CV to your friend. Thank you." }
+      else
+        format.html { redirect_to root_path, notice: 'Unable to send message' }
+        format.js { render :fail_notify_friend, status: :unprocessable_entity }
+        
+      end
     end
   end
 private

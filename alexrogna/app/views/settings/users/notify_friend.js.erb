@@ -1,0 +1,5 @@
+document.querySelector('#email_a_friend').innerHTML = "<%= escape_javascript render partial: 'notify_friend', locals: { email_a_friend: EmailAFriend.new, user: @user } %>";
+document.getElementById('email_a_friend_name').value = "";
+document.getElementById('email_a_friend_email').value = "";
+$('#notify-friend-message').html("<%= escape_javascript render 'home/flash' %>").delay(3000).fadeOut(4000);
+grecaptcha.render('notify_friend_captcha');
