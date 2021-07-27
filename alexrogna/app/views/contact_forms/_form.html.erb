@@ -35,7 +35,7 @@
     <%= flash[:recaptcha_error] %>
     <%= recaptcha_tags id: 'contact_captcha', theme: 'dark' %>
   </div>
-  
+  <div id="flash-message"></div>
   <div class="actions">
     <% if controller_path =="home" %>
       <%= form.submit 'Send', class:"btn btn--stroke h-full-width" %>
