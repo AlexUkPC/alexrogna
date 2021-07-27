@@ -84,6 +84,15 @@
             #notify-friend-message{
                 font-size: $text-xs;
             }
+            transform: scaleY(0);    
+            transform-origin: top;
+            transition: all 0.26s ease;
+            max-height: 0;
+            display: block;
+        }
+        .visible{
+            transform: scaleY(1)!important;
+            max-height: 500px!important;
         }
     }
  }

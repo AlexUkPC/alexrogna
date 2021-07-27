@@ -27,7 +27,7 @@
     <div id="notify-friend-message"></div>
     <div class="actions row collapse block-large-1-2 block-mob-full">
     <div class="column align-center"><%= form.submit 'Send', class:"btn btn--about h-full-width" %></div>
-    <div class="column align-center"><%= link_to 'Cancel', '#' , onclick:"document.querySelector('#notify_friend').style.display='none';return false;", class:"btn btn--about h-full-width" %></div>
+    <div class="column align-center"><%= link_to 'Cancel', '#' , onclick:"document.querySelector('#notify_friend').classList.remove('visible');return false;", class:"btn btn--about h-full-width" %></div>
          
         
     </div>
