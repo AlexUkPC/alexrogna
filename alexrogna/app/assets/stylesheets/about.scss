@@ -25,7 +25,7 @@
         color: $color-white;
         &:hover, 
         &:focus {
-            color: white;
+            color: $color-2;
         }
     }
     i {
@@ -42,25 +42,32 @@
         .column{
             padding: 0;
         }
+        
         .btn--about {
             background-color: white;
             border-color: white;
             color: black;
             margin-right: 0;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
             svg {
                 height: 2rem;
                 width: 2rem;
                 vertical-align: middle;
                 margin-right: 1.2rem;
-                -webkit-transition: all 0.3s ease-in-out;
-                transition: all 0.3s ease-in-out;
+                path{
+                    -webkit-transition: fill 0.3s ease-in-out;
+                    transition: fill 0.3s ease-in-out;  
+                }
+                
             }
             &:hover, 
             &:focus {
                 background-color: $color-2;
                 border-color: $color-2;
+                color: $color-white;
                 svg path {
-                    fill: white;
+                    fill: $color-white;
                 }
             }
         }
