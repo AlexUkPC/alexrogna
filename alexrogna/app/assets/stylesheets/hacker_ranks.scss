@@ -7,8 +7,22 @@
     background-color: $color-white;
     position: relative;
     h3{
-        margin-top: 1rem;
-        margin-bottom: 1rem;
+        display: inline-block;
+        line-height: $vspace-1_75;
+        padding-bottom: .1em;
+        margin-top: 0;
+        margin-bottom: $vspace-0_5;
+        position: relative;
+    }
+    h3:after {
+        content: "";
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: $color-1;
+        position: absolute;
+        left: 0;
+        bottom: 0;
     }
     .btn {
         position: absolute;

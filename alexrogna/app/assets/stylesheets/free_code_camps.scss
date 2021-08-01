@@ -2,6 +2,7 @@
 /* ## free-code-camps modal popup */
 .modal-popup-skills-fcc {
     background-color: #151515;
+    max-height: 90vh;
     img {
         display: block;
         background-color: white;
@@ -40,6 +41,26 @@
                 transition: all 0.3s ease-in-out;
             }
         }
+    }
+}
+.modal-title-skills-fcc{
+    h3{
+        color: $color-white;
+        display: inline-block;
+        line-height: $vspace-1_75;
+        padding-bottom: .1em;
+        margin-bottom: $vspace-0_5;
+        position: relative;
+    }
+    h3:after {
+        content: "";
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: $color-1;
+        position: absolute;
+        left: 0;
+        bottom: 0;
     }
 }
 .free_code_camps{

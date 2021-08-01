@@ -8,7 +8,23 @@
     line-height: 1.647;
     overflow-y: auto;
     position: relative;
-
+    h3{
+        display: inline-block;
+        line-height: $vspace-1_75;
+        padding-bottom: .1em;
+        margin-bottom: $vspace-0_5;
+        position: relative;
+    }
+    h3:after {
+        content: "";
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: $color-1;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
     img {
         margin-bottom: 0;
         max-height: 25vh;

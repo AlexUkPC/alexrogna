@@ -57,9 +57,12 @@
             </div> 
             <div id="modal-<%= skill.id %>-books" hidden>
                 <div class="modal-popup-skills-b">
-                    <%= render skill.books %></div>
+                    <div class="row"><h3 class="align-center">Books I've read</h3></div>
+                    <%= render skill.books %>
                 </div>
+            </div>
             <div id="modal-<%= skill.id %>-linkedins" hidden>
+                <div class="row modal-title-skills-li"><h3 class="align-center">Badges on Linkedin</h3></div>
                 <div class="row collapse block-large-1-2 block-500-stack modal-popup-skills-li">
                     <%= render skill.linkedins %>
                 </div>
@@ -67,7 +70,7 @@
             <div id="modal-<%= skill.id %>-hacker_ranks" hidden>
                 <% if skill.hacker_ranks.count{ |hacker_rank| hacker_rank.is_badge? } > 0 %>
                     <div class="row modal-popup-skills-hr">
-                        <div class="column large-12"><h3><i class="far fa-id-badge"></i> Badges</h3></div>
+                        <div class="column large-12"><h3><i class="far fa-id-badge"></i> Badges on HackerRank</h3></div>
                 <% else %>
                     <div>
                 <% end %>
@@ -77,6 +80,7 @@
                 
             </div>
             <div id="modal-<%= skill.id %>-free_code_camps" hidden>
+            <div class="row modal-title-skills-fcc"><h3 class="align-center">Certificates on FreeCodeCamp</h3></div>
                 <div class="row collapse block-large-1-2 block-500-stack modal-popup-skills-fcc">
                     <%= render skill.free_code_camps %>
                 </div>
