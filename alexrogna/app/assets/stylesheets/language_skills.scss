@@ -22,7 +22,7 @@
                 position: relative;
                 width: 500px;
                 height: 3em;
-                background-color: #CCCCCC;
+                background-color: $color-gray-1;
                 border-radius: 4px;
                 color: white;
                 margin: 1em;  
@@ -39,7 +39,7 @@
                 width: calc(var(--width, 0) * 1%);
                 min-width: 0rem;
                 max-width: calc(100%);
-                background-color: #313131;
+                background-color: $color-dark-blue;
                 border-radius: 4px;
                 padding: 1em;
                 animation: fill-progress-bar 2s ease;
