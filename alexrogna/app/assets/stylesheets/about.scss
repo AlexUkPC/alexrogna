@@ -4,7 +4,7 @@
      background-color: $color-dark-blue;
      padding-top: 3 * $space;
      padding-bottom: $vspace-4;
-     color: rgba(255, 255, 255, 0.4);
+     color: $color-white;
      h3 {
         margin-top: 0;
         color: $color-2;
@@ -22,7 +22,7 @@
         }
     }
     a {
-        color: rgba(255, 255, 255, 0.4);
+        color: $color-white;
         &:hover, 
         &:focus {
             color: white;
