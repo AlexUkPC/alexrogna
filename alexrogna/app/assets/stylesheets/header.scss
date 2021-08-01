@@ -73,9 +73,9 @@
         height: $header-height;
         line-height: $header-height;
         padding: 0 1.4rem;
-        color: rgba(255, 255, 255, 0.5);
+        color: $color-white;
         &:hover, &:focus {
-            color: white;
+            color: $color-2;
         }
         
     }
