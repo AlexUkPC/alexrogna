@@ -41,7 +41,7 @@
  }
  
  /* ## media */
- svg, img, video embed, iframe, object {
+ svg, img, video embed, object {
      max-width: 100%;
      height: auto;
  }
@@ -1340,6 +1340,7 @@
  button, 
  .btn {
      margin-bottom: $vspace-0_5;
+     z-index: 99;
  }
  
  input, 
