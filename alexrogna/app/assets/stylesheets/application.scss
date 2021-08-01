@@ -2133,6 +2133,8 @@
     border-radius: $border-radius;
     -webkit-box-shadow: none;
     box-shadow: none;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 
 .mailtoui-button-content:hover, 
@@ -2141,6 +2143,8 @@
 .mailtoui-button-copy:focus {
     background-color: $mailtoui-button-bgcolor-hover;
     color: $mailtoui-button-text-color-hover;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 
 .mailtoui-copy {
