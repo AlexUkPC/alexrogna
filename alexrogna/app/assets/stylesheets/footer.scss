@@ -1,10 +1,10 @@
 @import 'variables';
 /* # footer */
   .s-footer {
-    background-color: $color-gray-18;
+    background-color: $color-dark-blue;
     padding-top: $vspace-1;
     padding-bottom: $vspace-3;
-    color: rgba(255, 255, 255, 0.2);
+    color: $color-white;
     position: relative;
     .row {
         padding-top: $vspace-1;
