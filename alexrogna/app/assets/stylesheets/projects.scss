@@ -74,6 +74,17 @@
                 left: 50%;
                 top: 50%;
             }
+            @media (hover: none) and (pointer: coarse) {
+                &::before {
+                    opacity: 1;
+                    visibility: visible;
+                    background-color: rgba(0, 0, 0, 0.3);
+                }
+                &::after {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
         }
         &:hover {
             .thumb{
