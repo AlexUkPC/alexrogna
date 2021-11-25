@@ -162,6 +162,20 @@
     100% { width: calc(var(--width, 0) * 1%);  }
 }
 /* responsive: language_skills */
+@media screen and (max-width: 1200px) {
+    .s-language_skills {
+        main {
+            .language_skills {
+                p {
+                    padding-left: 10px;
+                }
+                .progress-bar {
+                    max-width: 90%;
+                }
+            }
+        }
+    }
+}
 @media screen and (max-width: 800px) {
     .s-language_skills {
         padding-top: $vspace-4;
