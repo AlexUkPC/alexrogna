@@ -2,9 +2,10 @@
 /* ## linkedins modal popup */
 .modal-popup-skills-li {
     background-color: #151515;
-    min-width: 60vw;
+    min-width: 55vw;
     position: relative;
     max-height: 90vh;
+    overflow-y: auto;
     img {
         display: block;
         background-color: white;
@@ -97,7 +98,6 @@
 @media screen and (max-width: 600px) {
     .modal-popup-skills-li  {
         max-height: 90vh !important;
-        overflow-y: auto;
     }
     .row {
         padding: 0 !important;
