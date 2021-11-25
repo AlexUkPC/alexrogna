@@ -192,5 +192,12 @@
 @media screen and (max-width: 800px) {
     .s-work {
         padding-top: $vspace-4;
+        main{
+            .work-place {
+                .description{
+                    padding: 0 10px;
+                }
+            }
+        }
     }
 }
