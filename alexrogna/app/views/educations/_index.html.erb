@@ -25,7 +25,7 @@
           <p class="header-meta">
               <span><%= education.location %></span> 
               <span class="header-date">
-                  <%= verbose_date(education.start_date) %> - <%= verbose_date(education.end_date) %>
+                  <%= verbose_date(education.start_date) %> - <%= education.present ? "Present" : verbose_date(education.end_date) %>
               </span>
           </p>
           <p>

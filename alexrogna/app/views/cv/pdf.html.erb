@@ -212,7 +212,7 @@
                                     <h2><%= education.school %> - <i><%= education.location %></i></h2>
                                 </td>
                                 <td>
-                                    <%= verbose_date(education.start_date) %> - <%= verbose_date(education.end_date) %> 
+                                    <%= verbose_date(education.start_date) %> - <%= education.present ? "Present" : verbose_date(education.end_date) %> 
                                 </td> 
                             </tr>
                             
