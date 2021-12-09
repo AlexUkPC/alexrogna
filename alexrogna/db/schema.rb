@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_09_110748) do
+ActiveRecord::Schema.define(version: 2021_12_09_133117) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(version: 2021_12_09_110748) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "show_on_cv", default: true
+    t.boolean "present"
   end
 
   create_table "educations_teches", id: false, force: :cascade do |t|
