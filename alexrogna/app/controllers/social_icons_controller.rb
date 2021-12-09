@@ -48,6 +48,6 @@ class SocialIconsController < ApplicationController
     end
 
     def social_icon_params
-      params.require(:social_icon).permit(:icon, :link, :order_id, :name)
+      params.require(:social_icon).permit(:icon, :link, :order_id, :name, :show_on_cv)
     end
 end

@@ -46,32 +46,24 @@
                 </td>
             </tr>
             <% @social_icons.each do |social_icon| %>
-                <tr>
-                    <td>
-                        <%= link_to social_icon.link do %>
-                            <i class='<%= social_icon.icon %>' ></i>
-                        <% end %>
-                    </td>
-                    <td>
-                        <%= link_to social_icon.link do %>
-                            <%= links(social_icon.link) %>
-                        <% end %>
-                    </td>
-                </tr>
+                
+                <% if social_icon.show_on_cv %>
+                    <tr>
+                        <td>
+                            <%= link_to social_icon.link do %>
+                                <i class='<%= social_icon.icon %>' ></i>
+                            <% end %>
+                        </td>
+                        <td>
+                            <%= link_to social_icon.link do %>
+                                <%= links(social_icon.link) %>
+                            <% end %>
+                        </td>
+                    </tr>
+                <% end %>
+                
             <% end %>
             
-            <tr>
-                <td>
-                    <a href="https://www.google.com/maps/place/99-203+Turners+Hill,+Hemel+Hempstead/@51.7509002,-0.4655196,18z/data=!3m1!4b1!4m5!3m4!1s0x4876415ca62b7b11:0x7a3e497cbaeaa198!8m2!3d51.7508344!4d-0.4642179">
-                        <i class="fas fa-map-marker"></i>
-                    </a>
-                </td>
-                <td>
-                    <a href="https://www.google.com/maps/place/99-203+Turners+Hill,+Hemel+Hempstead/@51.7509002,-0.4655196,18z/data=!3m1!4b1!4m5!3m4!1s0x4876415ca62b7b11:0x7a3e497cbaeaa198!8m2!3d51.7508344!4d-0.4642179">
-                        <%= @user.city %>, <%= @user.post_code %>
-                    </a>
-                </td>
-            </tr>
         </table>
         <hr> 
         <table class="main about">
