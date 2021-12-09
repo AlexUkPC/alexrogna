@@ -218,36 +218,39 @@
                 <td>
                     <table>
                     <% @educations.each do |education| %>
-                        <tr>
-                            <td colspan="2">
-                                <h2><%= education.school %></h2>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <i><%= education.location %></i>
-                            </td>
-                            <td>
-                                <%= verbose_date(education.start_date) %> - <%= verbose_date(education.end_date) %> 
-                            </td> 
-                        </tr>
-                        <tr>
-                            <td>
-                                <%= education.specialization %>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <%= education.courses %>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">Tools:
-                                <% for tech in education.teches.order('order_id ASC') %>
-                                    <span class="tech-name"><%= tech.name %></span>
-                                <% end %>
-                            </td>
-                        </tr>
+                        
+                        <% if education.show_on_cv %>
+                            <tr>
+                                <td colspan="2">
+                                    <h2><%= education.school %></h2>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i><%= education.location %></i>
+                                </td>
+                                <td>
+                                    <%= verbose_date(education.start_date) %> - <%= verbose_date(education.end_date) %> 
+                                </td> 
+                            </tr>
+                            <tr>
+                                <td>
+                                    <%= education.specialization %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <%= education.courses %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">Tools:
+                                    <% for tech in education.teches.order('order_id ASC') %>
+                                        <span class="tech-name"><%= tech.name %></span>
+                                    <% end %>
+                                </td>
+                            </tr>
+                        <% end %>
                     <% end %>
                     </table>
                 </td>
