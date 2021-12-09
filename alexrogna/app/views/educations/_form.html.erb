@@ -39,6 +39,11 @@
     <%= form.label :courses %>
     <%= form.rich_text_area :courses, class: "h-full-width" %>
   </div>
+  <%= form.file_field :show_on_cv %>
+  <div class="field">
+    <%= form.label :show_on_cv %>
+    <%= form.check_box :show_on_cv %>
+  </div>
   <h3>Add Techs</h3>
   <%= form.collection_check_boxes(:tech_ids, Tech.all.order('name ASC'), :id, :name) do |b| %>
     <% b.label {b.check_box + b.text } %>
