@@ -36,6 +36,9 @@
             transition: all 0.3s ease-in-out;
         }
     }
+    strong {
+        color: $color-2;
+    }
     .content-bottom {
         margin-top: $vspace-2;
         

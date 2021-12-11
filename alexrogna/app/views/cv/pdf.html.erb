@@ -71,7 +71,8 @@
                 <td><h2>About</h2></td>
 
                 <td>
-                    <%= @user.long_description %>Because I cannot detail more about me and fit in the recommended two pages for a CV, you can find more about me on my portfolio webpage <a href="https://alexrogna.com">alexrogna.com</a>, on which you can also see some of my projects.
+                    <%= @user.long_description_wysiwyg %>
+                    <%= @user.extra_description_for_pdf %>
                 </td>
 
             </tr>

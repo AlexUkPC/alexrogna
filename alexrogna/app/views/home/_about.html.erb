@@ -12,9 +12,9 @@
     <div class="column large-9 tab-12">
         <h3>About Me</h3>
         <p>
-        <%= user.long_description %>
+        <%= user.long_description_wysiwyg %>
         <% if current_user %>
-            <%= link_to settings_user_path + "#long_description", title: "Change Long Description" do %> 
+            <%= link_to settings_user_path + "#long_description_wysiwyg", title: "Change Long Description" do %> 
                 <i class="fal fa-pen" aria-hidden="true"></i>
             <% end %>
         <% end %>
