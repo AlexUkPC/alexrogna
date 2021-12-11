@@ -453,7 +453,7 @@
       .tech-name::after{
         content: ", ";
       }
-      .tech-name:last-child::after{
+      .tech-name:last-of-type::after{
         content: "";
       }
       .key-resp{
@@ -470,6 +470,11 @@
                 width: 40%;
                 text-align: right;
             }
+        }
+        tr:last-child{
+          hr{
+            display: none;
+          }
         }
       } 
     }

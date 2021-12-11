@@ -188,8 +188,9 @@
                                         <% for tech in work.teches.order('order_id ASC') %>
                                             <span class="tech-name"><%= tech.name %></span>
                                         <% end %>
+                                        <hr>
                                     </td>
-                                </tr>
+                                </tr> 
                             <% end %>
                         </table>
                     </td>
@@ -234,6 +235,7 @@
                                     <% for tech in education.teches.order('order_id ASC') %>
                                         <span class="tech-name"><%= tech.name %></span>
                                     <% end %>
+                                    <hr>
                                 </td>
                             </tr>
                         <% end %>
