@@ -10,8 +10,10 @@
             <%= f.text_field :salute, class: "h-full-width" %>
             <%= f.label :short_description, id: :short_description %>
             <%= f.text_area :short_description, class: "h-full-width" %>
-            <%= f.label :long_description, id: :long_description %>
-            <%= f.text_area :long_description, class: "h-full-width" %>
+            <%= f.label :long_description_wysiwyg, id: :long_description_wysiwyg %>
+            <%= f.rich_text_area :long_description_wysiwyg, class: "h-full-width" %>
+            <%= f.label :extra_description_for_pdf, id: :extra_description_for_pdf %>
+            <%= f.rich_text_area :extra_description_for_pdf, class: "h-full-width" %>
             <%= f.label :name, id: :name %>
             <%= f.text_field :name, class: "h-full-width" %>
             <%= f.label :street_number, id: :street_number %>

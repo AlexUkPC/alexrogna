@@ -38,7 +38,8 @@ private
     params.require(:user).permit(
       :salute,
       :short_description,
-      :long_description,
+      :long_description_wysiwyg,
+      :extra_description_for_pdf,
       :name,
       :street_number,
       :street_name,
