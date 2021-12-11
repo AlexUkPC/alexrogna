@@ -132,37 +132,36 @@
             </tr>
             
         </table>
-     
+        <hr>
+        <table class="main language-skills">
+                <tr>
+                    <td><h2>Language Skills</h2></td>
+                    <td>
+                        <ul>
+                            <% @language_skills.each do |language_skill| %>
+                                <li><b><%= language_skill.language %></b> - 
+                                    <% if language_skill.is_native %>
+                                        Native
+                                    <% else %>
+                                        
+                                        <% if language_skill.procent > 60 %>
+                                            Advanced
+                                        <% else %>
+                                            Intermediate
+                                        <% end %>
+                                        
+                                    <% end %>
+                                </li>
+                                <hr>
+                            <% end %>
+                        </ul>
+                        
+                    </td>
+                </tr>      
+            </table> 
 
     </div>
     <div class="alwaysbreak">
-        <table class="main language-skills">
-            <tr>
-                <td><h2>Language Skills</h2></td>
-                <td>
-                    <ul>
-                        <% @language_skills.each do |language_skill| %>
-                            <li><b><%= language_skill.language %></b> - 
-                                <% if language_skill.is_native %>
-                                    Native
-                                <% else %>
-                                    
-                                    <% if language_skill.procent > 60 %>
-                                        Advanced
-                                    <% else %>
-                                        Intermediate
-                                    <% end %>
-                                    
-                                <% end %>
-                            </li>
-                            <hr>
-                        <% end %>
-                    </ul>
-                    
-                </td>
-            </tr>      
-        </table>
-        <hr> 
         <table class="main work-experience">
                 <tr>
                     <td><h1>Work Experience</h1></td>
