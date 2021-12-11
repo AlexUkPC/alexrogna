@@ -15,7 +15,7 @@
         width: 100%;
     }
     hr{
-      margin: 2px 0;
+      margin: 10px 0;
     }
     .header{
         th{
@@ -450,6 +450,11 @@
           list-style: none;
           
         }
+        hr{
+          &:last-of-type{
+            display: none;
+          }
+        }
       }
     }
     .work-experience, .education{
@@ -480,9 +485,6 @@
             }
         }
         tr{
-          hr{
-            margin-bottom: 0;
-          }
           &:last-child{
             hr{
               display: none;
@@ -491,5 +493,9 @@
         }
       } 
     }
-    
+  .work-experience, .education, .language-skills, .personal-skills{
+    hr{
+      margin: 5px 0;
+    }  
+  }
 }
