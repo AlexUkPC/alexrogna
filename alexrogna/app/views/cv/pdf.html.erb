@@ -71,7 +71,7 @@
                 <td><h2>About</h2></td>
 
                 <td>
-                    <%= @user.long_description %>You can view some of my projects at <a href="https://alexrogna.com">alexrogna.com</a>.
+                    <%= @user.long_description %>Because I cannot detail more about me and fit in the recommended two pages for a CV, you can find more about me on my portfolio webpage <a href="https://alexrogna.com">alexrogna.com</a>, on which you can also see some of my projects.
                 </td>
 
             </tr>
@@ -98,7 +98,12 @@
                     </table>
                 </td>
             </tr>
-            
+            <tr>
+                <td colspan="2">
+                    <small>These percentages are calculated based on things that I add on my CV website <a href="https://alexrogna.com">alexrogna.com</a>, like projects I work on, books I read and courses I attend.</small>
+                    
+                </td>
+            </tr>
         </table>
         <hr>
         
@@ -107,20 +112,12 @@
                 <td><h2>Personal Skills</h2></td>
 
                 <td>
-                    <table>
-                    <% i=0 %>
-                        <tr>
-                            <% @personal_skills.each do |personal_skill| %>
-                                <% if i%3==0 %><% i=0 %>
-                                    </tr><tr>
-                                <% end %>
-                                <td>
-                                <i class="<%= personal_skill.icon %> fa-2x"></i> <br><%= personal_skill.skill %>
-                                </td>
-                                <% i+=1 %>
-                            <% end %>
-                        </tr>
-                    </table>
+                    <ul>
+                        <% @personal_skills.each do |personal_skill| %>
+                            <li><i class="<%= personal_skill.icon %>"></i> <b><%= personal_skill.skill %></b> - <%= personal_skill.description %></li><hr>
+                        <% end %>
+                    </ul>
+                    
                 </td>
 
             </tr>
