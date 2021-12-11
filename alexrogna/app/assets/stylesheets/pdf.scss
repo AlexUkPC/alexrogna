@@ -422,29 +422,18 @@
         }
     }
     .personal-skills{
-        table{
-            td{
-                text-align: center; 
-                vertical-align: middle;
-                height: 4.5em;
-                &:first-child{
-                    width: 33%;
-                }
-                &:nth-child(2){
-                    width: 33%;
-                }
-                &:last-child{
-                    width: 33%;
-                }
-            }
+      td {
+        &:nth-child(2){
         }
-        ul {
-          padding-left: 0;
-          li{
-            list-style: none;
-            
-          }
+      }
+      ul {
+        padding-left: 0;
+        margin: 0;
+        li{
+          list-style: none;
+          
         }
+      }
     }
     .work-experience, .education{
       h1{
