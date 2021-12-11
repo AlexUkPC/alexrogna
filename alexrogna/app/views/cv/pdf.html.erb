@@ -85,8 +85,11 @@
                 <td><h2>Technical Skills</h2></td>
                 <td>
                     <table>
+                        <% i=0 %>
                         <% @skills.each do |skill| %>
-                            <tr>
+                            <% if i.even? %>
+                                <tr>
+                            <% end %>
                                 <td>
                                     <%= skill.name %>
                                 </td>
@@ -94,7 +97,12 @@
                                     <div class="progress-bar p-<%= procent(skill) %>" style="--width: <%= procent(skill) %>%" data-label="<%= procent(skill) %>%&nbsp&nbsp&nbsp"></div>
                                     
                                 </td>
-                            </tr>
+                            <% if i.odd? %>  
+                                </tr>
+                            <% else %>
+                                <td></td>
+                            <% end %> 
+                            <% i+=1 %> 
                         <% end %>
                     </table>
                 </td>
