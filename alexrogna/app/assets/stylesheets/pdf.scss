@@ -416,10 +416,22 @@
                     width: 80%;
                 }
             }
+        } 
+    }
+    .language-skills{
+      ul {
+        margin:0;
+        padding-left: 0;
+        li{
+          list-style: none;
         }
-        ul {
-          margin:0;
+      }
+      hr{
+        width: 200px;
+        &:last-child{
+          display: none;
         }
+      }
     }
     .personal-skills{
       td {
@@ -450,7 +462,9 @@
           margin: 0 auto;
         }
       }
+      
       table{
+        
         td{
             &:first-child{
                 width: 50%;
@@ -460,9 +474,14 @@
                 text-align: right;
             }
         }
-        tr:last-child{
+        tr{
           hr{
-            display: none;
+            margin-bottom: 0;
+          }
+          &:last-child{
+            hr{
+              display: none;
+            }
           }
         }
       } 

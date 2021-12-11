@@ -134,7 +134,7 @@
                 <td>
                     <ul>
                         <% @language_skills.each do |language_skill| %>
-                            <li><%= language_skill.language %> - 
+                            <li><b><%= language_skill.language %></b> - 
                                 <% if language_skill.is_native %>
                                     Native
                                 <% else %>
@@ -147,6 +147,7 @@
                                     
                                 <% end %>
                             </li>
+                            <hr>
                         <% end %>
                     </ul>
                     
