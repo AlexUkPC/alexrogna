@@ -232,13 +232,11 @@
                                     </td>
                                 </tr>
                             <% end %>
-                            <% if education.courses=="a" %>
-                                <tr>
-                                    <td colspan="2">
-                                        <%= education.courses %>
-                                    </td>
-                                </tr>
-                            <% end %>
+                            <tr>
+                                <td colspan="2">
+                                    <%= education.courses %>
+                                </td>
+                            </tr>
                             <tr>
                                 <td colspan="2"><b>TOOLS:</b>
                                     <% for tech in education.teches.order('order_id ASC') %>
