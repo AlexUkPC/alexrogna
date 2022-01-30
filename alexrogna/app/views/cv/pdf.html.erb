@@ -147,8 +147,10 @@
                                         
                                         <% if language_skill.procent > 60 %>
                                             Advanced
-                                        <% else %>
+                                        <% elsif language_skill.procent > 30 %>
                                             Intermediate
+                                        <% else %>
+                                            Beginner
                                         <% end %>
                                         
                                     <% end %>
