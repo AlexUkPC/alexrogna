@@ -44,6 +44,11 @@ pipeline {
                 sh '/usr/local/bin/docker-compose -f docker-compose-jenkins.yml exec -T --user "$(id -u):$(id -g)" web_alexrogna_jenkins bin/rails db:migrate'
             }
         }
+        stage('Seed database') {
+            steps {
+                sh '/usr/local/bin/docker-compose -f docker-compose-jenkins.yml exec -T --user "$(id -u):$(id -g)" web_alexrogna_jenkins bin/rails db:seed'
+            }
+        }
         stage('Wait for server to start') {
             steps {
                 timeout(10) {
