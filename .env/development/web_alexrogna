@@ -1,0 +1,8 @@
+DATABASE_HOST=database_alexrogna
+DISABLE_SPRING=true
+EMAIL_USER_NAME=development@alexrogna.com
+EMAIL_PSW=ParolaDevelopment
+RECAPTCHA_SITE_KEY=6LcsEDkbAAAAAJg71Qdnt5N6EuNkCoBXg5NPpQBG
+RECAPTCHA_SECRET_KEY=6LcsEDkbAAAAACmqGspsoHk-bBhecjOj4NyAwDPJ
+ADMIN_EMAIL=vlad.rogna@gmail.com
+ADMIN_PASSWORD=123456

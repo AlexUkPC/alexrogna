@@ -1,0 +1,58 @@
+version: "3"
+services:
+  web_alexrogna_jenkins:
+    build:
+      context: .
+      args:
+        USER_ID: "${USER_ID:-1000}"
+        GROUP_ID: "${GROUP_ID:-1000}"
+    ports:
+      - "13000:3000"
+    volumes: 
+      - ./alexrogna:/opt/app
+      - gem_cache_alexrogna_jenkins:/gems
+    env_file: 
+      - .env/jenkins/database_alexrogna
+      - .env/jenkins/web_alexrogna
+    environment: 
+      - WEBPACKER_DEV_SERVER_HOST=webpack_dev_server_alexrogna_jenkins
+    networks:
+      - network_alexrogna_jenkins
+    stdin_open: true
+    tty: true
+  webpack_dev_server_alexrogna_jenkins:
+    build:
+      context: .
+      args:
+        USER_ID: "${USER_ID:-1000}"
+        GROUP_ID: "${GROUP_ID:-1000}"
+    command: ./bin/webpack-dev-server
+    ports: 
+      - "14000:4000"
+    volumes: 
+      - ./alexrogna:/opt/app
+      - gem_cache_alexrogna_jenkins:/gems
+    env_file: 
+      - .env/jenkins/database_alexrogna
+      - .env/jenkins/web_alexrogna
+    environment: 
+      - WEBPACKER_DEV_SERVER_HOST=0.0.0.0
+    networks:
+      - network_alexrogna_jenkins
+  database_alexrogna_jenkins:
+    image: postgres
+    env_file: 
+      - .env/jenkins/database_alexrogna
+    volumes: 
+      - db_data_alexrogna_jenkins:/var/lib/postgresql/data
+    networks:
+      - network_alexrogna_jenkins
+volumes: 
+  db_data_alexrogna_jenkins:
+  gem_cache_alexrogna_jenkins:
+networks:
+  network_alexrogna_jenkins:
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.16.230.0/24"
