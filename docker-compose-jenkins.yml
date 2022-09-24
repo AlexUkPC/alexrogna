@@ -9,7 +9,7 @@ services:
     ports:
       - "13000:3000"
     volumes: 
-      - ./alexrogna:/opt/app
+      - ./alexrogna_jenkins:/opt/app
       - gem_cache_alexrogna_jenkins:/gems
     env_file: 
       - .env/jenkins/database_alexrogna
@@ -30,7 +30,7 @@ services:
     ports: 
       - "14000:4000"
     volumes: 
-      - ./alexrogna:/opt/app
+      - ./alexrogna_jenkins:/opt/app
       - gem_cache_alexrogna_jenkins:/gems
     env_file: 
       - .env/jenkins/database_alexrogna
@@ -55,4 +55,4 @@ networks:
     ipam:
       driver: default
       config:
-        - subnet: "172.16.230.0/24"
+        - subnet: "172.11.0.0/24"
