@@ -38,7 +38,7 @@ services:
     networks:
       - network
   database_alexrogna:
-    image: postgres
+    image: postgres:13
     env_file: 
       - .env/development/database_alexrogna
     volumes: 

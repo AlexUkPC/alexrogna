@@ -40,7 +40,7 @@ services:
     networks:
       - network_alexrogna_jenkins
   database_alexrogna_jenkins:
-    image: postgres
+    image: postgres:13
     env_file: 
       - .env/jenkins/database_alexrogna
     volumes: 

@@ -18,7 +18,7 @@ services:
       - "com.centurylinklabs.watchtower.enable=true"
 
   database_alexrogna:
-    image: postgres
+    image: postgres:13
     env_file:
       - .env/production/database_alexrogna
     volumes:
