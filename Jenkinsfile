@@ -78,7 +78,7 @@ pipeline {
         // } 
         stage('Stop containers') {
             steps {
-                sh '/usr/local/bin/docker-compose stop'
+                sh '/usr/local/bin/docker-compose -f docker-compose-jenkins.yml stop'
             }
         }
     }
