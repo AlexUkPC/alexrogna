@@ -13,6 +13,12 @@ pipeline {
                 sh 'chmod +x alexrogna/bin/*'
             }
         }
+        stage('List') {
+            steps {
+                sh '/usr/local/bin/docker-compose -f docker-compose-jenkins.yml run --rm web_alexrogna_jenkins ls -la'
+                sh '/usr/local/bin/docker-compose -f docker-compose-jenkins.yml run --rm web_alexrogna_jenkins ls -la alexrogna'
+            }
+        }
         stage('Bundle Install') {
             steps {
                 sh '/usr/local/bin/docker-compose -f docker-compose-jenkins.yml run --rm web_alexrogna_jenkins bundle install'
