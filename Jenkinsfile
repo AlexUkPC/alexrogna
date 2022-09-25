@@ -76,10 +76,5 @@ pipeline {
         //         sh '/usr/local/bin/docker-compose -f docker-compose-jenkins.yml exec -T web_alexrogna_jenkins bundle exec rspec spec/system'
         //     }   
         // } 
-        stage('Stop containers') {
-            steps {
-                sh '/usr/local/bin/docker-compose -f docker-compose-jenkins.yml stop'
-            }
-        }
     }
 }
