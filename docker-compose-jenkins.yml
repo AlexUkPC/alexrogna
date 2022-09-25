@@ -9,7 +9,7 @@ services:
     ports:
       - "13000:3000"
     volumes: 
-      - ./alexrogna_jenkins:/opt/app
+      - ./alexrogna:/opt/app
       - gem_cache_alexrogna_jenkins:/gems
     env_file: 
       - .env/jenkins/database_alexrogna
@@ -30,7 +30,7 @@ services:
     ports: 
       - "14000:4000"
     volumes: 
-      - ./alexrogna_jenkins:/opt/app
+      - ./alexrogna:/opt/app
       - gem_cache_alexrogna_jenkins:/gems
     env_file: 
       - .env/jenkins/database_alexrogna
