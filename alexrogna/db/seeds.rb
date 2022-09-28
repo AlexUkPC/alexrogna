@@ -13,7 +13,7 @@ user.cover_image.attach(io: File.open(Rails.root.join('app/assets/images/for_see
 user.profile_image.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/profile_image.jpg')), filename: 'profile_image.jpg')
 
 #Social icons
-SocialIcon.create!(name: 'LinkedIn', link: 'https://www.linkedin.com/in/alexrogna/', icon: 'fab fa-linkedin-in')
+SocialIcon.create!(name: 'LinkedIn', link: 'https://linkedin.com/in/alexrogna', icon: 'fab fa-linkedin-in')
 SocialIcon.create!(name: 'GitHub', link: 'https://github.com/AlexUkPC', icon: 'fab fa-github')
 SocialIcon.create!(name: 'DockerHub', link: 'https://hub.docker.com/u/alexrogna', icon: 'fab fa-docker', show_on_cv: false)
 
@@ -26,7 +26,7 @@ skill3 = Skill.create!(name: 'HTML', order_id: '3')
 skill3.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Skills/HTML.png')), filename: 'html.png')
 skill4 = Skill.create!(name: 'CSS', order_id: '4')
 skill4.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Skills/CSS.png')), filename: 'css.png')
-skill5 = Skill.create!(name: 'JavaScript', order_id: '5')
+skill5 = Skill.create!(name: 'Javascript', order_id: '5')
 skill5.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Skills/Javascript.png')), filename: 'javascript.png')
 skill6 = Skill.create!(name: 'Wordpress', order_id: '6')
 skill6.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Skills/WordPress.png')), filename: 'wordpress.png')
@@ -199,3 +199,262 @@ education2 = Education.create!(school: "SPIRU HARET UNIVERSITY", location: "Buch
 ActionText::RichText.create!(record_type: 'Education',record_id: education2.id, name: 'courses', body: "<div>Bachelor's degree in Computer Science - 2021</div>")
 
 education3 = Education.create!(school: "Purple Beard Training", location: "UK", start_date: "2021-12-09", end_date: "2022-03-15", specialization: "DevOps Course ", tech_ids: [tech50.id, tech49.id ], show_on_cv: true )
+
+#Books
+book = Book.create!(title: "JavaScript in easy steps", subtitle: "5th Edition", author: "Mike McGrath", publisher: "In Easy Steps", dop: "2013-01-31", resources_link: "https://ineasysteps.com/wp-content/uploads/2013/04/JavaScript5th-sources-revisedApril2013.zip", github_link: "https://github.com/AlexUkPC/JavaScript_In_Easy_Steps", skill_ids: [skill5.id])
+book.cover.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Books/JavaScript-5th-ies.jpg')), filename: 'JavaScript-5th-ies.jpg')
+
+book = Book.create!(title: "jQuery in easy steps", subtitle: "", author: "Mike McGrath", publisher: "In Easy Steps", dop: "2014-02-11", resources_link: "https://ineasysteps.com/wp-content/uploads/2016/10/jquery-src.zip", github_link: "https://github.com/AlexUkPC/JQuery_In_Easy_Steps", skill_ids: [skill5.id])
+book.cover.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Books/jquery-ies.jpg')), filename: 'jquery-ies.jpg')
+
+book = Book.create!(title: "CSS3 in easy steps", subtitle: "", author: "Mike McGrath", publisher: "In Easy Steps", dop: "2013-02-08", resources_link: "https://ineasysteps.com/wp-content/uploads/2013/02/css3-src.zip", github_link: "https://github.com/AlexUkPC/CSS3_In_Easy_Steps", skill_ids: [skill4.id])
+book.cover.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Books/css3-ies.jpg')), filename: 'css3-ies.jpg')
+
+book = Book.create!(title: "HTML5 in easy steps", subtitle: "", author: "Mike McGrath", publisher: "In Easy Steps", dop: "2011-02-17", resources_link: "https://ineasysteps.com/wp-content/uploads/2018/06/HTML5sources.zip", github_link: "https://github.com/AlexUkPC/Html5_In_Easy_Steps", skill_ids: [skill3.id])
+book.cover.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Books/html5-ies.jpg')), filename: 'html5-ies.jpg')
+
+book = Book.create!(title: "Learn Rails 6", subtitle: "Accelerated Web Development with Ruby on Rails", author: "Adam Notodikromo", publisher: "Apress", dop: "2020-10-25", resources_link: "https://github.com/Apress/learn-rails-6", github_link: "https://github.com/AlexUkPC/tandibi", skill_ids: [skill2.id])
+book.cover.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Books/learnRails6.jpg')), filename: 'learnRails6.jpg')
+
+book = Book.create!(title: "Beginning Rails 6", subtitle: "From Novice to Professional", author: "Brady Somerville, Adam Gamble, Cloves Carneiro Jr. & Rida Al Barazi", publisher: "Apress", dop: "2020-07-23", resources_link: "https://github.com/Apress/beginning-rails-6", github_link: "https://github.com/AlexUkPC/begining_rail_6", skill_ids: [skill2.id])
+book.cover.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Books/beginnigRails6.jpg')), filename: 'beginnigRails6.jpg')
+
+book = Book.create!(title: "The Well-Grounded Rubyist", subtitle: "3rd Edition", author: "David A. Black & Joseph Leo III", publisher: "Manning", dop: "2019-05-07", resources_link: "https://www.manning.com/downloads/1966", github_link: "https://github.com/AlexUkPC/The-Well-Grounded-Rubyist", skill_ids: [skill1.id])
+book.cover.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Books/TheWell-GroundedRubyistThird.jpg')), filename: 'TheWell-GroundedRubyistThird.jpg')
+
+book = Book.create!(title: "Practical Linux with Raspberry Pi OS", subtitle: "Quick Start", author: "Ashwin Pajankar", publisher: "Apress", dop: "2021-01-05", resources_link: "", github_link: "", skill_ids: [skill8.id])
+book.cover.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Books/Practical-Linux-with-Raspberry Pi OS.jpeg')), filename: 'Practical-Linux-with-Raspberry Pi OS.jpeg')
+
+book = Book.create!(title: "Docker for Rails Developers", subtitle: "Build, Ship, and Run Your Applications Everywhere", author: "Rob Isenberg", publisher: "The Pragmatic Programmers", dop: "2019-03-19", resources_link: "https://media.pragprog.com/titles/ridocker/code/ridocker-code.zip", github_link: "https://github.com/AlexUkPC/Default_project_Rails_with_postgres", skill_ids: [skill10.id])
+book.cover.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Books/docker-for-rails-developers.jpg')), filename: 'docker-for-rails-developers.jpg')
+
+book = Book.create!(title: "CSS3 FOR WEB DESIGNERS", subtitle: "2nd Edition", author: "Dan Cederholm", publisher: "A Book Apart", dop: "2015-01-01", resources_link: "", github_link: "", skill_ids: [skill4.id])
+book.cover.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Books/css3-for-web-designers-2nd.jpg')), filename: 'css3-for-web-designers-2nd.jpg')
+
+book = Book.create!(title: "HTML5 FOR WEB DESIGNERS", subtitle: "2nd Edition", author: "Jeremy Keith & Rachel Andrew", publisher: "A Book Apart", dop: "2015-01-01", resources_link: "", github_link: "", skill_ids: [skill3.id])
+book.cover.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Books/html5-for-web-designers-2nd.jpg')), filename: 'html5-for-web-designers-2nd.jpg')
+
+book = Book.create!(title: "Pro HTML5 Programming", subtitle: "Powerful APIs for Richer Internet Application Development", author: "Peter Lubbers, Brian Albers & Frank Salim", publisher: "Apress", dop: "2010-03-01", resources_link: "", github_link: "", skill_ids: [skill3.id])
+book.cover.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Books/Pro-HTML5-Programming.jpg')), filename: 'Pro-HTML5-Programming.jpg')
+
+book = Book.create!(title: "Responsive Web Design with HTML5 and CSS3", subtitle: "Learn Responsive Design Using HTML5 and CSS3 to Adapt Websites to any Browser or Screen Size", author: "Ben Frain", publisher: "Packt", dop: "2012-04-10", resources_link: "", github_link: "", skill_ids: [skill3.id, skill4.id])
+book.cover.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Books/Responsive-Web-Design-with-HTML5-and-CSS3.jpg')), filename: 'Responsive-Web-Design-with-HTML5-and-CSS3.jpg')
+
+book = Book.create!(title: "Agile Web Development With Rails 6", subtitle: "", author: "Sam Ruby, David Bryant Copeland & Dave Thomas", publisher: "The Pragmatic Programmers", dop: "2020-02-10", resources_link: "https://media.pragprog.com/titles/rails6/code/rails6-code.zip", github_link: "https://github.com/AlexUkPC/depot", skill_ids: [skill2.id])
+book.cover.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Books/AgileWebDevelopmentWithRails6.jpg')), filename: 'AgileWebDevelopmentWithRails6.jpg')
+
+book = Book.create!(title: "Git for Programmers", subtitle: "Master Git for effective implementation of version control for your programming projects", author: "Jesse Liberty", publisher: "Packt", dop: "2021-06-30", resources_link: "", github_link: "", skill_ids: [skill9.id])
+book.cover.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Books/Git-for-Programmers.jpg')), filename: 'Git-for-Programmers.jpg')
+
+book = Book.create!(title: "Beginning Git and GitHub", subtitle: "A Comprehensive Guide to Version Control, Project Management, and Teamwork for the New Developer", author: "Mariot Tsioara", publisher: "Apress", dop: "2019-12-01", resources_link: "", github_link: "", skill_ids: [skill9.id])
+book.cover.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Books/Beginning-Git-and-GitHub.jpg')), filename: 'Beginning-Git-and-GitHub.jpg')
+
+#Linkedins
+linkedin = Linkedin.create!(badge_name: "Linux", skill_ids: [skill8.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Linux.png')), filename: 'Linux.png')
+
+linkedin = Linkedin.create!(badge_name: "Ruby on Rails", skill_ids: [skill1.id, skill2.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Ruby-on-Rails.png')), filename: 'Ruby-on-Rails.png')
+
+linkedin = Linkedin.create!(badge_name: "HTML", skill_ids: [skill3.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/HTML.png')), filename: 'HTML.png')
+
+linkedin = Linkedin.create!(badge_name: "CSS", skill_ids: [skill4.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/CSS.png')), filename: 'CSS.png')
+
+linkedin = Linkedin.create!(badge_name: "Git", skill_ids: [skill9.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Git.png')), filename: 'Git.png')
+
+linkedin = Linkedin.create!(badge_name: "Ruby-Testing-with-RSpec", skill_ids: [skill1.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Ruby-Testing-with-RSpec.png')), filename: 'Ruby-Testing-with-RSpec.png')
+
+linkedin = Linkedin.create!(badge_name: "Ruby-essential-training-part1-The-basics", skill_ids: [skill1.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Ruby-essential-training-part1-The-basics.png')), filename: 'Ruby-essential-training-part1-The-basics.png')
+
+linkedin = Linkedin.create!(badge_name: "Sinatra", skill_ids: [skill1.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Sinatra.png')), filename: 'Sinatra.png')
+
+linkedin = Linkedin.create!(badge_name: "Ruby-on-Rails-5-essential-training", skill_ids: [skill2.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Ruby-on-Rails-5-essential-training.png')), filename: 'Ruby-on-Rails-5-essential-training.png')
+
+linkedin = Linkedin.create!(badge_name: "Ruby-on-Rails-Developer", skill_ids: [skill2.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Ruby-on-Rails-Developer.png')), filename: 'Ruby-on-Rails-Developer.png')
+
+linkedin = Linkedin.create!(badge_name: "Ruby-on-Rails-Get-more-from-ActiveRecord", skill_ids: [skill2.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Ruby-on-Rails-Get-more-from-ActiveRecord.png')), filename: 'Ruby-on-Rails-Get-more-from-ActiveRecord.png')
+
+linkedin = Linkedin.create!(badge_name: "CoffeScript", skill_ids: [skill5.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/CoffeScript.png')), filename: 'CoffeScript.png')
+
+linkedin = Linkedin.create!(badge_name: "TypeScript", skill_ids: [skill5.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/TypeScript.png')), filename: 'TypeScript.png')
+
+linkedin = Linkedin.create!(badge_name: "Sass-essential-training", skill_ids: [skill4.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Sass-essential-training.png')), filename: 'Sass-essential-training.png')
+
+linkedin = Linkedin.create!(badge_name: "JavaScript-Enhancing-the-DOM", skill_ids: [skill5.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/JavaScript-Enhancing-the-DOM.png')), filename: 'JavaScript-Enhancing-the-DOM.png')
+
+linkedin = Linkedin.create!(badge_name: "JavaScript-Functions", skill_ids: [skill5.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/JavaScript-Functions.png')), filename: 'JavaScript-Functions.png')
+
+linkedin = Linkedin.create!(badge_name: "Git-esential-training-The-Basics-NASBA", skill_ids: [skill9.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Git-esential-training-The-Basics-NASBA.png')), filename: 'Git-esential-training-The-Basics-NASBA.png')
+
+linkedin = Linkedin.create!(badge_name: "HTML-essential-training", skill_ids: [skill3.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/HTML-essential-training.png')), filename: 'HTML-essential-training.png')
+
+linkedin = Linkedin.create!(badge_name: "Agile-Foundations-NASBA", skill_ids: [skill1.id, skill2.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Agile-Foundations-NASBA.png')), filename: 'Agile-Foundations-NASBA.png')
+
+#Hackerrank
+HackerRank.create!(cerificate_name: "Problem Solving", is_badge: true, url: "https://www.hackerrank.com/vlad_rogna", badgeorcertificate: "<svg viewBox=\"0 0 91.66667 100\" class=\"hexagon\"><g><defs><linearGradient id=\"badge-bronze-gradient\" x1=\"52.5\" y1=\"2.5\" x2=\"52.5\" y2=\"102.5\" gradientUnits=\"userSpaceOnUse\"><stop offset=\"0\" stop-color=\"#ffc5ab\"></stop><stop offset=\"1\" stop-color=\"#ffa38a\"></stop></linearGradient></defs><path fill=\"url(#badge-bronze-gradient)\" d=\"M98.28277,47.36h0c-.18459-9.382-.87983-17.797-2.0917-19.8595-1.02214-1.742-6.1721-5.43476-12.6195-9.45853L66.3804,8.23311C59.94162,4.89541,54.4699,2.5,52.49778,2.5c-2.42987,0-10.17687,3.63131-18.49789,8.18049-6.30411,3.44623-12.9328,7.41557-17.83631,10.74623-3.85037,2.61278-6.63864,4.828-7.35893,6.07393-.73574,1.27216-1.28014,4.91124-1.63613,9.67794l-.00014-.00008c-.45195,6.03951-.599,13.88935-.43933,21.10033.20233,9.11082.89243,17.18541,2.07561,19.22049C11.66541,82.42328,46.78277,102.5,52.49778,102.5c2.374,0,9.82245-3.47115,17.92388-7.87722,6.4-3.48081,13.19866-7.5418,18.23618-10.9459l-.00046-.00026c3.93694-2.6605,6.80064-4.91944,7.53385-6.17728.72907-1.2482,1.27024-4.80557,1.62881-9.48065l-.00014-.00008C98.269,62.13222,98.42408,54.47227,98.28277,47.36Z\" transform=\"translate(-6.66667 -2.5)\"></path></g><image class=\"badge-icon\" xlink:href=\"https://hrcdn.net/community-frontend/assets/badges/problem-solving-ecaf59a612.svg\" x=\"50%\" y=\"22\" height=\"27\" width=\"27\" transform=\"translate(-13.5, 0)\"></image><text class=\"badge-title\" x=\"50%\" y=\"65.5\" font-size=\"10\">Problem Solving</text><g class=\"star-section\" transform=\"translate(-8, 0)\"><svg x=\"50%\" y=\"71\" height=\"10\"><svg class=\"badge-star\" viewBox=\"0 0 6.54904 6.25825\" width=\"7\" x=\"0\"><path class=\"star\" d=\"M55.51425,77.01983l-1.89417-.275-.84833-1.7175a.299.299,0,0,0-.27167-.16917.3245.3245,0,0,0-.2725.16917l-.305.61833-.5425,1.09916-.51417.075-1.38.2a.30333.30333,0,0,0-.18583.10083.33411.33411,0,0,0-.045.06833.35631.35631,0,0,0-.02417.07667.34087.34087,0,0,0-.005.04083.3038.3038,0,0,0,.02417.13417.33341.33341,0,0,0,.06667.0975l1.37167,1.33667-.2875,1.67167-.03667.21417c-.00167.01-.00167.02-.0025.02917l-.00167.0175a.26453.26453,0,0,0,.00167.04417.30489.30489,0,0,0,.44417.22917l1.69417-.89,1.69416.89a.30352.30352,0,0,0,.44084-.32L54.31175,78.874l1.37083-1.33667a.30339.30339,0,0,0-.16833-.5175\" transform=\"translate(-49.22548 -74.85817)\"></path></svg><svg class=\"badge-star\" viewBox=\"0 0 6.54904 6.25825\" width=\"7\" x=\"9\"><path class=\"star\" d=\"M55.51425,77.01983l-1.89417-.275-.84833-1.7175a.299.299,0,0,0-.27167-.16917.3245.3245,0,0,0-.2725.16917l-.305.61833-.5425,1.09916-.51417.075-1.38.2a.30333.30333,0,0,0-.18583.10083.33411.33411,0,0,0-.045.06833.35631.35631,0,0,0-.02417.07667.34087.34087,0,0,0-.005.04083.3038.3038,0,0,0,.02417.13417.33341.33341,0,0,0,.06667.0975l1.37167,1.33667-.2875,1.67167-.03667.21417c-.00167.01-.00167.02-.0025.02917l-.00167.0175a.26453.26453,0,0,0,.00167.04417.30489.30489,0,0,0,.44417.22917l1.69417-.89,1.69416.89a.30352.30352,0,0,0,.44084-.32L54.31175,78.874l1.37083-1.33667a.30339.30339,0,0,0-.16833-.5175\" transform=\"translate(-49.22548 -74.85817)\"></path></svg></svg></g></svg>", skill_ids: [skill1.id])
+
+HackerRank.create!(cerificate_name: "10 Days of JS", is_badge: true, url: "https://www.hackerrank.com/vlad_rogna", badgeorcertificate: "<svg viewBox=\"0 0 91.66667 100\" class=\"hexagon\"><g><defs><linearGradient id=\"badge-gold-gradient\" x1=\"52.5\" y1=\"2.5\" x2=\"52.5\" y2=\"102.5\" gradientUnits=\"userSpaceOnUse\"><stop offset=\"0\" stop-color=\"#f9d641\"></stop><stop offset=\"1\" stop-color=\"#f8bc36\"></stop></linearGradient></defs><path fill=\"url(#badge-gold-gradient)\" d=\"M98.28277,47.36h0c-.18459-9.382-.87983-17.797-2.0917-19.8595-1.02214-1.742-6.1721-5.43476-12.6195-9.45853L66.3804,8.23311C59.94162,4.89541,54.4699,2.5,52.49778,2.5c-2.42987,0-10.17687,3.63131-18.49789,8.18049-6.30411,3.44623-12.9328,7.41557-17.83631,10.74623-3.85037,2.61278-6.63864,4.828-7.35893,6.07393-.73574,1.27216-1.28014,4.91124-1.63613,9.67794l-.00014-.00008c-.45195,6.03951-.599,13.88935-.43933,21.10033.20233,9.11082.89243,17.18541,2.07561,19.22049C11.66541,82.42328,46.78277,102.5,52.49778,102.5c2.374,0,9.82245-3.47115,17.92388-7.87722,6.4-3.48081,13.19866-7.5418,18.23618-10.9459l-.00046-.00026c3.93694-2.6605,6.80064-4.91944,7.53385-6.17728.72907-1.2482,1.27024-4.80557,1.62881-9.48065l-.00014-.00008C98.269,62.13222,98.42408,54.47227,98.28277,47.36Z\" transform=\"translate(-6.66667 -2.5)\"></path></g><image class=\"badge-icon\" xlink:href=\"https://hrcdn.net/community-frontend/assets/badges/10-days-of-javascript-94ff22d1c9.svg\" x=\"50%\" y=\"22\" height=\"27\" width=\"27\" transform=\"translate(-13.5, 0)\"></image><text class=\"badge-title\" x=\"50%\" y=\"65.5\" font-size=\"10\">Days of JS</text><g class=\"star-section\" transform=\"translate(-21.5, 0)\"><svg x=\"50%\" y=\"71\" height=\"10\"><svg class=\"badge-star\" viewBox=\"0 0 6.54904 6.25825\" width=\"7\" x=\"0\"><path class=\"star\" d=\"M55.51425,77.01983l-1.89417-.275-.84833-1.7175a.299.299,0,0,0-.27167-.16917.3245.3245,0,0,0-.2725.16917l-.305.61833-.5425,1.09916-.51417.075-1.38.2a.30333.30333,0,0,0-.18583.10083.33411.33411,0,0,0-.045.06833.35631.35631,0,0,0-.02417.07667.34087.34087,0,0,0-.005.04083.3038.3038,0,0,0,.02417.13417.33341.33341,0,0,0,.06667.0975l1.37167,1.33667-.2875,1.67167-.03667.21417c-.00167.01-.00167.02-.0025.02917l-.00167.0175a.26453.26453,0,0,0,.00167.04417.30489.30489,0,0,0,.44417.22917l1.69417-.89,1.69416.89a.30352.30352,0,0,0,.44084-.32L54.31175,78.874l1.37083-1.33667a.30339.30339,0,0,0-.16833-.5175\" transform=\"translate(-49.22548 -74.85817)\"></path></svg><svg class=\"badge-star\" viewBox=\"0 0 6.54904 6.25825\" width=\"7\" x=\"9\"><path class=\"star\" d=\"M55.51425,77.01983l-1.89417-.275-.84833-1.7175a.299.299,0,0,0-.27167-.16917.3245.3245,0,0,0-.2725.16917l-.305.61833-.5425,1.09916-.51417.075-1.38.2a.30333.30333,0,0,0-.18583.10083.33411.33411,0,0,0-.045.06833.35631.35631,0,0,0-.02417.07667.34087.34087,0,0,0-.005.04083.3038.3038,0,0,0,.02417.13417.33341.33341,0,0,0,.06667.0975l1.37167,1.33667-.2875,1.67167-.03667.21417c-.00167.01-.00167.02-.0025.02917l-.00167.0175a.26453.26453,0,0,0,.00167.04417.30489.30489,0,0,0,.44417.22917l1.69417-.89,1.69416.89a.30352.30352,0,0,0,.44084-.32L54.31175,78.874l1.37083-1.33667a.30339.30339,0,0,0-.16833-.5175\" transform=\"translate(-49.22548 -74.85817)\"></path></svg><svg class=\"badge-star\" viewBox=\"0 0 6.54904 6.25825\" width=\"7\" x=\"18\"><path class=\"star\" d=\"M55.51425,77.01983l-1.89417-.275-.84833-1.7175a.299.299,0,0,0-.27167-.16917.3245.3245,0,0,0-.2725.16917l-.305.61833-.5425,1.09916-.51417.075-1.38.2a.30333.30333,0,0,0-.18583.10083.33411.33411,0,0,0-.045.06833.35631.35631,0,0,0-.02417.07667.34087.34087,0,0,0-.005.04083.3038.3038,0,0,0,.02417.13417.33341.33341,0,0,0,.06667.0975l1.37167,1.33667-.2875,1.67167-.03667.21417c-.00167.01-.00167.02-.0025.02917l-.00167.0175a.26453.26453,0,0,0,.00167.04417.30489.30489,0,0,0,.44417.22917l1.69417-.89,1.69416.89a.30352.30352,0,0,0,.44084-.32L54.31175,78.874l1.37083-1.33667a.30339.30339,0,0,0-.16833-.5175\" transform=\"translate(-49.22548 -74.85817)\"></path></svg><svg class=\"badge-star\" viewBox=\"0 0 6.54904 6.25825\" width=\"7\" x=\"27\"><path class=\"star\" d=\"M55.51425,77.01983l-1.89417-.275-.84833-1.7175a.299.299,0,0,0-.27167-.16917.3245.3245,0,0,0-.2725.16917l-.305.61833-.5425,1.09916-.51417.075-1.38.2a.30333.30333,0,0,0-.18583.10083.33411.33411,0,0,0-.045.06833.35631.35631,0,0,0-.02417.07667.34087.34087,0,0,0-.005.04083.3038.3038,0,0,0,.02417.13417.33341.33341,0,0,0,.06667.0975l1.37167,1.33667-.2875,1.67167-.03667.21417c-.00167.01-.00167.02-.0025.02917l-.00167.0175a.26453.26453,0,0,0,.00167.04417.30489.30489,0,0,0,.44417.22917l1.69417-.89,1.69416.89a.30352.30352,0,0,0,.44084-.32L54.31175,78.874l1.37083-1.33667a.30339.30339,0,0,0-.16833-.5175\" transform=\"translate(-49.22548 -74.85817)\"></path></svg><svg class=\"badge-star\" viewBox=\"0 0 6.54904 6.25825\" width=\"7\" x=\"36\"><path class=\"star\" d=\"M55.51425,77.01983l-1.89417-.275-.84833-1.7175a.299.299,0,0,0-.27167-.16917.3245.3245,0,0,0-.2725.16917l-.305.61833-.5425,1.09916-.51417.075-1.38.2a.30333.30333,0,0,0-.18583.10083.33411.33411,0,0,0-.045.06833.35631.35631,0,0,0-.02417.07667.34087.34087,0,0,0-.005.04083.3038.3038,0,0,0,.02417.13417.33341.33341,0,0,0,.06667.0975l1.37167,1.33667-.2875,1.67167-.03667.21417c-.00167.01-.00167.02-.0025.02917l-.00167.0175a.26453.26453,0,0,0,.00167.04417.30489.30489,0,0,0,.44417.22917l1.69417-.89,1.69416.89a.30352.30352,0,0,0,.44084-.32L54.31175,78.874l1.37083-1.33667a.30339.30339,0,0,0-.16833-.5175\" transform=\"translate(-49.22548 -74.85817)\"></path></svg></svg></g></svg>", skill_ids: [skill5.id])
+
+HackerRank.create!(cerificate_name: "30 Days of Code", is_badge: true, url: "https://www.hackerrank.com/vlad_rogna", badgeorcertificate: "<svg viewBox=\"0 0 91.66667 100\" class=\"hexagon\"><g><defs><linearGradient id=\"badge-bronze-gradient\" x1=\"52.5\" y1=\"2.5\" x2=\"52.5\" y2=\"102.5\" gradientUnits=\"userSpaceOnUse\"><stop offset=\"0\" stop-color=\"#ffc5ab\"></stop><stop offset=\"1\" stop-color=\"#ffa38a\"></stop></linearGradient></defs><path fill=\"url(#badge-bronze-gradient)\" d=\"M98.28277,47.36h0c-.18459-9.382-.87983-17.797-2.0917-19.8595-1.02214-1.742-6.1721-5.43476-12.6195-9.45853L66.3804,8.23311C59.94162,4.89541,54.4699,2.5,52.49778,2.5c-2.42987,0-10.17687,3.63131-18.49789,8.18049-6.30411,3.44623-12.9328,7.41557-17.83631,10.74623-3.85037,2.61278-6.63864,4.828-7.35893,6.07393-.73574,1.27216-1.28014,4.91124-1.63613,9.67794l-.00014-.00008c-.45195,6.03951-.599,13.88935-.43933,21.10033.20233,9.11082.89243,17.18541,2.07561,19.22049C11.66541,82.42328,46.78277,102.5,52.49778,102.5c2.374,0,9.82245-3.47115,17.92388-7.87722,6.4-3.48081,13.19866-7.5418,18.23618-10.9459l-.00046-.00026c3.93694-2.6605,6.80064-4.91944,7.53385-6.17728.72907-1.2482,1.27024-4.80557,1.62881-9.48065l-.00014-.00008C98.269,62.13222,98.42408,54.47227,98.28277,47.36Z\" transform=\"translate(-6.66667 -2.5)\"></path></g><image class=\"badge-icon\" xlink:href=\"https://hrcdn.net/community-frontend/assets/badges/30-days-of-code-a772ae4c2f.svg\" x=\"50%\" y=\"22\" height=\"27\" width=\"27\" transform=\"translate(-13.5, 0)\"></image><text class=\"badge-title\" x=\"50%\" y=\"65.5\" font-size=\"10\">Days of Code</text><g class=\"star-section\" transform=\"translate(-3.5, 0)\"><svg x=\"50%\" y=\"71\" height=\"10\"><svg class=\"badge-star\" viewBox=\"0 0 6.54904 6.25825\" width=\"7\" x=\"0\"><path class=\"star\" d=\"M55.51425,77.01983l-1.89417-.275-.84833-1.7175a.299.299,0,0,0-.27167-.16917.3245.3245,0,0,0-.2725.16917l-.305.61833-.5425,1.09916-.51417.075-1.38.2a.30333.30333,0,0,0-.18583.10083.33411.33411,0,0,0-.045.06833.35631.35631,0,0,0-.02417.07667.34087.34087,0,0,0-.005.04083.3038.3038,0,0,0,.02417.13417.33341.33341,0,0,0,.06667.0975l1.37167,1.33667-.2875,1.67167-.03667.21417c-.00167.01-.00167.02-.0025.02917l-.00167.0175a.26453.26453,0,0,0,.00167.04417.30489.30489,0,0,0,.44417.22917l1.69417-.89,1.69416.89a.30352.30352,0,0,0,.44084-.32L54.31175,78.874l1.37083-1.33667a.30339.30339,0,0,0-.16833-.5175\" transform=\"translate(-49.22548 -74.85817)\"></path></svg></svg></g></svg>", skill_ids: [skill1.id])
+
+HackerRank.create!(cerificate_name: "Ruby", is_badge: true, url: "https://www.hackerrank.com/vlad_rogna", badgeorcertificate: "<svg viewBox=\"0 0 91.66667 100\" class=\"hexagon\"><g><defs><linearGradient id=\"badge-gold-gradient\" x1=\"52.5\" y1=\"2.5\" x2=\"52.5\" y2=\"102.5\" gradientUnits=\"userSpaceOnUse\"><stop offset=\"0\" stop-color=\"#f9d641\"></stop><stop offset=\"1\" stop-color=\"#f8bc36\"></stop></linearGradient></defs><path fill=\"url(#badge-gold-gradient)\" d=\"M98.28277,47.36h0c-.18459-9.382-.87983-17.797-2.0917-19.8595-1.02214-1.742-6.1721-5.43476-12.6195-9.45853L66.3804,8.23311C59.94162,4.89541,54.4699,2.5,52.49778,2.5c-2.42987,0-10.17687,3.63131-18.49789,8.18049-6.30411,3.44623-12.9328,7.41557-17.83631,10.74623-3.85037,2.61278-6.63864,4.828-7.35893,6.07393-.73574,1.27216-1.28014,4.91124-1.63613,9.67794l-.00014-.00008c-.45195,6.03951-.599,13.88935-.43933,21.10033.20233,9.11082.89243,17.18541,2.07561,19.22049C11.66541,82.42328,46.78277,102.5,52.49778,102.5c2.374,0,9.82245-3.47115,17.92388-7.87722,6.4-3.48081,13.19866-7.5418,18.23618-10.9459l-.00046-.00026c3.93694-2.6605,6.80064-4.91944,7.53385-6.17728.72907-1.2482,1.27024-4.80557,1.62881-9.48065l-.00014-.00008C98.269,62.13222,98.42408,54.47227,98.28277,47.36Z\" transform=\"translate(-6.66667 -2.5)\"></path></g><image class=\"badge-icon\" xlink:href=\"https://hrcdn.net/community-frontend/assets/badges/ruby-b2c8eababe.svg\" x=\"50%\" y=\"22\" height=\"27\" width=\"27\" transform=\"translate(-13.5, 0)\"></image><text class=\"badge-title\" x=\"50%\" y=\"65.5\" font-size=\"10\">Ruby</text><g class=\"star-section\" transform=\"translate(-21.5, 0)\"><svg x=\"50%\" y=\"71\" height=\"10\"><svg class=\"badge-star\" viewBox=\"0 0 6.54904 6.25825\" width=\"7\" x=\"0\"><path class=\"star\" d=\"M55.51425,77.01983l-1.89417-.275-.84833-1.7175a.299.299,0,0,0-.27167-.16917.3245.3245,0,0,0-.2725.16917l-.305.61833-.5425,1.09916-.51417.075-1.38.2a.30333.30333,0,0,0-.18583.10083.33411.33411,0,0,0-.045.06833.35631.35631,0,0,0-.02417.07667.34087.34087,0,0,0-.005.04083.3038.3038,0,0,0,.02417.13417.33341.33341,0,0,0,.06667.0975l1.37167,1.33667-.2875,1.67167-.03667.21417c-.00167.01-.00167.02-.0025.02917l-.00167.0175a.26453.26453,0,0,0,.00167.04417.30489.30489,0,0,0,.44417.22917l1.69417-.89,1.69416.89a.30352.30352,0,0,0,.44084-.32L54.31175,78.874l1.37083-1.33667a.30339.30339,0,0,0-.16833-.5175\" transform=\"translate(-49.22548 -74.85817)\"></path></svg><svg class=\"badge-star\" viewBox=\"0 0 6.54904 6.25825\" width=\"7\" x=\"9\"><path class=\"star\" d=\"M55.51425,77.01983l-1.89417-.275-.84833-1.7175a.299.299,0,0,0-.27167-.16917.3245.3245,0,0,0-.2725.16917l-.305.61833-.5425,1.09916-.51417.075-1.38.2a.30333.30333,0,0,0-.18583.10083.33411.33411,0,0,0-.045.06833.35631.35631,0,0,0-.02417.07667.34087.34087,0,0,0-.005.04083.3038.3038,0,0,0,.02417.13417.33341.33341,0,0,0,.06667.0975l1.37167,1.33667-.2875,1.67167-.03667.21417c-.00167.01-.00167.02-.0025.02917l-.00167.0175a.26453.26453,0,0,0,.00167.04417.30489.30489,0,0,0,.44417.22917l1.69417-.89,1.69416.89a.30352.30352,0,0,0,.44084-.32L54.31175,78.874l1.37083-1.33667a.30339.30339,0,0,0-.16833-.5175\" transform=\"translate(-49.22548 -74.85817)\"></path></svg><svg class=\"badge-star\" viewBox=\"0 0 6.54904 6.25825\" width=\"7\" x=\"18\"><path class=\"star\" d=\"M55.51425,77.01983l-1.89417-.275-.84833-1.7175a.299.299,0,0,0-.27167-.16917.3245.3245,0,0,0-.2725.16917l-.305.61833-.5425,1.09916-.51417.075-1.38.2a.30333.30333,0,0,0-.18583.10083.33411.33411,0,0,0-.045.06833.35631.35631,0,0,0-.02417.07667.34087.34087,0,0,0-.005.04083.3038.3038,0,0,0,.02417.13417.33341.33341,0,0,0,.06667.0975l1.37167,1.33667-.2875,1.67167-.03667.21417c-.00167.01-.00167.02-.0025.02917l-.00167.0175a.26453.26453,0,0,0,.00167.04417.30489.30489,0,0,0,.44417.22917l1.69417-.89,1.69416.89a.30352.30352,0,0,0,.44084-.32L54.31175,78.874l1.37083-1.33667a.30339.30339,0,0,0-.16833-.5175\" transform=\"translate(-49.22548 -74.85817)\"></path></svg><svg class=\"badge-star\" viewBox=\"0 0 6.54904 6.25825\" width=\"7\" x=\"27\"><path class=\"star\" d=\"M55.51425,77.01983l-1.89417-.275-.84833-1.7175a.299.299,0,0,0-.27167-.16917.3245.3245,0,0,0-.2725.16917l-.305.61833-.5425,1.09916-.51417.075-1.38.2a.30333.30333,0,0,0-.18583.10083.33411.33411,0,0,0-.045.06833.35631.35631,0,0,0-.02417.07667.34087.34087,0,0,0-.005.04083.3038.3038,0,0,0,.02417.13417.33341.33341,0,0,0,.06667.0975l1.37167,1.33667-.2875,1.67167-.03667.21417c-.00167.01-.00167.02-.0025.02917l-.00167.0175a.26453.26453,0,0,0,.00167.04417.30489.30489,0,0,0,.44417.22917l1.69417-.89,1.69416.89a.30352.30352,0,0,0,.44084-.32L54.31175,78.874l1.37083-1.33667a.30339.30339,0,0,0-.16833-.5175\" transform=\"translate(-49.22548 -74.85817)\"></path></svg><svg class=\"badge-star\" viewBox=\"0 0 6.54904 6.25825\" width=\"7\" x=\"36\"><path class=\"star\" d=\"M55.51425,77.01983l-1.89417-.275-.84833-1.7175a.299.299,0,0,0-.27167-.16917.3245.3245,0,0,0-.2725.16917l-.305.61833-.5425,1.09916-.51417.075-1.38.2a.30333.30333,0,0,0-.18583.10083.33411.33411,0,0,0-.045.06833.35631.35631,0,0,0-.02417.07667.34087.34087,0,0,0-.005.04083.3038.3038,0,0,0,.02417.13417.33341.33341,0,0,0,.06667.0975l1.37167,1.33667-.2875,1.67167-.03667.21417c-.00167.01-.00167.02-.0025.02917l-.00167.0175a.26453.26453,0,0,0,.00167.04417.30489.30489,0,0,0,.44417.22917l1.69417-.89,1.69416.89a.30352.30352,0,0,0,.44084-.32L54.31175,78.874l1.37083-1.33667a.30339.30339,0,0,0-.16833-.5175\" transform=\"translate(-49.22548 -74.85817)\"></path></svg></svg></g></svg>", skill_ids: [skill1.id])
+
+#FreeCodeCamp
+freecodecamp1 = FreeCodeCamp.create!(cerificate_name: "Responsive Web Design", url: "https://www.freecodecamp.org/certification/alexrogna/responsive-web-design", skill_ids: [skill3.id, skill4.id])
+freecodecamp1.certificate.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/FreeCodeCamps/Responsive-Web-Design.png')), filename: 'Responsive-Web-Design.png')
+
+freecodecamp2 = FreeCodeCamp.create!(cerificate_name: "JavaScript Algorithms and Data Structures", url: "https://www.freecodecamp.org/certification/alexrogna/javascript-algorithms-and-data-structures", skill_ids: [skill5.id])
+freecodecamp2.certificate.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/FreeCodeCamps/Javascript.png')), filename: 'Javascript.png')
+
+#Tags
+tag1 = Tag.create!(name: "Agency")
+tag2 = Tag.create!(name: "Amazon S3")
+tag3 = Tag.create!(name: "Blog")
+tag4 = Tag.create!(name: "Css")
+tag5 = Tag.create!(name: "Docker")
+tag6 = Tag.create!(name: "Ecommerce")
+tag7 = Tag.create!(name: "Git")
+tag8 = Tag.create!(name: "Google Maps")
+tag9 = Tag.create!(name: "Html")
+tag10 = Tag.create!(name: "I18n")
+tag11 = Tag.create!(name: "Javascript")
+tag12 = Tag.create!(name: "Linux")
+tag13 = Tag.create!(name: "Logo Design")
+tag14 = Tag.create!(name: "Photography Platform")
+tag15 = Tag.create!(name: "PostGis", skill_ids: [skill7.id])
+tag16 = Tag.create!(name: "Postgresql", skill_ids: [skill7.id])
+tag17 = Tag.create!(name: "Presentation Website")
+tag18 = Tag.create!(name: "Rails")
+tag19 = Tag.create!(name: "React")
+tag20 = Tag.create!(name: "Ruby")
+tag21 = Tag.create!(name: "Social Network")
+tag22 = Tag.create!(name: "VueJs", skill_ids: [skill5.id])
+tag23 = Tag.create!(name: "Wordpress")
+
+Project.create!(name: "Vang", tag_ids: [tag4.id, tag5.id, tag7.id, tag9.id, tag16.id, tag18.id, tag20.id], hidden: true, order_id: 101)
+Project.create!(name: "AlexRogna", tag_ids: [tag4.id, tag5.id, tag7.id, tag9.id, tag11.id, tag12.id, tag16.id, tag18.id, tag20.id ], hidden: true, order_id: 101)
+Project.create!(name: "Books website", tag_ids: [tag4.id, tag5.id, tag7.id, tag9.id, tag12.id, tag16.id, tag18.id, tag20.id], hidden: true, order_id: 101)
+Project.create!(name: "First Blog", tag_ids: [tag4.id, tag5.id, tag7.id, tag9.id, tag16.id, tag18.id, tag20.id], hidden: true, order_id: 101)
+Project.create!(name: "Second Blog", tag_ids: [tag4.id, tag5.id, tag7.id, tag9.id, tag16.id, tag18.id, tag20.id], hidden: true, order_id: 101)
+Project.create!(name: "Third Blog", tag_ids: [tag4.id, tag5.id, tag7.id, tag9.id, tag16.id, tag18.id, tag20.id], hidden: true, order_id: 101)
+Project.create!(name: "Twitter", tag_ids: [tag4.id, tag5.id, tag7.id, tag9.id, tag12.id, tag16.id, tag18.id, tag20.id], hidden: true, order_id: 101)
+Project.create!(name: "Dribble", tag_ids: [tag4.id, tag5.id, tag7.id, tag9.id, tag11.id, tag12.id, tag16.id, tag18.id, tag20.id], hidden: true, order_id: 101)
+Project.create!(name: "Depot", tag_ids: [tag4.id, tag5.id, tag7.id, tag9.id, tag10.id, tag11.id, tag12.id, tag16.id, tag18.id, tag19.id, tag20.id], hidden: true, order_id: 101)
+Project.create!(name: "Beginning Rails 6", tag_ids: [tag4.id, tag5.id, tag7.id, tag9.id, tag11.id, tag12.id, tag16.id, tag18.id, tag20.id], hidden: true, order_id: 101)
+Project.create!(name: "Tandibi", tag_ids: [tag4.id, tag5.id, tag7.id, tag8.id, tag9.id, tag10.id, tag11.id, tag15.id, tag18.id, tag20.id, tag22.id], hidden: true, order_id: 101)
+Project.create!(name: "Sempresano", tag_ids: [tag4.id, tag9.id, tag11.id, tag23.id], hidden: true, order_id: 101)
+Project.create!(name: "Cufarul cu dorinte", tag_ids: [tag23.id], hidden: true, order_id: 101)
+Project.create!(name: "Florarescu", tag_ids: [tag23.id], hidden: true, order_id: 101)
+Project.create!(name: "PloiestiValueCenter", tag_ids: [tag23.id], hidden: true, order_id: 101)
+Project.create!(name: "PloiestiRetailCenter", tag_ids: [tag23.id], hidden: true, order_id: 101)
+Project.create!(name: "ArtCandle", tag_ids: [tag4.id, tag9.id, tag11.id], hidden: true, order_id: 101)
+Project.create!(name: "Rogna", tag_ids: [tag23.id], hidden: true, order_id: 101)
+Project.create!(name: "VA Photos", tag_ids: [tag4.id, tag9.id], hidden: true, order_id: 101)
+Project.create!(name: "AdrianPetre.com", tag_ids: [tag4.id, tag9.id], hidden: true, order_id: 101)
+
+project1 = Project.create!(name: "Logit Solutions", url: "https://logit-solutions.co.uk/", tag_ids: [tag8.id, tag17.id, tag23.id], hidden: false, order_id: 1)
+ActionText::RichText.create!(record_type: 'Project',record_id: project1.id, name: 'description', body: "This is a presentation website for Logit Solutions which provides top-grade software services and together with partners delivers solutions on the fields involving high-volumes of operations and data, such as retail, distribution and logistics, business intelligence, process optimization, scientific research, applied data science, and others.")
+project1.cover_image.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/01.Logit-Solutions/cover-image-logit-solutions.png')), filename: 'cover-image-logit-solutions.png')
+project1.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/01.Logit-Solutions/logo-logit-solutions.png')), filename: 'logo-logit-solutions.png')
+project1.project_logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/01.Logit-Solutions/project-logo-logit-solutions.png')), filename: 'project-logo-logit-solutions.png')
+project1.main_tech.attac(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/Main-Tech/WordPress_blue_logo.png')), filename: 'WordPress_blue_logo.png')
+
+project2 = Project.create!(name: "Eleca", url: "https://elenamuteanu.awesomenewdesign.co.uk/", tag_ids: [tag3.id, tag13.id, tag23.id], hidden: false, order_id: 2)
+ActionText::RichText.create!(record_type: 'Project',record_id: project2.id, name: 'description', body: "Eleca is a blog made for a passionate reader who wants to share with her followers the opinions about what she and her daughter read. She also inspire followers with food recipe and handmade ideas.")
+project2.cover_image.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/02.EleCa/cover-image-eleca.png')), filename: 'cover-image-eleca.png')
+project2.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/02.EleCa/logo-eleca.png')), filename: 'logo-eleca.png')
+project2.project_logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/02.EleCa/project-logo-eleca.png')), filename: 'project-logo-eleca.png')
+project2.main_tech.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/Main-Tech/WordPress_blue_logo.png')), filename: 'WordPress_blue_logo.png')
+
+project3 = Project.create!(name: "Online Trust Mark", url: "https://trustmark.awesomenewdesign.co.uk/", tag_ids: [tag13.id, tag17.id, tag23.id], hidden: false, order_id: 3)
+ActionText::RichText.create!(record_type: 'Project',record_id: project3.id, name: 'description', body: "Undoubtedly, one of the key elements for the development of e-commerce is consumer confidence. The Online Trustmark is a self-regulatory tool designed to achieve this goal. However, as the Internet is a transnational environment, and legal regulations for consumer protection cannot be the only element that bring online business development, they are trying to actively involve the business environment in increasing confidence in the field in which it operates.")
+project3.cover_image.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/03.Online-Trust-Mark/cover-image-online-trust-mark.png')), filename: 'cover-image-online-trust-mark.png')
+project3.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/03.Online-Trust-Mark/logo-online-trust-mark.png')), filename: 'logo-online-trust-mark.png')
+project3.project_logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/03.Online-Trust-Mark/project-logo-online-trust-mark.png')), filename: 'project-logo-online-trust-mark.png')
+project3.main_tech.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/Main-Tech/WordPress_blue_logo.png')), filename: 'WordPress_blue_logo.png')
+
+project4 = Project.create!(name: "Lindenfeld", url: "https://lindenfeld.eu/", tag_ids: [tag4.id, tag8.id, tag13.id, tag17.id, tag23.id], hidden: false, order_id: 4)
+ActionText::RichText.create!(record_type: 'Project',record_id: project4.id, name: 'description', body: "Presentation website for a village in Romania that currently has no residents, the last one dying in 1998. It is a place that despite the fact that it’s in ruins , is reborn in online so that the descendants of those who lived there not to forget about it, and maybe one day to return to the place where they came from.")
+project4.cover_image.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/04.Lindenfeld/cover-image-lindenfeld.png')), filename: 'cover-image-lindenfeld.png')
+project4.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/04.Lindenfeld/logo-lindenfeld.png')), filename: 'logo-lindenfeld.png')
+project4.project_logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/04.Lindenfeld/project-logo-lindenfeld.jpg')), filename: 'project-logo-lindenfeld.jpg')
+project4.main_tech.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/Main-Tech/WordPress_blue_logo.png')), filename: 'WordPress_blue_logo.png')
+
+project5 = Project.create!(name: "Muzeul Petrolului", url: "https://muzeulpetrolului.ro/stage1", tag_ids: [tag8.id, tag13.id, tag17.id, tag23.id], hidden: false, order_id: 5)
+ActionText::RichText.create!(record_type: 'Project',record_id: project5.id, name: 'description', body: "Presentation website for the largest crude oil museum in Eastern Europe. It is about the beginning of an era that today is almost over due to developments in technology, but which must not be forgotten because it led to our development as a species. Without the discovery of crude oil, the world today would have looked very different from what we know.")
+project5.cover_image.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/05.Muzeul-Petrolului/cover-image-muzeul-petrolului.png')), filename: 'cover-image-muzeul-petrolului.png')
+project5.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/05.Muzeul-Petrolului/logo-muzeul-petrolului.png')), filename: 'logo-muzeul-petrolului.png')
+project5.project_logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/05.Muzeul-Petrolului/project-logo-muzeul-petrolului.png')), filename: 'project-logo-muzeul-petrolului.png')
+project5.main_tech.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/Main-Tech/WordPress_blue_logo.png')), filename: 'WordPress_blue_logo.png')
+
+project6 = Project.create!(name: "Ewbs", url: "https://ewbs.awesomenewdesign.co.uk/", tag_ids: [tag8.id, tag13.id, tag17.id, tag23.id], hidden: false, order_id: 6)
+ActionText::RichText.create!(record_type: 'Project',record_id: project6.id, name: 'description', body: "Presentation website for EWB Solutions which supplies bellows to many industries throughout the world including: Aerospace, Vacuum Engineering, Chemical, Semiconductor, Medical, Nuclear, Pharmaceutical and Defence industries.")
+project6.cover_image.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/06.Ewbs/cover-image-ewbs.png')), filename: 'cover-image-ewbs.png')
+project6.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/06.Ewbs/logo-ewbs.png')), filename: 'logo-ewbs.png')
+project6.project_logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/06.Ewbs/project-logo-ewbs.png')), filename: 'project-logo-ewbs.png')
+project6.main_tech.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/Main-Tech/WordPress_blue_logo.png')), filename: 'WordPress_blue_logo.png')
+
+project7 = Project.create!(name: "Mahunt", url: "https://mahunt.awesomenewdesign.co.uk/", tag_ids: [tag8.id, tag13.id, tag17.id, tag23.id], hidden: false, order_id: 7)
+ActionText::RichText.create!(record_type: 'Project',record_id: project7.id, name: 'description', body: "Presentation website for M A Hunt Ltd which remove scrap cars for the general public and private owned garages. Being approved by both the DVLA and the Environment Agency they will scrap vehicles responsibly and they will issue an official certificate of destruction.")
+project7.cover_image.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/07.Mahunt/cover-image-mahunt.png')), filename: 'cover-image-mahunt.png')
+project7.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/07.Mahunt/logo-mahunt.png')), filename: 'logo-mahunt.png')
+project7.project_logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/07.Mahunt/project-logo-mahunt.png')), filename: 'project-logo-mahunt.png')
+project7.main_tech.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/Main-Tech/WordPress_blue_logo.png')), filename: 'WordPress_blue_logo.png')
+
+project8 = Project.create!(name: "Awesome New Design", url: "https://awesomenewdesign.co.uk/stage1", tag_ids: [tag1.id, tag13.id, tag17.id, tag23.id], hidden: false, order_id: 8)
+ActionText::RichText.create!(record_type: 'Project',record_id: project8.id, name: 'description', body: "Presentation website for Awesome New Design, a web development agency which offer affordable and creative solutions for all online needs like websites design, e-commerce websites, CRM solutions, software development and branding.")
+project8.cover_image.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/08.Awesome-New-Design/cover-image-awesome-new-design.png')), filename: 'cover-image-awesome-new-design.png')
+project8.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/08.Awesome-New-Design/logo-awesome-new-design.png')), filename: 'logo-awesome-new-design.png')
+project8.project_logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/08.Awesome-New-Design/project-logo-awesome-new-design.png')), filename: 'project-logo-awesome-new-design.png')
+project8.main_tech.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/Main-Tech/WordPress_blue_logo.png')), filename: 'WordPress_blue_logo.png')
+
+project9 = Project.create!(name: "Black and Orange", url: "https://blackandorange.alexrogna.com/", github_url: "https://github.com/AlexUkPC/blackAndOrangeA", docker_url: "https://hub.docker.com/r/alexrogna/blackandorange_web", tag_ids: [tag2.id, tag4.id, tag5.id, tag7.id, tag9.id, tag11.id, tag12.id, tag13.id, tag14.id, tag16.id, tag18.id, tag20.id], hidden: false, order_id: 9)
+ActionText::RichText.create!(record_type: 'Project',record_id: project9.id, name: 'description', body: "For a long time in history there were only black and white pictures, after which colour photos appeared. Because I want to remember the black and white pictures, but I wanted a splash of colour I made this platform for sharing black and orange photos with everyone. Anyone can upload their black and orange pictures. Users can view, like and comment other user photos.")
+project9.cover_image.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/09.Black-and-Orange/cover-image-black-and-orange.png')), filename: 'cover-image-black-and-orange.png')
+project9.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/09.Black-and-Orange/logo-black-and-orange.png')), filename: 'logo-black-and-orange.png')
+project9.project_logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/09.Black-and-Orange/project-logo-black-and-orange.jpg')), filename: 'project-logo-black-and-orange.jpg')
+project9.main_tech.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/Main-Tech/Ruby_on_Rails_logo.png')), filename: 'Ruby_on_Rails_logo.png')
+
+project10 = Project.create!(name: "It Bookstore", url: "https://itbookstore.alexrogna.com/", github_url: "https://github.com/AlexUkPC/itbookstore", docker_url: "https://hub.docker.com/r/alexrogna/itbookstore_web", tag_ids: [tag4.id, tag5.id, tag6.id, tag7.id, tag9.id, tag10.id, tag11.id, tag12.id, tag13.id, tag16.id, tag18.id, tag19.id, tag20.id], hidden: true, order_id: 10)
+ActionText::RichText.create!(record_type: 'Project',record_id: project10.id, name: 'description', body: "This is a proof of concept, made in Rails, for an ecommerce website which sell IT books. The cart is updated dynamic with AJAX, changes are broadcast with the help of Action Cable, the checkout is made with a little help from React for adding fields dynamically to the form and admins can be notified in a RSS client about new orders with the help of Atom feed. I used Action mailer to send confirmation email to clients for placed orders, and Action Mailbox to receive support emails, Active Storage to store them and Rich Text to respond.")
+project10.cover_image.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/10.It-Bookstore/cover-image-it-bookstore.png')), filename: 'cover-image-it-bookstore.png')
+project10.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/10.It-Bookstore/logo-it-bookstore.png')), filename: 'logo-it-bookstore.png')
+project10.project_logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/10.It-Bookstore/project-logo-it-bookstore.png')), filename: 'project-logo-it-bookstore.png')
+project10.main_tech.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/Main-Tech/Ruby_on_Rails_logo.png')), filename: 'Ruby_on_Rails_logo.png')
+
+project11 = Project.create!(name: "Geldar Network", url: "https://geldarnetwork.alexrogna.com/", github_url: "https://github.com/AlexUkPC/GeldarNetwork", docker_url: "https://hub.docker.com/r/alexrogna/geldarnetwork_web", tag_ids: [tag2.id, tag4.id, tag5.id, tag7.id, tag8.id, tag9.id, tag10.id, tag11.id, tag12.id, tag13.id, tag15.id, tag18.id, tag20.id, tag21.id, tag22.id], hidden: false, order_id: 11)
+ActionText::RichText.create!(record_type: 'Project',record_id: project11.id, name: 'description', body: "This is a social network in which users can share their thoughts, photos and check in at different locations. They can also interact with other users by following and be followed. If they follow someone, then they can see in the main timeline what the other user post and respond to that. From the settings section users can change their profile photo, details, make the profile private or delete the account.")
+project11.cover_image.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/11.Geldar-Network/cover-image-geldar-network.png')), filename: 'cover-image-geldar-network.png')
+project11.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/11.Geldar-Network/logo-geldar-network.png')), filename: 'logo-geldar-network.png')
+project11.project_logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/11.Geldar-Network/project-logo-geldar-network.png')), filename: 'project-logo-geldar-network.png')
+project11.main_tech.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/Main-Tech/Ruby_on_Rails_logo.png')), filename: 'Ruby_on_Rails_logo.png')
+
+project12 = Project.create!(name: "The Art Of Travelling", url: "https://theartoftravelling.alexrogna.com/", github_url: "https://github.com/AlexUkPC/theartoftravelling", docker_url: "https://hub.docker.com/r/alexrogna/theartoftravelling_web", tag_ids: [tag3.id, tag4.id, tag5.id, tag7.id, tag9.id, tag10.id, tag11.id, tag12.id, tag13.id, tag16.id, tag18.id, tag20.id], hidden: false, order_id: 12)
+ActionText::RichText.create!(record_type: 'Project',record_id: project12.id, name: 'description', body: "This is a travel blog made in Rails. A blogger can post an article on the website or he can send an email to a custom email address and with the help of Active Mailbox this is stored as an unpublished article linked with his account which he can publish later. When a new article is published on the blog, with the help of Action Cable everyone active on the website can see a notification for this event with a direct link to the article.")
+project12.cover_image.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/12.The-Art-of-Travelling/cover-image-the-art-of-travelling.png')), filename: 'cover-image-the-art-of-travelling.png')
+project12.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/12.The-Art-of-Travelling/logo-the-art-of-travelling.png')), filename: 'logo-the-art-of-travelling.png')
+project12.project_logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/12.The-Art-of-Travelling/project-logo-the-art-of-travelling.png')), filename: 'project-logo-the-art-of-travelling.png')
+project12.main_tech.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/Main-Tech/Ruby_on_Rails_logo.png')), filename: 'Ruby_on_Rails_logo.png')
+
+project13 = Project.create!(name: "Titiatio", url: "https://titiatio.alexrogna.com/", github_url: "https://github.com/AlexUkPC/titiatio", docker_url: "https://hub.docker.com/r/alexrogna/titiatio_web", tag_ids: [tag4.id, tag5.id, tag7.id, tag9.id, tag11.id, tag12.id, tag13.id, tag16.id, tag18.id, tag20.id], hidden: true, order_id: 13)
+ActionText::RichText.create!(record_type: 'Project',record_id: project13.id, name: 'description', body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nescio quo modo praetervolavit oratio. Sed in rebus apertissimis nimium longi sumus. Perge porro; Compensabatur, inquit, cum summis doloribus laetitia. Bonum patria: miserum exilium. Conferam tecum, quam cuique verso rem subicias; ")
+project13.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/13.Titiatio/logo-titiatio.png')), filename: 'logo-titiatio.png')
+project13.project_logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/13.Titiatio/project-logo-titiatio.png')), filename: 'project-logo-titiatio.png')
+project13.main_tech.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/Main-Tech/Ruby_on_Rails_logo.png')), filename: 'Ruby_on_Rails_logo.png')
