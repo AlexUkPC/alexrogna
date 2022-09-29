@@ -41,7 +41,7 @@ skill10.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Sk
 
 #Language skills
 LanguageSkill.create!(language: "English", certificate_name: "EF SET Certificate", certificate_url: "https://efset.org/cert/ExPscw", procent: 66)
-LanguageSkill.create!(language: "German",certificate_name: "", certificate_url: "", procent: 33)
+LanguageSkill.create!(language: "German",certificate_name: "", certificate_url: "", procent: 30)
 LanguageSkill.create!(language: "Romanian",is_native: true, procent: 99)
 
 #Personal skills
