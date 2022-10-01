@@ -36,8 +36,8 @@ skill8 = Skill.create!(name: 'Linux', order_id: '8')
 skill8.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Skills/Linux.png')), filename: 'linux.png')
 skill9 = Skill.create!(name: 'Git', order_id: '9')
 skill9.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Skills/Git.png')), filename: 'git.png')
-skill10 = Skill.create!(name: 'Docker', order_id: '10')
-skill10.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Skills/Docker.png')), filename: 'docker.png')
+skill10 = Skill.create!(name: 'DevOps', order_id: '10')
+skill10.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Skills/DevOps.png')), filename: 'devops.png')
 
 #Language skills
 LanguageSkill.create!(language: "English", certificate_name: "EF SET Certificate", certificate_url: "https://efset.org/cert/ExPscw", procent: 66)
@@ -154,7 +154,7 @@ tech48 = Tech.create!(name: "Filezilla", order_id: 48)
 tech48.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Tech/Filezilla.png')), filename: 'filezilla.png')
 tech49 = Tech.create!(name: "Git", order_id: 49)
 tech49.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Tech/Git.png')), filename: 'git.png')
-tech50 = Tech.create!(name: "Docker", order_id: 50)
+tech50 = Tech.create!(name: "Docker", order_id: 50, skill_ids: [skill10.id])
 tech50.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Tech/Docker.png')), filename: 'docker.png')
 tech51 = Tech.create!(name: "Asana", order_id: 51)
 tech51.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Tech/Asana.png')), filename: 'asana.png')
@@ -174,6 +174,24 @@ tech58 = Tech.create!(name: "VmWare", order_id: 58)
 tech58.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Tech/VmWare.png')), filename: 'vmware.png')
 tech59 = Tech.create!(name: "Office Suite", order_id: 59)
 tech59.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Tech/Office.png')), filename: 'office.png')
+tech60 = Tech.create!(name: "Jenkins", order_id: 60, skill_ids: [skill10.id])
+tech60.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Tech/Jenkins.png')), filename: 'jenkins.png')
+tech61 = Tech.create!(name: "Jira", order_id: 61, skill_ids: [skill10.id])
+tech61.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Tech/Jira.png')), filename: 'jira.png')
+tech62 = Tech.create!(name: "Portainer", order_id: 62, skill_ids: [skill10.id])
+tech62.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Tech/Portainer.png')), filename: 'portainer.png')
+tech63 = Tech.create!(name: "Kubernetes", order_id: 63, skill_ids: [skill10.id])
+tech63.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Tech/Kubernetes.png')), filename: 'kubernetes.png')
+tech64 = Tech.create!(name: "Ansible", order_id: 64, skill_ids: [skill10.id])
+tech64.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Tech/Ansible.png')), filename: 'ansible.png')
+tech65 = Tech.create!(name: "Terraform", order_id: 65, skill_ids: [skill10.id])
+tech65.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Tech/Terraform.png')), filename: 'terraform.png')
+tech66 = Tech.create!(name: "Grafana", order_id: 66, skill_ids: [skill10.id])
+tech66.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Tech/Grafana.png')), filename: 'grafana.png')
+tech67 = Tech.create!(name: "Prometheus", order_id: 67, skill_ids: [skill10.id])
+tech67.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Tech/Prometheus.png')), filename: 'prometheus.png')
+tech68 = Tech.create!(name: "Loki", order_id: 68, skill_ids: [skill10.id])
+tech68.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Tech/Loki.png')), filename: 'loki.png')
 
 # Work Experience
 work1 = Work.create!(company: "DESTINE BROKER DE ASIGURARE - Ploiesti, RO", position: "Network Administrator and IT Support", start_date: "2008-01-03", end_date: "2014-06-15", tech_ids: [tech12.id, tech53.id, tech47.id, tech17.id, tech45.id, tech48.id, tech16.id, tech13.id, tech15.id, tech59.id, tech54.id, tech14.id, tech44.id, tech58.id, tech46.id] )
@@ -182,13 +200,13 @@ ActionText::RichText.create!(record_type: 'Work',record_id: work1.id, name: 'key
 work2 = Work.create!(company: "SEMPRE SANO CATERING - Bucharest, RO", position: "C# Developer", start_date: "2014-07-01", end_date: "2014-12-01", tech_ids: [tech12.id, tech47.id, tech17.id, tech48.id, tech16.id, tech15.id, tech44.id, tech46.id, tech26.id, tech25.id])
 ActionText::RichText.create!(record_type: 'Work',record_id: work2.id, name: 'key_responsibilities', body: "<ul><li>Developed the internal software and the external presentation website. </li><li>Generated, maintained and archived the content of the website . </li><li>Provided ongoing problem-solving support of applications and implementation of the web services.</li></ul>")
 
-work3 = Work.create!(company: "ARTCANDLE - Ploiesti, RO", position: "Web developer", start_date: "2015-05-01", end_date: "2016-08-01", tech_ids: [tech43.id, tech47.id, tech17.id, tech48.id, tech16.id, tech15.id, tech54.id, tech6.id, tech36.id, tech46.id])
+work3 = Work.create!(company: "ARTCANDLE - Ploiesti, RO", position: "Web developer", start_date: "2015-05-01", end_date: "2016-08-01", tech_ids: [tech43.id, tech47.id, tech17.id, tech16.id, tech15.id, tech54.id, tech6.id, tech36.id, tech46.id])
 ActionText::RichText.create!(record_type: 'Work',record_id: work3.id, name: 'key_responsibilities', body: "<ul><li>Defined website architecture and overall site structure. </li><li>Prepared, coded, installed, tested and debugged web applications using appropriate editors.</li><li>Assured security and backups of all websites and related applications.</li></ul>")
 
 work4 = Work.create!(company: "LOGIT SOLUTIONS - Ploiesti, RO", position: "Programmer and Web developer", start_date: "2016-09-01", end_date: "2016-12-01", tech_ids: [tech39.id, tech20.id, tech12.id, tech47.id, tech17.id, tech48.id, tech16.id, tech22.id, tech35.id, tech37.id, tech6.id, tech36.id, tech5.id, tech7.id, tech38.id, tech40.id, tech41.id])
 ActionText::RichText.create!(record_type: 'Work',record_id: work4.id, name: 'key_responsibilities', body: "<ul><li>Coded, debugged and documented modules in Python and C# for different CMS, based on clients requests. </li><li>Designed and updated websites on PrestaShop and Magento.</li></ul>")
 
-work5 = Work.create!(company: "FREELANCER", position: "Programmer and Web developer", start_date: "2016-12-01", end_date: "2022-12-01", present: true, tech_ids: [tech28.id, tech51.id, tech20.id, tech19.id, tech53.id, tech47.id, tech17.id, tech50.id, tech31.id, tech48.id, tech49.id, tech52.id, tech16.id, tech27.id, tech22.id, tech23.id, tech33.id, tech15.id, tech34.id, tech32.id, tech54.id, tech4.id, tech2.id, tech24.id, tech1.id, tech29.id, tech18.id, tech3.id, tech21.id, tech57.id, tech30.id, tech25.id])
+work5 = Work.create!(company: "FREELANCER", position: "Programmer and Web developer", start_date: "2016-12-01", end_date: "2022-12-01", present: true, tech_ids: [tech20.id, tech19.id, tech53.id, tech17.id, tech50.id, tech31.id, tech49.id, tech16.id, tech22.id, tech23.id, tech33.id, tech32.id, tech54.id, tech4.id, tech2.id, tech24.id, tech1.id, tech18.id, tech3.id, tech21.id, tech30.id, tech25.id, tech60.id, tech62.id])
 ActionText::RichText.create!(record_type: 'Work',record_id: work5.id, name: 'key_responsibilities', body: "<ul><li>Coded, debugged, tested and documented web applications based on customer requests. </li><li>Designed, created, updated, assured security and backups for websites.</li><li>Learned new tools and technologies to help me achieve my goals.</li></ul>")
 
 #Education
@@ -198,7 +216,7 @@ ActionText::RichText.create!(record_type: 'Education',record_id: education1.id, 
 education2 = Education.create!(school: "SPIRU HARET UNIVERSITY", location: "Bucharest, RO", start_date: "2009-10-01", end_date: "2012-06-01", specialization: "Faculty of Mathematics and Computer Science", tech_ids: [tech10.id, tech11.id ], show_on_cv: true )
 ActionText::RichText.create!(record_type: 'Education',record_id: education2.id, name: 'courses', body: "<div>Bachelor's degree in Computer Science - 2021</div>")
 
-education3 = Education.create!(school: "Purple Beard Training", location: "UK", start_date: "2021-12-09", end_date: "2022-03-15", specialization: "DevOps Course ", tech_ids: [tech50.id, tech49.id ], show_on_cv: true )
+education3 = Education.create!(school: "Purple Beard Training", location: "UK", start_date: "2021-12-09", end_date: "2022-03-15", specialization: "DevOps Course ", tech_ids: [tech50.id, tech49.id, tech60.id, tech61.id, tech62.id, tech63.id, tech64.id, tech65.id, tech66.id, tech67.id, tech68.id ], show_on_cv: true )
 
 #Books
 book = Book.create!(title: "JavaScript in easy steps", subtitle: "5th Edition", author: "Mike McGrath", publisher: "In Easy Steps", dop: "2013-01-31", resources_link: "https://ineasysteps.com/wp-content/uploads/2013/04/JavaScript5th-sources-revisedApril2013.zip", github_link: "https://github.com/AlexUkPC/JavaScript_In_Easy_Steps", skill_ids: [skill5.id])
@@ -250,62 +268,134 @@ book = Book.create!(title: "Beginning Git and GitHub", subtitle: "A Comprehensiv
 book.cover.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Books/Beginning-Git-and-GitHub.jpg')), filename: 'Beginning-Git-and-GitHub.jpg')
 
 #Linkedins
-linkedin = Linkedin.create!(badge_name: "Linux", skill_ids: [skill8.id])
-linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Linux.png')), filename: 'Linux.png')
-
-linkedin = Linkedin.create!(badge_name: "Ruby on Rails", skill_ids: [skill1.id, skill2.id])
-linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Ruby-on-Rails.png')), filename: 'Ruby-on-Rails.png')
-
-linkedin = Linkedin.create!(badge_name: "HTML", skill_ids: [skill3.id])
-linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/HTML.png')), filename: 'HTML.png')
+linkedin = Linkedin.create!(badge_name: "Agile Methodologies", skill_ids: [skill2.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Assessments/Agile-Methodologies.png')), filename: 'Agile-Methodologies.png')
 
 linkedin = Linkedin.create!(badge_name: "CSS", skill_ids: [skill4.id])
-linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/CSS.png')), filename: 'CSS.png')
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Assessments/CSS.png')), filename: 'CSS.png')
 
 linkedin = Linkedin.create!(badge_name: "Git", skill_ids: [skill9.id])
-linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Git.png')), filename: 'Git.png')
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Assessments/Git.png')), filename: 'Git.png')
 
-linkedin = Linkedin.create!(badge_name: "Ruby-Testing-with-RSpec", skill_ids: [skill1.id])
-linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Ruby-Testing-with-RSpec.png')), filename: 'Ruby-Testing-with-RSpec.png')
+linkedin = Linkedin.create!(badge_name: "HTML", skill_ids: [skill3.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Assessments/HTML.png')), filename: 'HTML.png')
 
-linkedin = Linkedin.create!(badge_name: "Ruby-essential-training-part1-The-basics", skill_ids: [skill1.id])
-linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Ruby-essential-training-part1-The-basics.png')), filename: 'Ruby-essential-training-part1-The-basics.png')
+linkedin = Linkedin.create!(badge_name: "JavaScript", skill_ids: [skill5.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Assessments/JavaScript.png')), filename: 'JavaScript.png')
 
-linkedin = Linkedin.create!(badge_name: "Sinatra", skill_ids: [skill1.id])
-linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Sinatra.png')), filename: 'Sinatra.png')
+linkedin = Linkedin.create!(badge_name: "Linux", skill_ids: [skill8.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Assessments/Linux.png')), filename: 'Linux.png')
 
-linkedin = Linkedin.create!(badge_name: "Ruby-on-Rails-5-essential-training", skill_ids: [skill2.id])
-linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Ruby-on-Rails-5-essential-training.png')), filename: 'Ruby-on-Rails-5-essential-training.png')
+linkedin = Linkedin.create!(badge_name: "Ruby on Rails", skill_ids: [skill1.id, skill2.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Assessments/Ruby-on-Rails.png')), filename: 'Ruby-on-Rails.png')
 
-linkedin = Linkedin.create!(badge_name: "Ruby-on-Rails-Developer", skill_ids: [skill2.id])
-linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Ruby-on-Rails-Developer.png')), filename: 'Ruby-on-Rails-Developer.png')
+linkedin = Linkedin.create!(badge_name: "Agile Development Practices",url: "https://www.linkedin.com/learning/certificates/42cea8bc5b94f03464f5b79cd8959da9580eaa3cd6a3041fbbd90450fee86563?trk=share_certificate", skill_ids: [skill2.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/01.Agile-Development-Practices.png')), filename: 'Agile-Development-Practices.png')
 
-linkedin = Linkedin.create!(badge_name: "Ruby-on-Rails-Get-more-from-ActiveRecord", skill_ids: [skill2.id])
-linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Ruby-on-Rails-Get-more-from-ActiveRecord.png')), filename: 'Ruby-on-Rails-Get-more-from-ActiveRecord.png')
+linkedin = Linkedin.create!(badge_name: "Agile Foundations",url: "https://www.linkedin.com/learning/certificates/72128198de935f6cf71bdbe819197188fee8b2521b3f6f63b3c8326af7214e10?trk=share_certificate", skill_ids: [skill2.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/02.Agile-Foundations.png')), filename: 'Agile-Foundations.png')
 
-linkedin = Linkedin.create!(badge_name: "CoffeScript", skill_ids: [skill5.id])
-linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/CoffeScript.png')), filename: 'CoffeScript.png')
+linkedin = Linkedin.create!(badge_name: "Become a Ruby on Rails Developer", url: "", skill_ids: [skill2.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/03.Become-a-Ruby-on-Rails-Developer.png')), filename: 'Become-a-Ruby-on-Rails-Developer.png')
 
-linkedin = Linkedin.create!(badge_name: "TypeScript", skill_ids: [skill5.id])
-linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/TypeScript.png')), filename: 'TypeScript.png')
+linkedin = Linkedin.create!(badge_name: "Become a Web Designer", url: "", skill_ids: [skill3.id, skill4.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/04.Become-a-Web-Designer.png')), filename: 'Become-a-Web-Designer.png')
 
-linkedin = Linkedin.create!(badge_name: "Sass-essential-training", skill_ids: [skill4.id])
-linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Sass-essential-training.png')), filename: 'Sass-essential-training.png')
+linkedin = Linkedin.create!(badge_name: "CSS Essential Training",url: "https://www.linkedin.com/learning/certificates/21db33e7f1704cb29974309563c0eac7da113d28a24275ae74658b87aabd4d87?trk=share_certificate", skill_ids: [skill4.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/05.CSS-Essential-Training.png')), filename: 'CSS-Essential-Training.png')
 
-linkedin = Linkedin.create!(badge_name: "JavaScript-Enhancing-the-DOM", skill_ids: [skill5.id])
-linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/JavaScript-Enhancing-the-DOM.png')), filename: 'JavaScript-Enhancing-the-DOM.png')
+linkedin = Linkedin.create!(badge_name: "Design Aesthetics for the Web", url: "https://www.linkedin.com/learning/certificates/a8c32947a9bbb0a10a7681a071e761b2142cd418ab8039386e15de3ee0146754?trk=share_certificate", skill_ids: [skill4.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/06.Design-Aesthetics-for-the-Web.png')), filename: 'Design-Aesthetics-for-the-Web.png')
 
-linkedin = Linkedin.create!(badge_name: "JavaScript-Functions", skill_ids: [skill5.id])
-linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/JavaScript-Functions.png')), filename: 'JavaScript-Functions.png')
+linkedin = Linkedin.create!(badge_name: "DevOps with AWS", url: "https://www.linkedin.com/learning/certificates/9e9c575af7d63edb9e778d6e81e4c75189d7ddd125f25ae2a1bee1868661e1bf?trk=share_certificate", skill_ids: [skill10.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/07.DevOps-with-AWS.png')), filename: 'DevOps-with-AWS.png')
 
-linkedin = Linkedin.create!(badge_name: "Git-esential-training-The-Basics-NASBA", skill_ids: [skill9.id])
-linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Git-esential-training-The-Basics-NASBA.png')), filename: 'Git-esential-training-The-Basics-NASBA.png')
+linkedin = Linkedin.create!(badge_name: "Git Essential Training The Basics", url: "https://www.linkedin.com/learning/certificates/152c0024555250f1fca1b86d4098501da5f5440a147d7d3e8aa20be8e29fe66c?trk=share_certificate", skill_ids: [skill9.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/08.Git-Essential-Training-The-Basics.png')), filename: 'Git-Essential-Training-The-Basics.png')
 
-linkedin = Linkedin.create!(badge_name: "HTML-essential-training", skill_ids: [skill3.id])
-linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/HTML-essential-training.png')), filename: 'HTML-essential-training.png')
+linkedin = Linkedin.create!(badge_name: "Graphite and Grafana Visualizing Application Performance", url: "https://www.linkedin.com/learning/certificates/612f351841fee90204fd48d572bc1f4e02908d3f108c32006a307137dc6b5f37?trk=share_certificate", skill_ids: [skill10.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/09.Graphite-and-Grafana-Visualizing-Application-Performance.png')), filename: 'Graphite-and-Grafana-Visualizing-Application-Performance.png')
 
-linkedin = Linkedin.create!(badge_name: "Agile-Foundations-NASBA", skill_ids: [skill1.id, skill2.id])
-linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Agile-Foundations-NASBA.png')), filename: 'Agile-Foundations-NASBA.png')
+linkedin = Linkedin.create!(badge_name: "HTML Essential Training", url: "https://www.linkedin.com/learning/certificates/77bd7196bdc1d8bbfd42e62f34c490540a3bede735bdefffcc4f66d0591f010f?trk=share_certificate", skill_ids: [skill3.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/10.HTML-Essential-Training.png')), filename: 'HTML-Essential-Training.png')
+
+linkedin = Linkedin.create!(badge_name: "Illustrator for Web Design", url: "https://www.linkedin.com/learning/certificates/7096b36bda7c01567213aa59b81c64604e2444da5000967238693fd095bc4d1c?trk=share_certificate", skill_ids: [skill4.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/11.Illustrator-for-Web-Design.png')), filename: 'Illustrator-for-Web-Design.png')
+
+linkedin = Linkedin.create!(badge_name: "InDesign for UX Design", url: "https://www.linkedin.com/learning/certificates/90a9f7bb413fbec61a576c82b572bc240450130c53709398efb29eb363b54c18?trk=share_certificate", skill_ids: [skill4.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/12.InDesign-for-UX-Design.png')), filename: 'InDesign-for-UX-Design.png')
+
+linkedin = Linkedin.create!(badge_name: "Introduction to Linux", url: "https://www.linkedin.com/learning/certificates/760f813cc40164f5306df5ea0cd8dbd4de725ddf5575f22f89993fff0b6f6cdf?trk=share_certificate", skill_ids: [skill8.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/13.Introduction-to-Linux.png')), filename: 'Introduction-to-Linux.png')
+
+linkedin = Linkedin.create!(badge_name: "Introduction to Web Design and Development 2014", url: "https://www.linkedin.com/learning/certificates/bebdd50514e245661f58c997284dd8ac4a33f31ae60b7dee315a6a1ad40daaf6?trk=share_certificate", skill_ids: [skill3.id, skill4.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/14.Introduction-to-Web-Design-and-Development-2014.png')), filename: 'Introduction-to-Web-Design-and-Development-2014.png')
+
+linkedin = Linkedin.create!(badge_name: "JavaScript Enhancing the DOM", url: "https://www.linkedin.com/learning/certificates/84078e5c838bede880397a8a0fb1914fd78872d30aecdc481f6508e0a961f381?trk=share_certificate", skill_ids: [skill5.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/15.JavaScript-Enhancing-the-DOM.png')), filename: 'JavaScript-Enhancing-the-DOM.png')
+
+linkedin = Linkedin.create!(badge_name: "JavaScript Functions", url: "https://www.linkedin.com/learning/certificates/4518f56246bf4f8762b22543809690e5c3b4bcc7530f32b6f5c186d7f8374e94?trk=share_certificate", skill_ids: [skill5.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/16.JavaScript-Functions.png')), filename: 'JavaScript-Functions.png')
+
+linkedin = Linkedin.create!(badge_name: "Learning Bash Scripting", url: "https://www.linkedin.com/learning/certificates/074bd60281e970bf9b0388ce6bfaac51dfda265a8332cb932fbd055f4b59d797?trk=share_certificate", skill_ids: [skill8.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/17.Learning-Bash-Scripting.png')), filename: 'Learning-Bash-Scripting.png')
+
+linkedin = Linkedin.create!(badge_name: "Learning Chef", url: "https://www.linkedin.com/learning/certificates/1b7008cce88238dd39769fee498bfec5122d4f6ef160c7bd4904ecb06145a063?trk=share_certificate", skill_ids: [skill10.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/18.Learning-Chef.png')), filename: 'Learning-Chef.png')
+
+linkedin = Linkedin.create!(badge_name: "Learning CoffeeScript", url: "https://www.linkedin.com/learning/certificates/75c2f2b2fb245345b7d2dae83a2babe5bc0d2df58e25c5efc446997da3d6cf96?trk=share_certificate", skill_ids: [skill5.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/19.Learning-CoffeeScript.png')), filename: 'Learning-CoffeeScript.png')
+
+linkedin = Linkedin.create!(badge_name: "Learning Linux Command Line 2018", url: "https://www.linkedin.com/learning/certificates/4fc99d35edaf4fd36980f5491f44d360da4648b2b54a7c451bfb5da4e5d0d8c7?trk=share_certificate", skill_ids: [skill8.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/20.Learning-Linux-Command-Line-2018.png')), filename: 'Learning-Linux-Command-Line-2018.png')
+
+linkedin = Linkedin.create!(badge_name: "Learning Responsive Web Design in the Browser", url: "https://www.linkedin.com/learning/certificates/d9f4baa0196f2af0bc057de4f7dfe839bef43fd3b6b544796183d17bb5f9d6eb?trk=share_certificate", skill_ids: [skill3.id, skill4.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/21.Learning-Responsive-Web-Design-in-the-Browser.png')), filename: 'Learning-Responsive-Web-Design-in-the-Browser.png')
+
+linkedin = Linkedin.create!(badge_name: "Learning Sinatra", url: "https://www.linkedin.com/learning/certificates/ab46adeee9cf484368613a306d2004e8ecea5e948a8e4b808958333d7dbe94e3?trk=share_certificate", skill_ids: [skill2.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/22.Learning-Sinatra.png')), filename: 'Learning-Sinatra.png')
+
+linkedin = Linkedin.create!(badge_name: "Learning TypeScript", url: "https://www.linkedin.com/learning/certificates/f0263f02ec62803e9df2c70089e5e7302badb5a857894ea4bd5432cb9510475b?trk=share_certificate", skill_ids: [skill5.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/23.Learning-TypeScript.png')), filename: 'Learning-TypeScript.png')
+
+linkedin = Linkedin.create!(badge_name: "Mapping the Modern Web Design Process", url: "https://www.linkedin.com/learning/certificates/4e202aad24f6aee51ea3401bcfec416df59640daf380c8d10e28a8c62eeae219?trk=share_certificate", skill_ids: [skill3.id, skill4.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/24.Mapping-the-Modern-Web-Design-Process.png')), filename: 'Mapping-the-Modern-Web-Design-Process.png')
+
+linkedin = Linkedin.create!(badge_name: "Microservices Foundations", url: "https://www.linkedin.com/learning/certificates/d1bb5a90e09c191de04f0f9be3d5bf44d81d513047118896ce1833bf1c6909e6?trk=share_certificate", skill_ids: [skill1.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/25.Microservices-Foundations.png')), filename: 'Microservices-Foundations.png')
+
+linkedin = Linkedin.create!(badge_name: "Photoshop for Web Design", url: "https://www.linkedin.com/learning/certificates/b0bc036040788ec5251c404cc9d4fadd1f3604e0f85d96dbf712bd4c002afb29?trk=share_certificate", skill_ids: [skill4.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/26.Photoshop-for-Web-Design.png')), filename: 'Photoshop-for-Web-Design.png')
+
+linkedin = Linkedin.create!(badge_name: "Responsive Images", url: "https://www.linkedin.com/learning/certificates/3a47e2d561f95eabf9ee739901ffe9b2174a2acfc97183ec6497e19312d119cc?trk=share_certificate", skill_ids: [skill4.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/27.Responsive-Images.png')), filename: 'Responsive-Images.png')
+
+linkedin = Linkedin.create!(badge_name: "Responsive Typography Techniques", url: "https://www.linkedin.com/learning/certificates/0f783cdf6f6ac46e35b8c9fea373befd22baca39352554fb3b4aa65bcabbc072?trk=share_certificate", skill_ids: [skill4.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/28.Responsive-Typography-Techniques.png')), filename: 'Responsive-Typography-Techniques.png')
+
+linkedin = Linkedin.create!(badge_name: "Ruby Essential Training Part 1 The Basics 2018", url: "https://www.linkedin.com/learning/certificates/01a2ef419c732c5843c24f76bb0d7a043db214fca5c2e34d306b871d7af65d56?trk=share_certificate", skill_ids: [skill1.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/29.Ruby-Essential-Training-Part-1-The-Basics-2018.png')), filename: 'Ruby-Essential-Training-Part-1-The-Basics-2018.png')
+
+linkedin = Linkedin.create!(badge_name: "Ruby on Rails 5 Essential Training", url: "https://www.linkedin.com/learning/certificates/f2ecffe2593ce328fda195e9248a80f9d0fb5bc7f04a8ef049bf0621057e9ed6?trk=share_certificate", skill_ids: [skill2.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/30.Ruby-on-Rails-5-Essential-Training.png')), filename: 'Ruby-on-Rails-5-Essential-Training.png')
+
+linkedin = Linkedin.create!(badge_name: "Ruby on Rails Get More From ActiveRecord", url: "https://www.linkedin.com/learning/certificates/4207dcade373a768fe9facb69c0468eb2ebe2ece800e02edccfdcca96cb628f1?trk=share_certificate", skill_ids: [skill2.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/31.Ruby-on-Rails-Get-More-From-ActiveRecord.png')), filename: 'Ruby-on-Rails-Get-More-From-ActiveRecord.png')
+
+linkedin = Linkedin.create!(badge_name: "Ruby Testing with RSpec", url: "https://www.linkedin.com/learning/certificates/322e6af742ceb60b003d665f3cf464a1b4fe709cc3dddb05f89cf0b7d335cdbe?trk=share_certificate", skill_ids: [skill1.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/32.Ruby-Testing-with-RSpec.png')), filename: 'Ruby-Testing-with-RSpec.png')
+
+linkedin = Linkedin.create!(badge_name: "Sass Essential Training 2015", url: "https://www.linkedin.com/learning/certificates/4cc8abbba0d7808a3eba35d5b3a77a0962e21baa3f1da79968782938180e9874?trk=share_certificate", skill_ids: [skill4.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/33.Sass-Essential-Training-2015.png')), filename: 'Sass-Essential-Training-2015.png')
+
+linkedin = Linkedin.create!(badge_name: "Shopify Essential Training", url: "https://www.linkedin.com/learning/certificates/da17f73e7bd148d43aa47a296221f2d7956b8d75750a7dacc3206358369e1265?trk=share_certificate", skill_ids: [skill1.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/34.Shopify-Essential-Training.png')), filename: 'Shopify-Essential-Training.png')
+
+linkedin = Linkedin.create!(badge_name: "Software Development Life Cycle SDLC", url: "https://www.linkedin.com/learning/certificates/ef34b23a8c0aaa711025c0db5387227fda6e2951d506680ee718a440963c4590?trk=share_certificate", skill_ids: [skill10.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/35.Software-Development-Life-Cycle-SDLC.png')), filename: 'Software-Development-Life-Cycle-SDLC.png')
+
+linkedin = Linkedin.create!(badge_name: "User Experience for Web Design 2015", url: "https://www.linkedin.com/learning/certificates/2d05fc598d0deda770f8cabcea5836cf5106f32bd668cce2a3da6099eef89e3d?trk=share_certificate", skill_ids: [skill3.id, skill4.id])
+linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Courses/36.User-Experience-for-Web-Design-2015.png')), filename: 'User-Experience-for-Web-Design-2015.png')
 
 #Hackerrank
 HackerRank.create!(cerificate_name: "Problem Solving", is_badge: true, url: "https://www.hackerrank.com/vlad_rogna", badgeorcertificate: "<svg viewBox=\"0 0 91.66667 100\" class=\"hexagon\"><g><defs><linearGradient id=\"badge-bronze-gradient\" x1=\"52.5\" y1=\"2.5\" x2=\"52.5\" y2=\"102.5\" gradientUnits=\"userSpaceOnUse\"><stop offset=\"0\" stop-color=\"#ffc5ab\"></stop><stop offset=\"1\" stop-color=\"#ffa38a\"></stop></linearGradient></defs><path fill=\"url(#badge-bronze-gradient)\" d=\"M98.28277,47.36h0c-.18459-9.382-.87983-17.797-2.0917-19.8595-1.02214-1.742-6.1721-5.43476-12.6195-9.45853L66.3804,8.23311C59.94162,4.89541,54.4699,2.5,52.49778,2.5c-2.42987,0-10.17687,3.63131-18.49789,8.18049-6.30411,3.44623-12.9328,7.41557-17.83631,10.74623-3.85037,2.61278-6.63864,4.828-7.35893,6.07393-.73574,1.27216-1.28014,4.91124-1.63613,9.67794l-.00014-.00008c-.45195,6.03951-.599,13.88935-.43933,21.10033.20233,9.11082.89243,17.18541,2.07561,19.22049C11.66541,82.42328,46.78277,102.5,52.49778,102.5c2.374,0,9.82245-3.47115,17.92388-7.87722,6.4-3.48081,13.19866-7.5418,18.23618-10.9459l-.00046-.00026c3.93694-2.6605,6.80064-4.91944,7.53385-6.17728.72907-1.2482,1.27024-4.80557,1.62881-9.48065l-.00014-.00008C98.269,62.13222,98.42408,54.47227,98.28277,47.36Z\" transform=\"translate(-6.66667 -2.5)\"></path></g><image class=\"badge-icon\" xlink:href=\"https://hrcdn.net/community-frontend/assets/badges/problem-solving-ecaf59a612.svg\" x=\"50%\" y=\"22\" height=\"27\" width=\"27\" transform=\"translate(-13.5, 0)\"></image><text class=\"badge-title\" x=\"50%\" y=\"65.5\" font-size=\"10\">Problem Solving</text><g class=\"star-section\" transform=\"translate(-8, 0)\"><svg x=\"50%\" y=\"71\" height=\"10\"><svg class=\"badge-star\" viewBox=\"0 0 6.54904 6.25825\" width=\"7\" x=\"0\"><path class=\"star\" d=\"M55.51425,77.01983l-1.89417-.275-.84833-1.7175a.299.299,0,0,0-.27167-.16917.3245.3245,0,0,0-.2725.16917l-.305.61833-.5425,1.09916-.51417.075-1.38.2a.30333.30333,0,0,0-.18583.10083.33411.33411,0,0,0-.045.06833.35631.35631,0,0,0-.02417.07667.34087.34087,0,0,0-.005.04083.3038.3038,0,0,0,.02417.13417.33341.33341,0,0,0,.06667.0975l1.37167,1.33667-.2875,1.67167-.03667.21417c-.00167.01-.00167.02-.0025.02917l-.00167.0175a.26453.26453,0,0,0,.00167.04417.30489.30489,0,0,0,.44417.22917l1.69417-.89,1.69416.89a.30352.30352,0,0,0,.44084-.32L54.31175,78.874l1.37083-1.33667a.30339.30339,0,0,0-.16833-.5175\" transform=\"translate(-49.22548 -74.85817)\"></path></svg><svg class=\"badge-star\" viewBox=\"0 0 6.54904 6.25825\" width=\"7\" x=\"9\"><path class=\"star\" d=\"M55.51425,77.01983l-1.89417-.275-.84833-1.7175a.299.299,0,0,0-.27167-.16917.3245.3245,0,0,0-.2725.16917l-.305.61833-.5425,1.09916-.51417.075-1.38.2a.30333.30333,0,0,0-.18583.10083.33411.33411,0,0,0-.045.06833.35631.35631,0,0,0-.02417.07667.34087.34087,0,0,0-.005.04083.3038.3038,0,0,0,.02417.13417.33341.33341,0,0,0,.06667.0975l1.37167,1.33667-.2875,1.67167-.03667.21417c-.00167.01-.00167.02-.0025.02917l-.00167.0175a.26453.26453,0,0,0,.00167.04417.30489.30489,0,0,0,.44417.22917l1.69417-.89,1.69416.89a.30352.30352,0,0,0,.44084-.32L54.31175,78.874l1.37083-1.33667a.30339.30339,0,0,0-.16833-.5175\" transform=\"translate(-49.22548 -74.85817)\"></path></svg></svg></g></svg>", skill_ids: [skill1.id])
@@ -328,7 +418,7 @@ tag1 = Tag.create!(name: "Agency")
 tag2 = Tag.create!(name: "Amazon S3")
 tag3 = Tag.create!(name: "Blog")
 tag4 = Tag.create!(name: "Css")
-tag5 = Tag.create!(name: "Docker")
+tag5 = Tag.create!(name: "Docker", skill_ids: [skill10.id])
 tag6 = Tag.create!(name: "Ecommerce")
 tag7 = Tag.create!(name: "Git")
 tag8 = Tag.create!(name: "Google Maps")
