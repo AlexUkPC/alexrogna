@@ -10,7 +10,7 @@ user = CreateAdminService.new.call
 ActionText::RichText.create!(record_type: 'User',record_id: user.id, name: 'long_description_wysiwyg', body: "I'm a <strong>web designer</strong> and <strong>programmer</strong> specialized in creating useful applications and beautiful websites. I've been in the field for more than <strong>5 years</strong> and have been loving every minute of it! I'm an entrepreneur, designer, developer and overall a thinker. I have experience in all phases of the project life cycle - <strong>analysis</strong>,<strong> design</strong>,<strong> coding</strong>, <strong>debugging</strong>, <strong>testing</strong> and <strong>implementation</strong>. My working experience is the proof that I can be an excellent asset to your company.")
 ActionText::RichText.create!(record_type: 'User',record_id: user.id, name: 'extra_description_for_pdf', body: "Find more details about me and my portfolio of projects on my website <a href=\"https://alexrogna.com\">alexrogna.com</a>")
 user.cover_image.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/cover_image.jpg')), filename: 'cover_image.jpg')
-user.profile_image.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/profile_image.jpg')), filename: 'profile_image.jpg')
+user.profile_image.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/profile_image_small.jpg')), filename: 'profile_image_small.jpg')
 
 #Social icons
 SocialIcon.create!(name: 'LinkedIn', link: 'https://linkedin.com/in/alexrogna', icon: 'fab fa-linkedin-in')
@@ -33,9 +33,9 @@ skill6.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Ski
 skill7 = Skill.create!(name: 'Databases', order_id: '7')
 skill7.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Skills/Databases.png')), filename: 'databases.png')
 skill8 = Skill.create!(name: 'Linux', order_id: '8')
-skill8.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Skills/Linux.png')), filename: 'linux.png')
+skill8.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Skills/Linux-Ubuntu.png')), filename: 'linux-ubuntu.png')
 skill9 = Skill.create!(name: 'Git', order_id: '9')
-skill9.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Skills/Git.png')), filename: 'git.png')
+skill9.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Skills/Git-GitHub.png')), filename: 'git-github.png')
 skill10 = Skill.create!(name: 'DevOps', order_id: '10')
 skill10.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Skills/DevOps.png')), filename: 'devops.png')
 
@@ -121,7 +121,7 @@ tech31.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Tec
 tech32 = Tech.create!(name: "Notion", order_id: 32)
 tech32.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Tech/Notion.png')), filename: 'notion.png')
 tech33 = Tech.create!(name: "Linux", order_id: 33)
-tech33.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Tech/Linux.png')), filename: 'linux.png')
+tech33.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Tech/Linux-Ubuntu.png')), filename: 'linux-ubuntu.png')
 tech34 = Tech.create!(name: "Nginx", order_id: 34)
 tech34.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Tech/Nginx.png')), filename: 'nginx.png')
 tech35 = Tech.create!(name: "Magento", order_id: 35)
@@ -153,7 +153,7 @@ tech47.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Tec
 tech48 = Tech.create!(name: "Filezilla", order_id: 48)
 tech48.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Tech/Filezilla.png')), filename: 'filezilla.png')
 tech49 = Tech.create!(name: "Git", order_id: 49)
-tech49.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Tech/Git.png')), filename: 'git.png')
+tech49.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Tech/Git-GitHub.png')), filename: 'git-github.png')
 tech50 = Tech.create!(name: "Docker", order_id: 50, skill_ids: [skill10.id])
 tech50.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Tech/Docker.png')), filename: 'docker.png')
 tech51 = Tech.create!(name: "Asana", order_id: 51)
@@ -241,7 +241,7 @@ book = Book.create!(title: "The Well-Grounded Rubyist", subtitle: "3rd Edition",
 book.cover.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Books/TheWell-GroundedRubyistThird.jpg')), filename: 'TheWell-GroundedRubyistThird.jpg')
 
 book = Book.create!(title: "Practical Linux with Raspberry Pi OS", subtitle: "Quick Start", author: "Ashwin Pajankar", publisher: "Apress", dop: "2021-01-05", resources_link: "", github_link: "", skill_ids: [skill8.id])
-book.cover.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Books/Practical-Linux-with-Raspberry Pi OS.jpeg')), filename: 'Practical-Linux-with-Raspberry Pi OS.jpeg')
+book.cover.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Books/Practical-Linux-with-Raspberry-Pi-OS.jpeg')), filename: 'Practical-Linux-with-Raspberry-Pi-OS.jpeg')
 
 book = Book.create!(title: "Docker for Rails Developers", subtitle: "Build, Ship, and Run Your Applications Everywhere", author: "Rob Isenberg", publisher: "The Pragmatic Programmers", dop: "2019-03-19", resources_link: "https://media.pragprog.com/titles/ridocker/code/ridocker-code.zip", github_link: "https://github.com/AlexUkPC/Default_project_Rails_with_postgres", skill_ids: [skill10.id])
 book.cover.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Books/docker-for-rails-developers.jpg')), filename: 'docker-for-rails-developers.jpg')
@@ -413,6 +413,9 @@ freecodecamp1.certificate.attach(io: File.open(Rails.root.join('app/assets/image
 freecodecamp2 = FreeCodeCamp.create!(cerificate_name: "JavaScript Algorithms and Data Structures", url: "https://www.freecodecamp.org/certification/alexrogna/javascript-algorithms-and-data-structures", skill_ids: [skill5.id])
 freecodecamp2.certificate.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/FreeCodeCamps/Javascript.png')), filename: 'Javascript.png')
 
+freecodecamp3 = FreeCodeCamp.create!(cerificate_name: "DevOps Purple Beard", url: "", skill_ids: [skill10.id])
+freecodecamp3.certificate.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/FreeCodeCamps/DevOps-PurpleBeard.png')), filename: 'DevOps-PurpleBeard.png')
+
 #Tags
 tag1 = Tag.create!(name: "Agency")
 tag2 = Tag.create!(name: "Amazon S3")
@@ -437,6 +440,8 @@ tag20 = Tag.create!(name: "Ruby")
 tag21 = Tag.create!(name: "Social Network")
 tag22 = Tag.create!(name: "VueJs", skill_ids: [skill5.id])
 tag23 = Tag.create!(name: "Wordpress")
+tag24 = Tag.create!(name: "Shopify")
+tag25 = Tag.create!(name: "Liquid")
 
 Project.create!(name: "Vang", tag_ids: [tag4.id, tag5.id, tag7.id, tag9.id, tag16.id, tag18.id, tag20.id], hidden: true, order_id: 101)
 Project.create!(name: "AlexRogna", tag_ids: [tag4.id, tag5.id, tag7.id, tag9.id, tag11.id, tag12.id, tag16.id, tag18.id, tag20.id ], hidden: true, order_id: 101)
@@ -459,7 +464,7 @@ Project.create!(name: "Rogna", tag_ids: [tag23.id], hidden: true, order_id: 101)
 Project.create!(name: "VA Photos", tag_ids: [tag4.id, tag9.id], hidden: true, order_id: 101)
 Project.create!(name: "AdrianPetre.com", tag_ids: [tag4.id, tag9.id], hidden: true, order_id: 101)
 
-project1 = Project.create!(name: "Logit Solutions", url: "https://logit-solutions.co.uk/", tag_ids: [tag8.id, tag17.id, tag23.id], hidden: false, order_id: 1)
+project1 = Project.create!(name: "Logit Solutions", url: "https://logit-solutions.co.uk/", tag_ids: [tag8.id, tag17.id, tag23.id], hidden: true, order_id: 1)
 ActionText::RichText.create!(record_type: 'Project',record_id: project1.id, name: 'description', body: "This is a presentation website for Logit Solutions which provides top-grade software services and together with partners delivers solutions on the fields involving high-volumes of operations and data, such as retail, distribution and logistics, business intelligence, process optimization, scientific research, applied data science, and others.")
 project1.cover_image.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/01.Logit-Solutions/cover-image-logit-solutions.png')), filename: 'cover-image-logit-solutions.png')
 project1.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/01.Logit-Solutions/logo-logit-solutions.png')), filename: 'logo-logit-solutions.png')
@@ -473,7 +478,7 @@ project2.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/P
 project2.project_logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/02.EleCa/project-logo-eleca.png')), filename: 'project-logo-eleca.png')
 project2.main_tech.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/Main-Tech/WordPress_blue_logo.png')), filename: 'WordPress_blue_logo.png')
 
-project3 = Project.create!(name: "Online Trust Mark", url: "https://trustmark.awesomenewdesign.co.uk/", tag_ids: [tag13.id, tag17.id, tag23.id], hidden: false, order_id: 3)
+project3 = Project.create!(name: "Online Trust Mark", url: "https://trustmark.awesomenewdesign.co.uk/", tag_ids: [tag13.id, tag17.id, tag23.id], hidden: true, order_id: 3)
 ActionText::RichText.create!(record_type: 'Project',record_id: project3.id, name: 'description', body: "Undoubtedly, one of the key elements for the development of e-commerce is consumer confidence. The Online Trustmark is a self-regulatory tool designed to achieve this goal. However, as the Internet is a transnational environment, and legal regulations for consumer protection cannot be the only element that bring online business development, they are trying to actively involve the business environment in increasing confidence in the field in which it operates.")
 project3.cover_image.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/03.Online-Trust-Mark/cover-image-online-trust-mark.png')), filename: 'cover-image-online-trust-mark.png')
 project3.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/03.Online-Trust-Mark/logo-online-trust-mark.png')), filename: 'logo-online-trust-mark.png')
@@ -484,7 +489,7 @@ project4 = Project.create!(name: "Lindenfeld", url: "https://lindenfeld.eu/", ta
 ActionText::RichText.create!(record_type: 'Project',record_id: project4.id, name: 'description', body: "Presentation website for a village in Romania that currently has no residents, the last one dying in 1998. It is a place that despite the fact that it’s in ruins , is reborn in online so that the descendants of those who lived there not to forget about it, and maybe one day to return to the place where they came from.")
 project4.cover_image.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/04.Lindenfeld/cover-image-lindenfeld.png')), filename: 'cover-image-lindenfeld.png')
 project4.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/04.Lindenfeld/logo-lindenfeld.png')), filename: 'logo-lindenfeld.png')
-project4.project_logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/04.Lindenfeld/project-logo-lindenfeld.jpg')), filename: 'project-logo-lindenfeld.jpg')
+project4.project_logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/04.Lindenfeld/project-logo-lindenfeld.png')), filename: 'project-logo-lindenfeld.png')
 project4.main_tech.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/Main-Tech/WordPress_blue_logo.png')), filename: 'WordPress_blue_logo.png')
 
 project5 = Project.create!(name: "Muzeul Petrolului", url: "https://muzeulpetrolului.ro/stage1", tag_ids: [tag8.id, tag13.id, tag17.id, tag23.id], hidden: false, order_id: 5)
@@ -519,7 +524,7 @@ project9 = Project.create!(name: "Black and Orange", url: "https://blackandorang
 ActionText::RichText.create!(record_type: 'Project',record_id: project9.id, name: 'description', body: "For a long time in history there were only black and white pictures, after which colour photos appeared. Because I want to remember the black and white pictures, but I wanted a splash of colour I made this platform for sharing black and orange photos with everyone. Anyone can upload their black and orange pictures. Users can view, like and comment other user photos.")
 project9.cover_image.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/09.Black-and-Orange/cover-image-black-and-orange.png')), filename: 'cover-image-black-and-orange.png')
 project9.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/09.Black-and-Orange/logo-black-and-orange.png')), filename: 'logo-black-and-orange.png')
-project9.project_logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/09.Black-and-Orange/project-logo-black-and-orange.jpg')), filename: 'project-logo-black-and-orange.jpg')
+project9.project_logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/09.Black-and-Orange/project-logo-black-and-orange.png')), filename: 'project-logo-black-and-orange.png')
 project9.main_tech.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/Main-Tech/Ruby_on_Rails_logo.png')), filename: 'Ruby_on_Rails_logo.png')
 
 project10 = Project.create!(name: "It Bookstore", url: "https://itbookstore.alexrogna.com/", github_url: "https://github.com/AlexUkPC/itbookstore", docker_url: "https://hub.docker.com/r/alexrogna/itbookstore_web", tag_ids: [tag4.id, tag5.id, tag6.id, tag7.id, tag9.id, tag10.id, tag11.id, tag12.id, tag13.id, tag16.id, tag18.id, tag19.id, tag20.id], hidden: true, order_id: 10)
@@ -544,7 +549,28 @@ project12.project_logo.attach(io: File.open(Rails.root.join('app/assets/images/f
 project12.main_tech.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/Main-Tech/Ruby_on_Rails_logo.png')), filename: 'Ruby_on_Rails_logo.png')
 
 project13 = Project.create!(name: "Titiatio", url: "https://titiatio.alexrogna.com/", github_url: "https://github.com/AlexUkPC/titiatio", docker_url: "https://hub.docker.com/r/alexrogna/titiatio_web", tag_ids: [tag4.id, tag5.id, tag7.id, tag9.id, tag11.id, tag12.id, tag13.id, tag16.id, tag18.id, tag20.id], hidden: true, order_id: 13)
-ActionText::RichText.create!(record_type: 'Project',record_id: project13.id, name: 'description', body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nescio quo modo praetervolavit oratio. Sed in rebus apertissimis nimium longi sumus. Perge porro; Compensabatur, inquit, cum summis doloribus laetitia. Bonum patria: miserum exilium. Conferam tecum, quam cuique verso rem subicias; ")
+ActionText::RichText.create!(record_type: 'Project',record_id: project13.id, name: 'description', body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nescio quo modo praetervolavit oratio. Sed in rebus apertissimis nimium longi sumus. Perge porro; Compensabatur, inquit, cum summis doloribus laetitia. Bonum patria: miserum exilium. Conferam tecum, quam cuique verso rem subicias;")
 project13.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/13.Titiatio/logo-titiatio.png')), filename: 'logo-titiatio.png')
 project13.project_logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/13.Titiatio/project-logo-titiatio.png')), filename: 'project-logo-titiatio.png')
 project13.main_tech.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/Main-Tech/Ruby_on_Rails_logo.png')), filename: 'Ruby_on_Rails_logo.png')
+
+project14 = Project.create!(name: "Sempresano", url: "https://sempresano.ro/", github_url: "", docker_url: "", tag_ids: [tag6.id, tag24.id, tag25.id], hidden: false, order_id: 14)
+ActionText::RichText.create!(record_type: 'Project',record_id: project14.id, name: 'description', body: "This is an eCommerce website built with Shopify for a catering company. The biggest challenge was creating a pleasant experience for customers, because when you're hungry you have no more patience and you want to order as soon as possible. Starting from a custom theme, I modified it using Liquid to meets the client's requirements.")
+project14.cover_image.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/14.Sempresano/cover-image-sempresano.png')), filename: 'cover-image-sempresano.png')
+project14.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/14.Sempresano/logo-sempresano.png')), filename: 'logo-sempresano.png')
+project14.project_logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/14.Sempresano/project-logo-sempresano.png')), filename: 'project-logo-sempresano.png')
+project14.main_tech.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/Main-Tech/Shopify_logo.png')), filename: 'Shopify_logo.png')
+
+project15 = Project.create!(name: "Enocis", url: "https://www.enocis.ro", github_url: "https://github.com/AlexUkPC/enocis", docker_url: "https://hub.docker.com/repository/docker/alexrogna/enocis_web", tag_ids: [tag4.id, tag5.id, tag7.id, tag8.id, tag9.id, tag11.id, tag12.id, tag16.id, tag17.id, tag18.id, tag20.id], hidden: false, order_id: 15)
+ActionText::RichText.create!(record_type: 'Project',record_id: project15.id, name: 'description', body: "Presentation website for a custom made furniture company. Because they wanted to be able to update the website regularly, I've created a dashboard from which they can add/update projects, products and services. The admin can also accept/reject testimonials, see all the contact forms submission and also can change contact details.")
+project15.cover_image.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/15.Enocis/cover-image-enocis.png')), filename: 'cover-image-enocis.png')
+project15.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/15.Enocis/logo-enocis.png')), filename: 'logo-enocis.png')
+project15.project_logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/15.Enocis/project-logo-enocis.png')), filename: 'project-logo-enocis.png')
+project15.main_tech.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/Main-Tech/Ruby_on_Rails_logo.png')), filename: 'Ruby_on_Rails_logo.png')
+
+project16 = Project.create!(name: "Erp Enocis", url: "https://erpenocis.alexrogna.com", github_url: "https://github.com/AlexUkPC/erpenocis", docker_url: "https://hub.docker.com/repository/docker/alexrogna/erpenocis_web", tag_ids: [tag4.id, tag5.id, tag7.id, tag9.id, tag11.id, tag12.id, tag16.id, tag18.id, tag20.id], hidden: false, order_id: 16)
+ActionText::RichText.create!(record_type: 'Project',record_id: project16.id, name: 'description', body: "This is an enterprise resource planning platform custom build for the customer's needs. With the help of this they can see an overvire of the company's performance, make quick decisions and plan for the future.")
+project16.cover_image.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/16.Erp-Enocis/cover-image-erpenocis.png')), filename: 'cover-image-erpenocis.png')
+project16.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/16.Erp-Enocis/logo-erpenocis.png')), filename: 'logo-erpenocis.png')
+project16.project_logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/16.Erp-Enocis/project-logo-erpenocis.png')), filename: 'project-logo-erpenocis.png')
+project16.main_tech.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/Main-Tech/Ruby_on_Rails_logo.png')), filename: 'Ruby_on_Rails_logo.png')

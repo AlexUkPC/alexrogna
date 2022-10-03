@@ -46,11 +46,11 @@
                     </div>  
                     <div class="column collapse skill-item">
                         <% if skill.free_code_camps.count()>0 %>
-                            <%= link_to "#modal-#{skill.id}-free_code_camps", title: "View what FreeCodeCamp certificates I have" do %>
-                                <i class="fab fa-free-code-camp"></i>
+                            <%= link_to "#modal-#{skill.id}-free_code_camps", title: "View what certificates I have" do %>
+                                <i class="far fa-file-certificate"></i>
                             <% end %>  
                             <% else %>         
-                                <i class="fab fa-free-code-camp deactivated"></i>
+                                <i class="far fa-file-certificate deactivated"></i>
                         <% end %>
                     </div> 
                 </div>
@@ -80,7 +80,7 @@
                 
             </div>
             <div id="modal-<%= skill.id %>-free_code_camps" hidden>
-            <div class="row modal-title-skills-fcc"><h3 class="align-center">Certificates on FreeCodeCamp</h3></div>
+            <div class="row modal-title-skills-fcc"><h3 class="align-center">Certificates</h3></div>
                 <div class="row collapse block-large-1-2 block-500-stack modal-popup-skills-fcc">
                     <%= render skill.free_code_camps %>
                 </div>

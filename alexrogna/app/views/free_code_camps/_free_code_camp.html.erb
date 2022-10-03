@@ -1,7 +1,11 @@
 <div class="column align-center">
     <div class="badge">
         <% if free_code_camp.certificate.attached? %>
-            <%= link_to free_code_camp.url, target: :_blank do %> 
+            <% if free_code_camp.url!="" %>
+                <%= link_to free_code_camp.url, target: :_blank do %> 
+                    <%= image_tag free_code_camp.certificate %>
+                <% end %>
+            <% else %>
                 <%= image_tag free_code_camp.certificate %>
             <% end %>
         <% end %>
