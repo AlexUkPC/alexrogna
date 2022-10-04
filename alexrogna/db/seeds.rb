@@ -13,9 +13,9 @@ user.cover_image.attach(io: File.open(Rails.root.join('app/assets/images/for_see
 user.profile_image.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/profile_image_small.jpg')), filename: 'profile_image_small.jpg')
 
 #Social icons
-SocialIcon.create!(name: 'LinkedIn', link: 'https://linkedin.com/in/alexrogna', icon: 'fab fa-linkedin-in')
-SocialIcon.create!(name: 'GitHub', link: 'https://github.com/AlexUkPC', icon: 'fab fa-github')
-SocialIcon.create!(name: 'DockerHub', link: 'https://hub.docker.com/u/alexrogna', icon: 'fab fa-docker', show_on_cv: false)
+SocialIcon.create!(name: 'LinkedIn', link: 'https://linkedin.com/in/alexrogna', icon: 'fab fa-linkedin-in', order_id: 1)
+SocialIcon.create!(name: 'GitHub', link: 'https://github.com/AlexUkPC', icon: 'fab fa-github', order_id: 2)
+SocialIcon.create!(name: 'DockerHub', link: 'https://hub.docker.com/u/alexrogna', icon: 'fab fa-docker', show_on_cv: false, order_id: 3)
 
 #Skills
 skill1 = Skill.create!(name: 'Ruby', order_id: '1')
