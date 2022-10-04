@@ -569,7 +569,7 @@ project15.project_logo.attach(io: File.open(Rails.root.join('app/assets/images/f
 project15.main_tech.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/Main-Tech/Ruby_on_Rails_logo.png')), filename: 'Ruby_on_Rails_logo.png')
 
 project16 = Project.create!(name: "Erp Enocis", url: "https://erpenocis.alexrogna.com", github_url: "https://github.com/AlexUkPC/erpenocis", docker_url: "https://hub.docker.com/repository/docker/alexrogna/erpenocis_web", tag_ids: [tag4.id, tag5.id, tag7.id, tag9.id, tag11.id, tag12.id, tag16.id, tag18.id, tag20.id], hidden: false, order_id: 16)
-ActionText::RichText.create!(record_type: 'Project',record_id: project16.id, name: 'description', body: "This is an enterprise resource planning platform custom build for the customer's needs. With the help of this they can see an overvire of the company's performance, make quick decisions and plan for the future.")
+ActionText::RichText.create!(record_type: 'Project',record_id: project16.id, name: 'description', body: "This is an enterprise resource planning platform custom build for the customer's needs. With the help of this they can see an overview of the company's performance, make quick decisions and plan for the future.")
 project16.cover_image.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/16.Erp-Enocis/cover-image-erpenocis.png')), filename: 'cover-image-erpenocis.png')
 project16.logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/16.Erp-Enocis/logo-erpenocis.png')), filename: 'logo-erpenocis.png')
 project16.project_logo.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Portfolio/16.Erp-Enocis/project-logo-erpenocis.png')), filename: 'project-logo-erpenocis.png')
