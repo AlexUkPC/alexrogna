@@ -47,6 +47,9 @@
           &:nth-child(2){
               width: 80%;
           }
+          small {
+            font-size: 12px;
+          }
         }
         .progress-bar {
             position: relative;
@@ -99,7 +102,7 @@
                 }
             }
         }
-        
+
         .p-0::before {
           width: 0%;
         }
