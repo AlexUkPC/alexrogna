@@ -285,6 +285,13 @@ book.cover.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Book
 book = Book.create!(title: "Ubuntu Linux Bible" , subtitle: "", author: "Ubuntu Linux Bible, Christopher Negus", publisher: "Wiley", dop: "2021-01-04", resources_link: "", github_link: "", skill_ids: [skill8.id])
 book.cover.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Books/Ubuntu-Linux-Bible.jpg')), filename: 'Ubuntu-Linux-Bible.jpg')
 
+book = Book.create!(title: "Beginning Ruby 3", subtitle: "From Beginner to Pro", author: "Carleton DiLeo, Peter Cooper", publisher: "Apress", dop: "2020-12-09", resources_link: "", github_link: "https://github.com/AlexUkPC/Begining_Ruby_3", skill_ids: [skill1.id])
+book.cover.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Books/Beginning-Ruby-3.jpg')), filename: 'Beginning-Ruby-3.jpg')
+
+book = Book.create!(title: "Ruby on Rails Tutorial 6th Edition", subtitle: "Learn Web Development with Rails", author: "Michael Hartl", publisher: "Addison Wesley", dop: "2020-10-06", resources_link: "", github_link: "", skill_ids: [skill2.id])
+book.cover.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Books/Ruby-on-Rails-Tutorial.jpg')), filename: 'Ruby-on-Rails-Tutorial.jpg')
+
+
 #Linkedins
 linkedin = Linkedin.create!(badge_name: "Agile Methodologies", skill_ids: [skill2.id])
 linkedin.badge.attach(io: File.open(Rails.root.join('app/assets/images/for_seed/Linkedins/Assessments/Agile-Methodologies.png')), filename: 'Agile-Methodologies.png')
