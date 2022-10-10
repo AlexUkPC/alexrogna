@@ -58,7 +58,7 @@
             <div id="modal-<%= skill.id %>-books" hidden>
                 <div class="modal-popup-skills-b">
                     <div class="row"><h3 class="align-center">Books I've read</h3></div>
-                    <%= render skill.books.with_attached_cover %>
+                    <%= render skill.books.with_attached_cover.order("dop DESC") %>
                 </div>
             </div>
             <div id="modal-<%= skill.id %>-linkedins" hidden>
