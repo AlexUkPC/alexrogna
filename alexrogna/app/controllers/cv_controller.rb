@@ -14,7 +14,7 @@ class CvController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: 'CV-AlexRogna', template: '/cv/pdf.html.erb'    # Excluding ".pdf" extension.
+        render pdf: "CV-AlexRogna-#{Time.now.strftime("%Y-%m-%d")}", template: '/cv/pdf.html.erb'    # Excluding ".pdf" extension.
       end
     end
   end

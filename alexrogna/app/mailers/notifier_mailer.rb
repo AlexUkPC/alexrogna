@@ -16,7 +16,7 @@ class NotifierMailer < ApplicationMailer
     @educations = Education.all.order('start_date DESC')
     @user = user
     @sender_name = sender_name
-    attachments['CV-AlexRogna.pdf'] = WickedPdf.new.pdf_from_string(
+    attachments["CV-AlexRogna-#{Time.now.strftime("%Y-%m-%d")}.pdf"] = WickedPdf.new.pdf_from_string(
       render_to_string('/cv/pdf.html.erb', layout: 'pdf')
     )
     mail to: receiver_email,bcc: user.email, subject: 'Check out this CV' 
